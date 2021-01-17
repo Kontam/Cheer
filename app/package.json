@@ -1,0 +1,17 @@
+{
+  "name": "Cheer",
+  "productName": "Cheer",
+  "version": "1.3.0",
+  "description": "Slack App for showing messages on your screen.",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Kontam",
+    "email": "tehayan0111@gmail.com",
+    "url": "https://github.com/Kanta0111/SlackWatcher"
+  },
+  "scripts": {
+    "electron-rebuild": "node -r ../internals/scripts/BabelRegister.js ../internals/scripts/ElectronRebuild.js",
+    "postinstall": "yarn electron-rebuild"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>preference</title>
+  </head>
+  <body>
+    <div id="preference" style="height: 100%"></div>
+  </body>
+  <script>
+    if (typeof process === 'object') {
+      const scripts = [];
+      if (process.env.START_HOT) {
+        // Dynamically insert the bundled app script in the renderer process
+        const port = process.env.PORT || 1212;
+        scripts.push(
+          `http://localhost:${port}/dist/preference.renderer.dev.js`
+        );
+      } else {
+        scripts.push('./../../dist/preference.renderer.prod.js');
+      }
+
+      if (scripts.length) {
+        document.write(
+          scripts
+            .map((script) => `<script defer src="${script}"><\/script>`)
+            .join('')
+        );
+      }
+    }
+  </script>
+</html>

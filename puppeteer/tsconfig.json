@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "strict": false,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false
+  },
+  "include": ["./main.ts"]
+}
