@@ -48,7 +48,3 @@ npm-debug.log.*
 *.scss.d.ts
 *.swp
 
-// 機密情報定数ファイル
-secret.ts
-secret.ts_ci
-.env
