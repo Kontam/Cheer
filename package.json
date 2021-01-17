@@ -110,12 +110,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kanta0111/SlackWatcher.git"
+    "url": "https://github.com/Kontam/Cheer.git"
   },
   "author": {
     "name": "Kontam",
     "email": "tehayan0111@gmail.com",
-    "url": "https://github.com/Kanta0111/SlackWatcher"
+    "url": "https://twitter.com/kontam0111"
   },
   "keywords": [
     "electron",
