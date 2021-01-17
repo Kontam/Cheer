@@ -1,0 +1,5607 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots atoms/CellSetting Active 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #E2F5E1;
+  border: solid 1px #B5E0B3;
+}
+
+.c0:focus {
+  z-index: 1000;
+}
+
+.c0:hover {
+  background-color: #F1FDF0;
+}
+
+<div>
+  <div>
+    <button
+      className="c0"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="checked"
+        className=""
+        src="test-file-stub"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/CellSetting Inactive 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #FFE6EB;
+  border: solid 1px #F490A7;
+}
+
+.c0:focus {
+  z-index: 1000;
+}
+
+.c0:hover {
+  background-color: #FFF4F6;
+}
+
+<div>
+  <div>
+    <button
+      className="c0"
+      onClick={[Function]}
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/CheckboxField Checkbox Field 1`] = `
+.c1 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c2 {
+  margin-left: 10px;
+  border: none;
+  vertical-align: top;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form>
+      <label
+        className="c1"
+        htmlFor="field"
+      >
+        checkbox
+      </label>
+      <input
+        checked={false}
+        className="c2"
+        id="field"
+        name="field"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        type="checkbox"
+        value=""
+      />
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/FieldTitle Field Title 1`] = `
+.c1 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <p
+      className="c1"
+    >
+      Field Title
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/GeneralButton Active 1`] = `
+.c0 {
+  background-color: #B5E0B3;
+  color: #4E793A;
+  -webkit-transition: 0.2 cursor:pointer;
+  transition: 0.2 cursor:pointer;
+  padding: 5px 12px;
+  font-size: 2rem;
+  box-shadow: 0 3px 6px #6A6A6A;
+  border: none;
+}
+
+.c0:hover {
+  background-color: #E2F5E1;
+}
+
+<div>
+  <div>
+    <input
+      className="c0"
+      disabled={false}
+      type="submit"
+      value="label"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/GeneralButton Full 1`] = `
+.c0 {
+  background-color: #B5E0B3;
+  color: #4E793A;
+  -webkit-transition: 0.2 cursor:pointer;
+  transition: 0.2 cursor:pointer;
+  width: 100%;
+  padding: 5px 12px;
+  font-size: 2rem;
+  box-shadow: 0 3px 6px #6A6A6A;
+  border: none;
+}
+
+.c0:hover {
+  background-color: #E2F5E1;
+}
+
+<div>
+  <div>
+    <input
+      className="c0"
+      disabled={false}
+      type="submit"
+      value="label"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/GeneralButton Passive 1`] = `
+.c0 {
+  background-color: #DEDEDE;
+  color: #6E6E6E;
+  -webkit-transition: 0.2 cursor:pointer;
+  transition: 0.2 cursor:pointer;
+  padding: 5px 12px;
+  font-size: 2rem;
+  box-shadow: 0 3px 6px #6A6A6A;
+  border: none;
+}
+
+.c0:hover {
+  background-color: #EDEDED;
+}
+
+<div>
+  <div>
+    <input
+      className="c0"
+      disabled={false}
+      type="submit"
+      value="label"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/IconButton Icon Button 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background: #B5E0B3;
+  border-radius: 50%;
+  outline: 0;
+  border: none;
+  box-shadow: 0 3px 6px #6A6A6A;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.c0:hover {
+  background-color: #E2F5E1;
+}
+
+.c1 {
+  width: 25px;
+  height: 25px;
+}
+
+<div>
+  <div>
+    <button
+      className="c0"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        className="c1"
+        src="test-file-stub"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/IconTextInput Icon Text Input 1`] = `
+.c1 {
+  background-color: #FFFFFF;
+  border-radius: 7px;
+  padding: 0 7px;
+}
+
+.c4 {
+  border: none;
+  height: 40px;
+  border-radius: 7px;
+  font-size: 2rem;
+  width: 100%;
+  color: #444444;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #C7C7C7;
+}
+
+.c4::-moz-placeholder {
+  color: #C7C7C7;
+}
+
+.c4:-ms-input-placeholder {
+  color: #C7C7C7;
+}
+
+.c4::placeholder {
+  color: #C7C7C7;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  height: 25px;
+  width: 25px;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className=""
+        >
+          <img
+            className="c3"
+            src="test-file-stub"
+          />
+        </div>
+        <input
+          className="c4"
+          onChange={[Function]}
+          placeholder="Channel name"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/LoadingImage Loading Image 1`] = `
+.c2 {
+  height: 40px;
+  width: 40px;
+}
+
+.c1 {
+  height: 40px;
+}
+
+.c0 {
+  background-color: #F490A7;
+  width: 500px;
+  height: 500px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+      size={40}
+    >
+      <img
+        alt="loading"
+        className="c2"
+        size={40}
+        src="test-file-stub"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/MessageIcon Message Icon 1`] = `
+.c1 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c2 {
+  width: 70px;
+  height: 70px;
+}
+
+.c0 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #66b7ec;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <div>
+    <div
+      className="c0"
+      color="#66b7ec"
+    >
+      <div
+        className="c1"
+      >
+        <img
+          className="c2"
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/NumberField Default 1`] = `
+.c1 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c1:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form>
+      <input
+        className="c1"
+        max={10}
+        min={0}
+        name="field"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        type="number"
+        value=""
+      />
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/NumberField Disabled 1`] = `
+.c1 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c1:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form>
+      <input
+        className="c1"
+        disabled={true}
+        max={10}
+        min={0}
+        name="field"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        type="number"
+        value=""
+      />
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/SelectChannelItem Select Channel Item 1`] = `
+.c1 {
+  border: none;
+  border-bottom: solid 1px #FFE6EB;
+  background-color: #FFFFFF;
+  color: #444444;
+  cursor: pointer;
+  outline-offset: -3px;
+  height: 60px;
+  font-size: 2rem;
+  text-align: left;
+  width: 100%;
+  padding-left: 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c1:hover {
+  border-bottom: solid 1px #FFE6EB;
+  background-color: #FFF4F6;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <button
+      className="c1"
+      onClick={[Function]}
+      selected={false}
+      type="button"
+    >
+      # channel1
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/SelectField Select Field 1`] = `
+.c1 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form>
+      <select
+        className="c1"
+        name="option"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        type="text"
+        value=""
+      >
+        <option
+          value="op1"
+        >
+          option1
+        </option>
+        <option
+          value="op2"
+        >
+          option2
+        </option>
+        <option
+          value="op3"
+        >
+          option3
+        </option>
+        <option
+          value="op4"
+        >
+          option4
+        </option>
+      </select>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/SlackAuthButton Default 1`] = `
+.c0 {
+  background-color: #B5E0B3;
+  border: none;
+  color: #4E793A;
+  box-shadow: 0 3px 6px #6A6A6A;
+  font-weight: 600;
+  font-size: 2.8rem;
+  height: 60px;
+  width: 250px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c0:hover {
+  background-color: #E2F5E1;
+}
+
+<div>
+  <div>
+    <button
+      className="c0"
+      data-qa="SlackAuthButton"
+      onClick={[Function]}
+      type="button"
+    >
+      Login
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/TabItem Tab Item 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  border: solid 1px #FFE6EB;
+  cursor: pointer;
+  outline-offset: -3px;
+  height: 35px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #4E793A;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c0:hover {
+  border-bottom: solid 1px #FFE6EB;
+  background-color: #FFF4F6;
+}
+
+<div>
+  <div>
+    <button
+      className="c0"
+      onClick={[Function]}
+      selected={false}
+      type="button"
+    >
+      tab label
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/TextField Default 1`] = `
+.c1 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #C7C7C7;
+}
+
+.c1::-moz-placeholder {
+  color: #C7C7C7;
+}
+
+.c1:-ms-input-placeholder {
+  color: #C7C7C7;
+}
+
+.c1::placeholder {
+  color: #C7C7C7;
+}
+
+.c1:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form>
+      <input
+        className="c1"
+        name="field"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        placeholder="placeholder"
+        type="text"
+        value=""
+      />
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/TextField Disabled 1`] = `
+.c1 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #FFFFFF;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+.c1::-moz-placeholder {
+  color: #FFFFFF;
+}
+
+.c1:-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+.c1::placeholder {
+  color: #FFFFFF;
+}
+
+.c1:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form>
+      <input
+        className="c1"
+        disabled="disabled"
+        name="field"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        placeholder="placeholder"
+        type="text"
+        value=""
+      />
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots atoms/UserIcon User Icon 1`] = `
+.c0 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c1 {
+  width: 70px;
+  height: 70px;
+}
+
+<div>
+  <div>
+    <div
+      className="c0"
+    >
+      <img
+        className="c1"
+        src="test-file-stub"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/ActiveCellSetting Default 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #FFE6EB;
+  border: solid 1px #F490A7;
+}
+
+.c1:focus {
+  z-index: 1000;
+}
+
+.c1:hover {
+  background-color: #FFF4F6;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #E2F5E1;
+  border: solid 1px #B5E0B3;
+}
+
+.c2:focus {
+  z-index: 1000;
+}
+
+.c2:hover {
+  background-color: #F1FDF0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 360px;
+}
+
+<div>
+  <div>
+    <ul
+      className="c0"
+    >
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      />
+      <button
+        className="c2"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="checked"
+          className=""
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        className="c2"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="checked"
+          className=""
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        className="c2"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="checked"
+          className=""
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        className="c2"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="checked"
+          className=""
+          src="test-file-stub"
+        />
+      </button>
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      />
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      />
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      />
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      />
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/ConveyorCell Conveyor 1`] = `
+.c4 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c5 {
+  width: 70px;
+  height: 70px;
+}
+
+.c3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #66b7ec;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c6 {
+  position: relative;
+  background-color: #66b7ec;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c7 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c8 {
+  padding-top: 6px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  word-break: break-all;
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+.c0 {
+  -webkit-animation: 0.5s eFBKsf forwards ease-in-out;
+  animation: 0.5s eFBKsf forwards ease-in-out;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 50vw;
+}
+
+<div>
+  <div
+    className="c0"
+    direction="left"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          color="#66b7ec"
+        >
+          <div
+            className="c4"
+          >
+            <img
+              className="c5"
+              src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+        color="#66b7ec"
+      >
+        <p
+          className="c7"
+        >
+          user nameA
+        </p>
+        <p
+          className="c8"
+        >
+          text
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/ConveyorSettingFields Default 1`] = `
+.c5 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c6 {
+  margin-left: 10px;
+  border: none;
+  vertical-align: top;
+}
+
+.c2 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c4 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c4:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c1 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.c3 {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.c7 {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 500px;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form>
+      <div
+        className="c1"
+      >
+        <p
+          className="c2"
+        >
+          Amount
+        </p>
+        <div
+          className="c3"
+        >
+          <input
+            className="c4"
+            max={10}
+            min={1}
+            name="conveyorAmount"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onDragStart={[Function]}
+            onDrop={[Function]}
+            onFocus={[Function]}
+            type="number"
+            value={3}
+          />
+        </div>
+      </div>
+      <div
+        className="c1"
+      >
+        <label
+          className="c5"
+          htmlFor="conveyorOverflow"
+        >
+          Overflow
+        </label>
+        <input
+          checked={false}
+          className="c6"
+          id="conveyorOverflow"
+          name="conveyorOverflow"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+          value={false}
+        />
+        <div
+          className="c7"
+        >
+          <p
+            className="c2"
+          >
+            Queue Limit
+          </p>
+          <div
+            className="c3"
+          >
+            <input
+              className="c4"
+              disabled={true}
+              max={100}
+              min={5}
+              name="conveyorLimit"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              onFocus={[Function]}
+              type="number"
+              value={10}
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/ConveyorSettingFields Overflow 1`] = `
+.c5 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c6 {
+  margin-left: 10px;
+  border: none;
+  vertical-align: top;
+}
+
+.c2 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c4 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c4:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c1 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.c3 {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.c7 {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 500px;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form>
+      <div
+        className="c1"
+      >
+        <p
+          className="c2"
+        >
+          Amount
+        </p>
+        <div
+          className="c3"
+        >
+          <input
+            className="c4"
+            max={10}
+            min={1}
+            name="conveyorAmount"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onDragStart={[Function]}
+            onDrop={[Function]}
+            onFocus={[Function]}
+            type="number"
+            value={2}
+          />
+        </div>
+      </div>
+      <div
+        className="c1"
+      >
+        <label
+          className="c5"
+          htmlFor="conveyorOverflow"
+        >
+          Overflow
+        </label>
+        <input
+          checked={true}
+          className="c6"
+          id="conveyorOverflow"
+          name="conveyorOverflow"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+          value={true}
+        />
+        <div
+          className="c7"
+        >
+          <p
+            className="c2"
+          >
+            Queue Limit
+          </p>
+          <div
+            className="c3"
+          >
+            <input
+              className="c4"
+              disabled={false}
+              max={100}
+              min={5}
+              name="conveyorLimit"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              onFocus={[Function]}
+              type="number"
+              value={8}
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/GridCell Conveyor 1`] = `
+.c4 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c5 {
+  width: 70px;
+  height: 70px;
+}
+
+.c3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #66b7ec;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c6 {
+  position: relative;
+  -webkit-animation: cJoqxJ .1s ease-in;
+  animation: cJoqxJ .1s ease-in;
+  background-color: #66b7ec;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c7 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c8 {
+  padding-top: 6px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  word-break: break-all;
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+.c0 {
+  height: 32vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          color="#66b7ec"
+        >
+          <div
+            className="c4"
+          >
+            <img
+              className="c5"
+              src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+        color="#66b7ec"
+      >
+        <p
+          className="c7"
+        >
+          user nameA
+        </p>
+        <p
+          className="c8"
+        >
+          text0
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/GridSettingFields Default 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #FFE6EB;
+  border: solid 1px #F490A7;
+}
+
+.c5:focus {
+  z-index: 1000;
+}
+
+.c5:hover {
+  background-color: #FFF4F6;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #E2F5E1;
+  border: solid 1px #B5E0B3;
+}
+
+.c6:focus {
+  z-index: 1000;
+}
+
+.c6:hover {
+  background-color: #F1FDF0;
+}
+
+.c7 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c8 {
+  margin-left: 10px;
+  border: none;
+  vertical-align: top;
+}
+
+.c2 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c10 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c10:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 360px;
+}
+
+.c3 {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.c1 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.c9 {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 500px;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form>
+      <div
+        className="c1"
+      >
+        <p
+          className="c2"
+        >
+          Active Cells
+        </p>
+        <div
+          className="c3"
+        >
+          <ul
+            className="c4"
+          >
+            <button
+              className="c5"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c6"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c6"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c6"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c6"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c5"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c5"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c5"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c5"
+              onClick={[Function]}
+              type="button"
+            />
+          </ul>
+        </div>
+      </div>
+      <div
+        className="c1"
+      >
+        <label
+          className="c7"
+          htmlFor="gridOverflow"
+        >
+          Overflow
+        </label>
+        <input
+          checked={false}
+          className="c8"
+          id="gridOverflow"
+          name="gridOverflow"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+          value={false}
+        />
+        <div
+          className="c9"
+        >
+          <p
+            className="c2"
+          >
+            Queue Limit
+          </p>
+          <div
+            className="c3"
+          >
+            <input
+              className="c10"
+              disabled={true}
+              max={100}
+              min={5}
+              name="gridLimit"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              onFocus={[Function]}
+              type="number"
+              value={10}
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/GridSettingFields Overflow 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #FFE6EB;
+  border: solid 1px #F490A7;
+}
+
+.c5:focus {
+  z-index: 1000;
+}
+
+.c5:hover {
+  background-color: #FFF4F6;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #E2F5E1;
+  border: solid 1px #B5E0B3;
+}
+
+.c6:focus {
+  z-index: 1000;
+}
+
+.c6:hover {
+  background-color: #F1FDF0;
+}
+
+.c7 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c8 {
+  margin-left: 10px;
+  border: none;
+  vertical-align: top;
+}
+
+.c2 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c10 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c10:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 360px;
+}
+
+.c3 {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.c1 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.c9 {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 500px;
+  padding: 50px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form>
+      <div
+        className="c1"
+      >
+        <p
+          className="c2"
+        >
+          Active Cells
+        </p>
+        <div
+          className="c3"
+        >
+          <ul
+            className="c4"
+          >
+            <button
+              className="c5"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c6"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c6"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c6"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c6"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c5"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c5"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c5"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c5"
+              onClick={[Function]}
+              type="button"
+            />
+          </ul>
+        </div>
+      </div>
+      <div
+        className="c1"
+      >
+        <label
+          className="c7"
+          htmlFor="gridOverflow"
+        >
+          Overflow
+        </label>
+        <input
+          checked={true}
+          className="c8"
+          id="gridOverflow"
+          name="gridOverflow"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+          value={true}
+        />
+        <div
+          className="c9"
+        >
+          <p
+            className="c2"
+          >
+            Queue Limit
+          </p>
+          <div
+            className="c3"
+          >
+            <input
+              className="c10"
+              disabled={false}
+              max={100}
+              min={5}
+              name="gridLimit"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              onFocus={[Function]}
+              type="number"
+              value={10}
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/Message Long Message 1`] = `
+.c4 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c5 {
+  width: 70px;
+  height: 70px;
+}
+
+.c3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #B9CEF3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c6 {
+  position: relative;
+  background-color: #B9CEF3;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c7 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c8 {
+  padding-top: 5px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  word-break: break-all;
+  line-height: 1.1;
+  font-size: 12px;
+}
+
+.c0 {
+  padding: 100px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          color="#B9CEF3"
+        >
+          <div
+            className="c4"
+          >
+            <img
+              className="c5"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+        color="#B9CEF3"
+      >
+        <p
+          className="c7"
+        >
+          Nekoyama Cat
+        </p>
+        <p
+          className="c8"
+        >
+          １行は１７文字です。こんにちはみなさん。私からのメッセージが見えていますか？このくらいがギリギリの文字サイズでしょう。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/Message Midium Message 1`] = `
+.c4 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c5 {
+  width: 70px;
+  height: 70px;
+}
+
+.c3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #B9CEF3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c6 {
+  position: relative;
+  background-color: #B9CEF3;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c7 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c8 {
+  padding-top: 6px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  word-break: break-all;
+  line-height: 1.2;
+  font-size: 14px;
+}
+
+.c0 {
+  padding: 100px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          color="#B9CEF3"
+        >
+          <div
+            className="c4"
+          >
+            <img
+              className="c5"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+        color="#B9CEF3"
+      >
+        <p
+          className="c7"
+        >
+          Nekoyama Cat
+        </p>
+        <p
+          className="c8"
+        >
+          １行は１５文字です。こんにちはみなさん。私からのメッセージが見えていますか？
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/Message Short Message 1`] = `
+.c4 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c5 {
+  width: 70px;
+  height: 70px;
+}
+
+.c3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #B9CEF3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c6 {
+  position: relative;
+  background-color: #B9CEF3;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c7 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c8 {
+  padding-top: 8px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  word-break: break-all;
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+.c0 {
+  padding: 100px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          color="#B9CEF3"
+        >
+          <div
+            className="c4"
+          >
+            <img
+              className="c5"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+        color="#B9CEF3"
+      >
+        <p
+          className="c7"
+        >
+          Nekoyama Cat
+        </p>
+        <p
+          className="c8"
+        >
+          １行は１３文字です。こんにちはみなさん。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/Message Very Long Message 1`] = `
+.c4 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c5 {
+  width: 70px;
+  height: 70px;
+}
+
+.c3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #B9CEF3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c6 {
+  position: relative;
+  background-color: #B9CEF3;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c7 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c8 {
+  padding-top: 5px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  word-break: break-all;
+  line-height: 1.1;
+  font-size: 12px;
+}
+
+.c0 {
+  padding: 100px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          color="#B9CEF3"
+        >
+          <div
+            className="c4"
+          >
+            <img
+              className="c5"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+        color="#B9CEF3"
+      >
+        <p
+          className="c7"
+        >
+          Nekoyama Cat
+        </p>
+        <p
+          className="c8"
+        >
+          １行は１７文字です。こんにちはみなさん。私からのメッセージが見えていますか？このくらいがギリギリの文字サイズでしょう。限界を超えた...
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/Message Very Short Message 1`] = `
+.c4 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c5 {
+  width: 70px;
+  height: 70px;
+}
+
+.c3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #B9CEF3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c6 {
+  position: relative;
+  background-color: #B9CEF3;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c7 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c8 {
+  padding-top: 6px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  word-break: break-all;
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+.c0 {
+  padding: 100px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          color="#B9CEF3"
+        >
+          <div
+            className="c4"
+          >
+            <img
+              className="c5"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+        color="#B9CEF3"
+      >
+        <p
+          className="c7"
+        >
+          Nekoyama Cat
+        </p>
+        <p
+          className="c8"
+        >
+          １行は１１文字です。こんにちは。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/ScreenSettingForm Default 1`] = `
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #FFE6EB;
+  border: solid 1px #F490A7;
+}
+
+.c8:focus {
+  z-index: 1000;
+}
+
+.c8:hover {
+  background-color: #FFF4F6;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #E2F5E1;
+  border: solid 1px #B5E0B3;
+}
+
+.c9:focus {
+  z-index: 1000;
+}
+
+.c9:hover {
+  background-color: #F1FDF0;
+}
+
+.c10 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c11 {
+  margin-left: 10px;
+  border: none;
+  vertical-align: top;
+}
+
+.c2 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c16 {
+  background-color: #B5E0B3;
+  color: #4E793A;
+  -webkit-transition: 0.2 cursor:pointer;
+  transition: 0.2 cursor:pointer;
+  padding: 5px 12px;
+  font-size: 2rem;
+  box-shadow: 0 3px 6px #6A6A6A;
+  border: none;
+}
+
+.c16:hover {
+  background-color: #E2F5E1;
+}
+
+.c13 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c13:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c4 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 360px;
+}
+
+.c6 {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.c5 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.c12 {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.c1 {
+  width: 90%;
+  height: 100%;
+  position: relative;
+}
+
+.c14 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.c3 {
+  max-width: 300px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.c15 {
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  bottom: 0;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 500px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <form
+      className="c1"
+      onSubmit={[Function]}
+    >
+      <p
+        className="c2"
+      >
+        Screen Mode
+      </p>
+      <div
+        className="c3"
+      >
+        <select
+          className="c4"
+          name="mode"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          onFocus={[Function]}
+          type="text"
+          value=""
+        >
+          <option
+            value="GRID"
+          >
+            grid
+          </option>
+          <option
+            value="CONVEYOR"
+          >
+            conveyor
+          </option>
+        </select>
+      </div>
+      <div
+        className="c5"
+      >
+        <p
+          className="c2"
+        >
+          Active Cells
+        </p>
+        <div
+          className="c6"
+        >
+          <ul
+            className="c7"
+          >
+            <button
+              className="c8"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c9"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c9"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c9"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c9"
+              onClick={[Function]}
+              type="button"
+            >
+              <img
+                alt="checked"
+                className=""
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              className="c8"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c8"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c8"
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              className="c8"
+              onClick={[Function]}
+              type="button"
+            />
+          </ul>
+        </div>
+      </div>
+      <div
+        className="c5"
+      >
+        <label
+          className="c10"
+          htmlFor="gridOverflow"
+        >
+          Overflow
+        </label>
+        <input
+          checked={false}
+          className="c11"
+          id="gridOverflow"
+          name="gridOverflow"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+          value=""
+        />
+        <div
+          className="c12"
+        >
+          <p
+            className="c2"
+          >
+            Queue Limit
+          </p>
+          <div
+            className="c6"
+          >
+            <input
+              className="c13"
+              disabled={true}
+              max={100}
+              min={5}
+              name="gridLimit"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              onFocus={[Function]}
+              type="number"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c14"
+      >
+        <div
+          className="c15"
+        >
+          <input
+            className="c16"
+            disabled={false}
+            type="submit"
+            value="Save"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/SelectChannelList Select Channel List 1`] = `
+.c2 {
+  border: none;
+  border-bottom: solid 1px #B5E0B3;
+  background-color: #E2F5E1;
+  outline-offset: -3px;
+  height: 60px;
+  font-size: 2rem;
+  text-align: left;
+  width: 100%;
+  padding-left: 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c3 {
+  border: none;
+  border-bottom: solid 1px #FFE6EB;
+  background-color: #FFFFFF;
+  color: #444444;
+  cursor: pointer;
+  outline-offset: -3px;
+  height: 60px;
+  font-size: 2rem;
+  text-align: left;
+  width: 100%;
+  padding-left: 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c3:hover {
+  border-bottom: solid 1px #FFE6EB;
+  background-color: #FFF4F6;
+}
+
+.c1 {
+  height: 340px;
+  background-color: #FFFFFF;
+  overflow-y: scroll;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className=""
+    >
+      <ul
+        className="c1"
+      >
+        <li
+          className=""
+        >
+          <button
+            className="c2"
+            onClick={[Function]}
+            selected={true}
+            type="button"
+          >
+            # channel1
+          </button>
+        </li>
+        <li
+          className=""
+        >
+          <button
+            className="c3"
+            onClick={[Function]}
+            selected={false}
+            type="button"
+          >
+            # channel2
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/TabBar Tab Bar 1`] = `
+.c1 {
+  background-color: #E2F5E1;
+  border: solid 1px #B5E0B3;
+  outline-offset: -3px;
+  height: 35px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #4E793A;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c2 {
+  background-color: #FFFFFF;
+  border: solid 1px #FFE6EB;
+  cursor: pointer;
+  outline-offset: -3px;
+  height: 35px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #4E793A;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c2:hover {
+  border-bottom: solid 1px #FFE6EB;
+  background-color: #FFF4F6;
+}
+
+.c0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div>
+  <div>
+    <div
+      className=""
+    >
+      <ul
+        className="c0"
+      >
+        <button
+          className="c1"
+          onClick={[Function]}
+          selected={true}
+          type="button"
+        >
+          all
+        </button>
+        <button
+          className="c2"
+          onClick={[Function]}
+          selected={false}
+          type="button"
+        >
+          history
+        </button>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots organisms/HorizonConveyor Conveyor 1`] = `
+.c5 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c6 {
+  width: 70px;
+  height: 70px;
+}
+
+.c4 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #66b7ec;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c3 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c7 {
+  position: relative;
+  background-color: #66b7ec;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c8 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c9 {
+  padding-top: 6px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  word-break: break-all;
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+.c1 {
+  -webkit-animation: 0.5s fToGAX forwards ease-in-out;
+  animation: 0.5s fToGAX forwards ease-in-out;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 33.333333333333336vw;
+}
+
+.c10 {
+  -webkit-animation: 0.5s gSilZz forwards ease-in-out;
+  animation: 0.5s gSilZz forwards ease-in-out;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 33.333333333333336vw;
+}
+
+.c0 {
+  width: 133.33333333333334vw;
+  margin-left: -35.333333333333336vw;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 20px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+      direction="left"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text0
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c1"
+      direction="left"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text1
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c10"
+      direction="up"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text2
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots organisms/LoginForm Default 1`] = `
+.c11 {
+  font-size: 16px;
+}
+
+.c8 {
+  height: 40px;
+  width: 40px;
+}
+
+.c7 {
+  height: 40px;
+}
+
+.c10 {
+  background-color: #B5E0B3;
+  border: none;
+  color: #4E793A;
+  box-shadow: 0 3px 6px #6A6A6A;
+  font-weight: 600;
+  font-size: 2.8rem;
+  height: 60px;
+  width: 250px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c10:hover {
+  background-color: #E2F5E1;
+}
+
+.c1 {
+  padding: 30px;
+  background-color: #F490A7;
+  height: 470px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border-radius: 80px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 120px;
+  padding-right: 10px;
+  width: 350px;
+}
+
+.c4 {
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.c5 {
+  font-size: 2.4rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c6 {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.c9 {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.c0 {
+  width: 500px;
+  height: 500px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <img
+            alt="Cheer"
+            src="test-file-stub"
+          />
+        </div>
+      </div>
+      <div
+        className="c4"
+      >
+        <p
+          className="c5"
+        >
+          We would love to cheer you up.
+        </p>
+      </div>
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+          size={40}
+        >
+          <img
+            alt="loading"
+            className="c8"
+            size={40}
+            src="test-file-stub"
+          />
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <button
+          className="c10"
+          data-qa="SlackAuthButton"
+          onClick={[Function]}
+          type="button"
+        >
+          Login
+        </button>
+      </div>
+      <div
+        className="c11"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
+.c5 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c6 {
+  width: 70px;
+  height: 70px;
+}
+
+.c4 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #66b7ec;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c3 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c7 {
+  position: relative;
+  -webkit-animation: cJoqxJ .1s ease-in;
+  animation: cJoqxJ .1s ease-in;
+  background-color: #66b7ec;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c8 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c9 {
+  padding-top: 6px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  word-break: break-all;
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+.c1 {
+  height: 32vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c10 {
+  height: 32vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c11 {
+  height: 32vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c12 {
+  height: 32vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c13 {
+  height: 32vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c14 {
+  height: 32vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c15 {
+  height: 32vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c16 {
+  height: 32vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c17 {
+  height: 32vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c0 {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text0
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c10"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text1
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c11"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text2
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text3
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c13"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text4
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c14"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text5
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c15"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text6
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c16"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text7
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c17"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            color="#66b7ec"
+          >
+            <div
+              className="c5"
+            >
+              <img
+                className="c6"
+                src="https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+          color="#66b7ec"
+        >
+          <p
+            className="c8"
+          >
+            user nameA
+          </p>
+          <p
+            className="c9"
+          >
+            text8
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots organisms/RecommendBotContent Default 1`] = `
+.c2 {
+  background-color: #DEDEDE;
+  color: #6E6E6E;
+  -webkit-transition: 0.2 cursor:pointer;
+  transition: 0.2 cursor:pointer;
+  padding: 5px 12px;
+  font-size: 2rem;
+  box-shadow: 0 3px 6px #6A6A6A;
+  border: none;
+}
+
+.c2:hover {
+  background-color: #EDEDED;
+}
+
+.c13 {
+  background-color: #B5E0B3;
+  color: #4E793A;
+  -webkit-transition: 0.2 cursor:pointer;
+  transition: 0.2 cursor:pointer;
+  width: 100%;
+  padding: 5px 12px;
+  font-size: 2rem;
+  box-shadow: 0 3px 6px #6A6A6A;
+  border: none;
+}
+
+.c13:hover {
+  background-color: #E2F5E1;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background: #B5E0B3;
+  border-radius: 50%;
+  outline: 0;
+  border: none;
+  box-shadow: 0 3px 6px #6A6A6A;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.c6:hover {
+  background-color: #E2F5E1;
+}
+
+.c7 {
+  width: 25px;
+  height: 25px;
+}
+
+.c11 {
+  height: 50px;
+  width: 50px;
+}
+
+.c10 {
+  height: 50px;
+}
+
+.c1 {
+  padding: 40px 100px;
+  background-color: #F490A7;
+  height: 570px;
+  position: relative;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.c4 {
+  color: #FFFFFF;
+  font-size: 2.4rem;
+}
+
+.c5 {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  margin-top: 8px;
+}
+
+.c8 {
+  margin-top: 50px;
+}
+
+.c9 {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.c12 {
+  position: absolute;
+  bottom: 40px;
+  width: 600px;
+}
+
+.c0 {
+  width: 800px;
+  height: 600px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className=""
+      >
+        <input
+          className="c2"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+          value="Back"
+        />
+      </div>
+      <div
+        className="c3"
+      >
+        <section
+          className=""
+        >
+          <h2
+            className="c4"
+          >
+            cheer_botを#
+            channelName
+            に招待してください
+          </h2>
+          <p
+            className="c5"
+          >
+            Cheerの使用を他の人に通知します。これが最後のステップです。
+          </p>
+        </section>
+        <button
+          className="c6"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            className="c7"
+            src="test-file-stub"
+          />
+        </button>
+      </div>
+      <div
+        className="c8"
+      >
+        <img
+          className=""
+          src="test-file-stub"
+        />
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+          size={50}
+        >
+          <img
+            alt="loading"
+            className="c11"
+            size={50}
+            src="test-file-stub"
+          />
+        </div>
+      </div>
+      <div
+        className="c12"
+      >
+        <input
+          className="c13"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+          value="Retry watch #channelName"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots organisms/ScreenSetting Conveyor 1`] = `
+.c9 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c10 {
+  margin-left: 10px;
+  border: none;
+  vertical-align: top;
+}
+
+.c3 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c14 {
+  background-color: #B5E0B3;
+  color: #4E793A;
+  -webkit-transition: 0.2 cursor:pointer;
+  transition: 0.2 cursor:pointer;
+  padding: 5px 12px;
+  font-size: 2rem;
+  box-shadow: 0 3px 6px #6A6A6A;
+  border: none;
+}
+
+.c14:hover {
+  background-color: #E2F5E1;
+}
+
+.c15 {
+  font-size: 16px;
+}
+
+.c8 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c8:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c5 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c6 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.c7 {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.c11 {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.c2 {
+  width: 90%;
+  height: 100%;
+  position: relative;
+}
+
+.c12 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.c4 {
+  max-width: 300px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.c13 {
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  bottom: 0;
+}
+
+.c1 {
+  padding: 40px;
+  background-color: #F490A7;
+  height: 670px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c0 {
+  background-color: #f490a7;
+  width: 500px;
+  height: 500px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <form
+        className="c2"
+        onSubmit={[Function]}
+      >
+        <p
+          className="c3"
+        >
+          Screen Mode
+        </p>
+        <div
+          className="c4"
+        >
+          <select
+            className="c5"
+            name="mode"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onDragStart={[Function]}
+            onDrop={[Function]}
+            onFocus={[Function]}
+            type="text"
+            value="CONVEYOR"
+          >
+            <option
+              value="GRID"
+            >
+              grid
+            </option>
+            <option
+              value="CONVEYOR"
+            >
+              conveyor
+            </option>
+          </select>
+        </div>
+        <div
+          className="c6"
+        >
+          <p
+            className="c3"
+          >
+            Amount
+          </p>
+          <div
+            className="c7"
+          >
+            <input
+              className="c8"
+              max={10}
+              min={1}
+              name="conveyorAmount"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              onFocus={[Function]}
+              type="number"
+              value={3}
+            />
+          </div>
+        </div>
+        <div
+          className="c6"
+        >
+          <label
+            className="c9"
+            htmlFor="conveyorOverflow"
+          >
+            Overflow
+          </label>
+          <input
+            checked={true}
+            className="c10"
+            id="conveyorOverflow"
+            name="conveyorOverflow"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onDragStart={[Function]}
+            onDrop={[Function]}
+            onFocus={[Function]}
+            type="checkbox"
+            value={true}
+          />
+          <div
+            className="c11"
+          >
+            <p
+              className="c3"
+            >
+              Queue Limit
+            </p>
+            <div
+              className="c7"
+            >
+              <input
+                className="c8"
+                disabled={false}
+                max={100}
+                min={5}
+                name="conveyorLimit"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                onFocus={[Function]}
+                type="number"
+                value={10}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c12"
+        >
+          <div
+            className="c13"
+          >
+            <input
+              className="c14"
+              disabled={false}
+              type="submit"
+              value="Save"
+            />
+          </div>
+        </div>
+      </form>
+      <div
+        className="c15"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots organisms/ScreenSetting Grid 1`] = `
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #FFE6EB;
+  border: solid 1px #F490A7;
+}
+
+.c9:focus {
+  z-index: 1000;
+}
+
+.c9:hover {
+  background-color: #FFF4F6;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  height: 60px;
+  background-color: #E2F5E1;
+  border: solid 1px #B5E0B3;
+}
+
+.c10:focus {
+  z-index: 1000;
+}
+
+.c10:hover {
+  background-color: #F1FDF0;
+}
+
+.c11 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c12 {
+  margin-left: 10px;
+  border: none;
+  vertical-align: top;
+}
+
+.c3 {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: Varela Round;
+}
+
+.c17 {
+  background-color: #B5E0B3;
+  color: #4E793A;
+  -webkit-transition: 0.2 cursor:pointer;
+  transition: 0.2 cursor:pointer;
+  padding: 5px 12px;
+  font-size: 2rem;
+  box-shadow: 0 3px 6px #6A6A6A;
+  border: none;
+}
+
+.c17:hover {
+  background-color: #E2F5E1;
+}
+
+.c18 {
+  font-size: 16px;
+}
+
+.c14 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c14:disabled {
+  background-color: #E2F5E1;
+  opacity: 0.5;
+}
+
+.c5 {
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 10px;
+  color: #6E6E6E;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 360px;
+}
+
+.c7 {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.c6 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.c13 {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.c2 {
+  width: 90%;
+  height: 100%;
+  position: relative;
+}
+
+.c15 {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.c4 {
+  max-width: 300px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.c16 {
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  bottom: 0;
+}
+
+.c1 {
+  padding: 40px;
+  background-color: #F490A7;
+  height: 670px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c0 {
+  background-color: #f490a7;
+  width: 500px;
+  height: 500px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <form
+        className="c2"
+        onSubmit={[Function]}
+      >
+        <p
+          className="c3"
+        >
+          Screen Mode
+        </p>
+        <div
+          className="c4"
+        >
+          <select
+            className="c5"
+            name="mode"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onDragStart={[Function]}
+            onDrop={[Function]}
+            onFocus={[Function]}
+            type="text"
+            value="GRID"
+          >
+            <option
+              value="GRID"
+            >
+              grid
+            </option>
+            <option
+              value="CONVEYOR"
+            >
+              conveyor
+            </option>
+          </select>
+        </div>
+        <div
+          className="c6"
+        >
+          <p
+            className="c3"
+          >
+            Active Cells
+          </p>
+          <div
+            className="c7"
+          >
+            <ul
+              className="c8"
+            >
+              <button
+                className="c9"
+                onClick={[Function]}
+                type="button"
+              />
+              <button
+                className="c10"
+                onClick={[Function]}
+                type="button"
+              >
+                <img
+                  alt="checked"
+                  className=""
+                  src="test-file-stub"
+                />
+              </button>
+              <button
+                className="c10"
+                onClick={[Function]}
+                type="button"
+              >
+                <img
+                  alt="checked"
+                  className=""
+                  src="test-file-stub"
+                />
+              </button>
+              <button
+                className="c10"
+                onClick={[Function]}
+                type="button"
+              >
+                <img
+                  alt="checked"
+                  className=""
+                  src="test-file-stub"
+                />
+              </button>
+              <button
+                className="c10"
+                onClick={[Function]}
+                type="button"
+              >
+                <img
+                  alt="checked"
+                  className=""
+                  src="test-file-stub"
+                />
+              </button>
+              <button
+                className="c9"
+                onClick={[Function]}
+                type="button"
+              />
+              <button
+                className="c9"
+                onClick={[Function]}
+                type="button"
+              />
+              <button
+                className="c9"
+                onClick={[Function]}
+                type="button"
+              />
+              <button
+                className="c9"
+                onClick={[Function]}
+                type="button"
+              />
+            </ul>
+          </div>
+        </div>
+        <div
+          className="c6"
+        >
+          <label
+            className="c11"
+            htmlFor="gridOverflow"
+          >
+            Overflow
+          </label>
+          <input
+            checked={true}
+            className="c12"
+            id="gridOverflow"
+            name="gridOverflow"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onDragStart={[Function]}
+            onDrop={[Function]}
+            onFocus={[Function]}
+            type="checkbox"
+            value={true}
+          />
+          <div
+            className="c13"
+          >
+            <p
+              className="c3"
+            >
+              Queue Limit
+            </p>
+            <div
+              className="c7"
+            >
+              <input
+                className="c14"
+                disabled={false}
+                max={100}
+                min={5}
+                name="gridLimit"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                onFocus={[Function]}
+                type="number"
+                value={10}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c15"
+        >
+          <div
+            className="c16"
+          >
+            <input
+              className="c17"
+              disabled={false}
+              type="submit"
+              value="Save"
+            />
+          </div>
+        </div>
+      </form>
+      <div
+        className="c18"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots organisms/SelectChannel Select Channel 1`] = `
+.c18 {
+  font-size: 16px;
+}
+
+.c17 {
+  background-color: #B5E0B3;
+  color: #4E793A;
+  opacity: 0.5;
+  width: 100%;
+  padding: 5px 12px;
+  font-size: 2rem;
+  box-shadow: 0 3px 6px #6A6A6A;
+  border: none;
+}
+
+.c3 {
+  background-color: #FFFFFF;
+  border-radius: 7px;
+  padding: 0 7px;
+}
+
+.c6 {
+  border: none;
+  height: 40px;
+  border-radius: 7px;
+  font-size: 2rem;
+  width: 100%;
+  color: #444444;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #C7C7C7;
+}
+
+.c6::-moz-placeholder {
+  color: #C7C7C7;
+}
+
+.c6:-ms-input-placeholder {
+  color: #C7C7C7;
+}
+
+.c6::placeholder {
+  color: #C7C7C7;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  height: 25px;
+  width: 25px;
+}
+
+.c15 {
+  height: 30px;
+  width: 30px;
+}
+
+.c14 {
+  height: 30px;
+}
+
+.c12 {
+  border: none;
+  border-bottom: solid 1px #FFE6EB;
+  background-color: #FFFFFF;
+  color: #444444;
+  cursor: pointer;
+  outline-offset: -3px;
+  height: 60px;
+  font-size: 2rem;
+  text-align: left;
+  width: 100%;
+  padding-left: 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c12:hover {
+  border-bottom: solid 1px #FFE6EB;
+  background-color: #FFF4F6;
+}
+
+.c9 {
+  background-color: #E2F5E1;
+  border: solid 1px #B5E0B3;
+  outline-offset: -3px;
+  height: 35px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #4E793A;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c10 {
+  background-color: #FFFFFF;
+  border: solid 1px #FFE6EB;
+  cursor: pointer;
+  outline-offset: -3px;
+  height: 35px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #4E793A;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c10:hover {
+  border-bottom: solid 1px #FFE6EB;
+  background-color: #FFF4F6;
+}
+
+.c11 {
+  height: 340px;
+  background-color: #FFFFFF;
+  overflow-y: scroll;
+}
+
+.c8 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  padding-top: 30px;
+  background-color: #F490A7;
+  height: 570px;
+}
+
+.c2 {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.c7 {
+  margin-top: 15px;
+}
+
+.c13 {
+  text-align: center;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.c16 {
+  margin-top: 10px;
+}
+
+.c0 {
+  background-color: #f490a7;
+  height: 500px;
+  width: 100%;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className=""
+        >
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            >
+              <div
+                className=""
+              >
+                <img
+                  className="c5"
+                  src="test-file-stub"
+                />
+              </div>
+              <input
+                className="c6"
+                onChange={[Function]}
+                placeholder="Channel name"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+        >
+          <div
+            className=""
+          >
+            <ul
+              className="c8"
+            >
+              <button
+                className="c9"
+                onClick={[Function]}
+                selected={true}
+                type="button"
+              >
+                all
+              </button>
+              <button
+                className="c10"
+                onClick={[Function]}
+                selected={false}
+                type="button"
+              >
+                history
+              </button>
+            </ul>
+          </div>
+          <div
+            className=""
+          >
+            <ul
+              className="c11"
+            >
+              <li
+                className=""
+              >
+                <button
+                  className="c12"
+                  onClick={[Function]}
+                  selected={false}
+                  type="button"
+                >
+                  # channel1
+                </button>
+              </li>
+              <li
+                className=""
+              >
+                <button
+                  className="c12"
+                  onClick={[Function]}
+                  selected={false}
+                  type="button"
+                >
+                  # channel2
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="c13"
+        >
+          <div
+            className="c14"
+            size={30}
+          >
+            <img
+              alt="loading"
+              className="c15"
+              size={30}
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+        <div
+          className="c16"
+        >
+          <input
+            className="c17"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+            value="Select channel"
+          />
+        </div>
+      </div>
+      <div
+        className="c18"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots organisms/WindowHeader Window Header 1`] = `
+.c0 {
+  background-color: #FFE6EB;
+  width: 100%;
+  height: 30px;
+  -webkit-app-region: drag;
+}
+
+<div>
+  <div>
+    <div
+      className="c0"
+    />
+  </div>
+</div>
+`;
