@@ -1,7 +1,7 @@
 {
   "name": "Cheer",
   "productName": "Cheer",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Slack App for showing messages on your screen.",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -59,7 +59,8 @@
         "cheer-kontam"
       ]
     },
-    "appId": "org.develar.ElectronReact",
+    "appId": "com.konkonta.cheer",
+    "afterSign": "internals/scripts/notarizeApp.js",
     "files": [
       "dist/",
       "node_modules/",
@@ -96,6 +97,11 @@
         "AppImage"
       ],
       "category": "Development"
+    },
+    "mac": {
+      "hardenedRuntime": true,
+      "entitlements": "./resources/build/entitlement.plist",
+      "entitlementsInherit": "./resources/build/entitlement.plist"
     },
     "directories": {
       "buildResources": "resources",
@@ -215,6 +221,7 @@
     "electron": "8.5.2",
     "electron-builder": "^22.9.1",
     "electron-devtools-installer": "^2.2.4",
+    "electron-notarize": "^1.0.0",
     "electron-rebuild": "^1.11.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
