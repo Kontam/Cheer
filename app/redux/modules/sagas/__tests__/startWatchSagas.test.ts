@@ -21,7 +21,7 @@ import {
   historyLoaded,
   overflowHistory,
 } from '../../app/channelHistories';
-import { watchNewChannel } from '../../app/messageQueue';
+import { ENQUEUE_MESSAGES, watchNewChannel } from '../../app/messageQueue';
 import { SlackChannelInfo } from '../../types';
 import { makeWatchWindow } from '../../../effects/window';
 import { selectChannel } from '../../ui/selectChannelUI';
@@ -76,17 +76,19 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
 
       test(
         'SlackのWatch対象チャンネル取得フロー' +
-          '1. storeから選択中チャンネルの情報を取得' +
-          '2. storeの認証情報からtokenを取得' +
-          '3. storeの監視中チャンネル情報を取得' +
-          '4. Slackにキー情報にあるチャンネルの情報をリクエスト' +
-          '5. リクエスト成功時、チャンネル情報をstateに保存' +
-          '6. storeからチャンネル履歴を取得' +
-          '7. チャンネル情報をstorageに保存' +
-          '8. メッセージキューと表示メッセージ情報を削除' +
-          '9. Windowの透明化' +
-          '10. 現在時刻を前回リクエスト時刻にセット' +
-          '11. WATCH_SCREENに画面遷移',
+          '- storeから選択中チャンネルの情報を取得' +
+          '- storeの認証情報からtokenを取得' +
+          '- storeの監視中チャンネル情報を取得' +
+          '- Slackにキー情報にあるチャンネルの情報をリクエスト' +
+          '- bot存在確認のためのlimit1のAPIリクエスト' +
+          '- bot存在確認リクエストではAPIリクエスト成功のアクションは発火されない' +
+          '- リクエスト成功時、チャンネル情報をstateに保存' +
+          '- storeからチャンネル履歴を取得' +
+          '- チャンネル情報をstorageに保存' +
+          '- メッセージキューと表示メッセージ情報を削除' +
+          '- Windowの透明化' +
+          '- 現在時刻を前回リクエスト時刻にセット' +
+          '- WATCH_SCREENに画面遷移',
         () => {
           return (
             expect
@@ -110,8 +112,10 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
               .call(botWeb.conversations.history, {
                 channel: mockChannelId,
                 oldest: mockOldest,
+                limit: 1,
               })
               .put(requestMessagesAPISuccess([]))
+              .not.put.like({ action: { type: ENQUEUE_MESSAGES } }) // 疎通確認時はスキップされる
               // requestSlackMessagesFlow end
 
               .select(channelHistoriesSelector)

@@ -70,7 +70,7 @@ export function* requestSlackChannelInfoFlow() {
         name: result?.channel?.name,
       })
     );
-    yield* requestSlackMessagesFlow();
+    yield* requestSlackMessagesFlow({ limit: 0 }); // 疎通確認のため0件取得
     yield call(botWeb.chat.postMessage, {
       channel: selectedChannel,
       text: `${userName}さんがこのチャンネルの閲覧を開始しました。`,

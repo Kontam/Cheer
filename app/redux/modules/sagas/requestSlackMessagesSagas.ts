@@ -1,4 +1,5 @@
-import { createAction } from 'redux-actions';
+import { ConversationsHistoryArguments } from '@slack/web-api';
+import { Action, createAction } from 'redux-actions';
 import { select, put, call, takeEvery } from 'redux-saga/effects';
 import filterSlackMessages from '../../../modules/util/filterSlackMessage';
 import {
@@ -19,10 +20,14 @@ export const lastRequestTimeSelector = (state: RootState) =>
 export const selectedChannelSelector = (state: RootState) =>
   state.ui.selectChannelUI.selectedChannel;
 export const REQUEST_SLACK_MESSAGES = 'REQUEST_SLACK_MESSAGES';
-export const requestSlackMessages = createAction(REQUEST_SLACK_MESSAGES);
+export const requestSlackMessages = createAction<Partial<
+  ConversationsHistoryArguments
+> | void>(REQUEST_SLACK_MESSAGES);
 
-// Slack APIにメッセージとユーザー情報をリクエストする
-export function* requestSlackMessagesFlow(): any {
+// Slack APIにメッセージとユーザー情報をリクエストするフロー
+export function* requestSlackMessagesFlow(
+  options: Partial<ConversationsHistoryArguments>
+): any {
   const selectedChannel: string = yield select(selectedChannelSelector);
   const authInfo: AuthInfo = yield select(authInfoSelector);
   const botWeb = getWebClientBotInstance(authInfo.botToken);
@@ -34,16 +39,26 @@ export function* requestSlackMessagesFlow(): any {
     {
       channel: selectedChannel,
       oldest,
+      ...{ ...options, ...(options.limit === 0 ? { limit: 1 } : {}) },
     }
   );
+  // 疎通確認用にoptionsにlimit:0が指定されるケースがある
+  // SlackAPIは0に対応していないので1としてリクエストし、レスポンスをメッセージキューに入れないことで0を表現する
   const userMessages = filterSlackMessages(result.messages);
   yield* addUserListFlow(userMessages);
-
   yield put(requestMessagesAPISuccess(userMessages));
+  if (options.limit === 0) return;
+
   yield put(enqueueMessageQueue(userMessages.reverse()));
   yield* overflowMessageQueue();
 }
 
+export function* requestSlackMessagesWrapper({
+  payload = {},
+}: Action<Partial<ConversationsHistoryArguments>>): any {
+  yield* requestSlackMessagesFlow(payload);
+}
+
 export const requestSlackMessagesSagas = [
-  takeEvery(REQUEST_SLACK_MESSAGES, requestSlackMessagesFlow),
+  takeEvery(REQUEST_SLACK_MESSAGES, requestSlackMessagesWrapper),
 ];
