@@ -13,6 +13,7 @@ import 'babel-polyfill';
 import appConst from './modules/constants/appConst';
 import { createMainWindow } from './modules/windows/mainWindow';
 import { setMainUrlSchemeEventHandler } from './modules/eventHandlers/main/urlSchemeEventHandler';
+import { setAppQuitEventhandler } from './modules/eventHandlers/main/appQuitEventHandler';
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -26,9 +27,11 @@ if (
   require('electron-debug')();
 }
 
-/**
+/*
  * Add event listeners...
  */
+
+setAppQuitEventhandler(app);
 
 app.on('window-all-closed', () => {
   // Respect the OSX convention of having the application in memory even
