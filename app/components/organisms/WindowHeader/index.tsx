@@ -1,16 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
-import { styleConst } from '../../../modules/styles/styleConst';
+import Presentational, { HeaderMenu } from './WindowHeader';
 
-const WindowHeader: React.FC = () => {
-  return <Container />;
-};
+export const WindowHeader: React.VFC = () => {
 
-const Container = styled.div`
-  background-color: ${styleConst.lightPink};
-  width: 100%;
-  height: 30px;
-  -webkit-app-region: drag;
-`;
+  const menus: HeaderMenu[] = [{
+    name: "quit",
+    iconNode: <h1>a</h1>,
+    action: () => console.log("quit")
+  }];
+  
+  return <Presentational menus={menus} />;
+}
 
 export default WindowHeader;
