@@ -22,3 +22,9 @@ export type TabInfo = {
   name: SelectChannelTab;
   label: string;
 };
+
+export type HeaderMenu = {
+  name: string;
+  iconNode: any;
+  action: () => void;
+};
