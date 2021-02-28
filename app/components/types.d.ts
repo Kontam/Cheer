@@ -28,3 +28,9 @@ export type HeaderMenu = {
   iconNode: any;
   action: () => void;
 };
+
+export type FlatMenu = {
+  name: string;
+  label: string;
+  action: () => void;
+};
