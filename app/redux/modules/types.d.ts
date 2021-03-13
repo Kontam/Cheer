@@ -82,6 +82,9 @@ export type SelectChannelUI = {
   selectedTab: SelectChannelTab;
   selectedChannel: string;
 };
+export type ScreenMenuUI = {
+  isOpen: boolean;
+};
 
 // app
 export type SearchedChannels = SlackChannelState[];
@@ -157,6 +160,7 @@ export type RootState = {
   };
   ui: {
     selectChannelUI: SelectChannelUI;
+    screenMenuUI: ScreenMenuUI;
   };
   app: {
     channelHistories: ChannelHistories;

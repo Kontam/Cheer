@@ -1,21 +1,39 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { HeaderMenu } from '../../types';
-import Presentational from './WindowHeader';
-import { quitApp } from '../../../redux/effects/app';
+import styled from 'styled-components';
+import { styleConst } from '../../../modules/styles/styleConst';
+import { HeaderMenu, FlatMenu } from '../../types';
+import ScreenMenu from '../ScreenMenu';
+import WindowHeaderItem from '../../atoms/WindowHeaderItem';
 
-export const WindowHeader: React.VFC = () => {
-  const dispatch = useDispatch();
-
-  const menus: HeaderMenu[] = [
-    {
-      name: 'quit',
-      iconNode: <h1>a</h1>,
-      action: () => dispatch(quitApp()),
-    },
-  ];
-
-  return <Presentational menus={menus} />;
+type Props = {
+  headerMenus: HeaderMenu[];
+  screenMenus: FlatMenu[];
 };
+
+const WindowHeader: React.FC<Props> = ({ headerMenus, screenMenus }) => {
+  return (
+    <Container>
+      <List>
+        {headerMenus.map((menu) => (
+          <Item key={menu.name}>
+            <WindowHeaderItem menu={menu} />
+          </Item>
+        ))}
+      </List>
+      <ScreenMenu menus={screenMenus} />
+    </Container>
+  );
+};
+
+const Container = styled.div`
+  background-color: ${styleConst.lightPink};
+  width: 100%;
+  height: 30px;
+  -webkit-app-region: drag;
+`;
+
+const List = styled.ul``;
+
+const Item = styled.li``;
 
 export default WindowHeader;

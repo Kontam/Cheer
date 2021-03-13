@@ -7,9 +7,7 @@ type Props = {
 };
 
 const FlatMenuButton: React.FC<Props> = ({ menu }) => {
-  return (
-    <Button>{menu.label}</Button>
-  );
+  return <Button onClick={menu.action}>{menu.label}</Button>;
 };
 
 const Button = styled.button``;

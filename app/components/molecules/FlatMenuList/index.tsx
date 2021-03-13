@@ -11,7 +11,9 @@ const FlatMenuList: React.FC<Props> = ({ menus }) => {
   return (
     <List>
       <Item>
-        {menus.map(menu => <FlatMenuItem menu={menu} />)}
+        {menus.map((menu) => (
+          <FlatMenuItem key={menu.name} menu={menu} />
+        ))}
       </Item>
     </List>
   );
