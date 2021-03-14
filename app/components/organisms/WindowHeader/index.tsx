@@ -6,21 +6,30 @@ import ScreenMenu from '../ScreenMenu';
 import WindowHeaderItem from '../../atoms/WindowHeaderItem';
 
 type Props = {
+  withMenu: boolean;
   headerMenus: HeaderMenu[];
   screenMenus: FlatMenu[];
 };
 
-const WindowHeader: React.FC<Props> = ({ headerMenus, screenMenus }) => {
+const WindowHeader: React.FC<Props> = ({
+  headerMenus,
+  screenMenus,
+  withMenu = false,
+}) => {
   return (
     <Container>
-      <List>
-        {headerMenus.map((menu) => (
-          <Item key={menu.name}>
-            <WindowHeaderItem menu={menu} />
-          </Item>
-        ))}
-      </List>
-      {screenMenus.length && <ScreenMenu menus={screenMenus} />}
+      {withMenu && (
+        <>
+          <List>
+            {headerMenus.map((menu) => (
+              <Item key={menu.name}>
+                <WindowHeaderItem menu={menu} />
+              </Item>
+            ))}
+          </List>
+          {screenMenus.length && <ScreenMenu menus={screenMenus} />}
+        </>
+      )}
     </Container>
   );
 };

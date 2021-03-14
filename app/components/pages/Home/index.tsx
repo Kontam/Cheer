@@ -7,7 +7,11 @@ const Home: React.FC = () => {
   const { headerMenus, screenMenus } = useHomeHeaderMenu();
   return (
     <>
-      <WindowHeader headerMenus={headerMenus} screenMenus={screenMenus} />
+      <WindowHeader
+        withMenu
+        headerMenus={headerMenus}
+        screenMenus={screenMenus}
+      />
       <SelectChannel />
     </>
   );
