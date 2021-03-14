@@ -2,7 +2,7 @@ import React from 'react';
 import { combineReducers, createStore } from 'redux';
 import { Provider, useDispatch } from 'react-redux';
 import { actions } from '@storybook/addon-actions';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import WindowHeaderComponent from '..';
 import { FlatMenu, HeaderMenu } from '../../../types';
 import screenMenuUI, {
@@ -36,7 +36,11 @@ const WindowHeaderWithScreenMenu = () => {
     },
   ];
   return (
-    <WindowHeaderComponent headerMenus={menus} screenMenus={screenMenus} />
+    <WindowHeaderComponent
+      withMenu={boolean('withMenu', true)}
+      headerMenus={menus}
+      screenMenus={screenMenus}
+    />
   );
 };
 
