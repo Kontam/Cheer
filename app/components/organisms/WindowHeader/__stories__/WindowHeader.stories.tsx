@@ -8,6 +8,7 @@ import { FlatMenu, HeaderMenu } from '../../../types';
 import screenMenuUI, {
   openScreenMenu,
 } from '../../../../redux/modules/ui/screenMenuUI';
+import menuIcon from '../../../../static/image/menuIcon.svg';
 
 export default {
   title: 'organisms/WindowHeader',
@@ -31,7 +32,7 @@ const WindowHeaderWithScreenMenu = () => {
   const menus: HeaderMenu[] = [
     {
       name: 'quit',
-      iconNode: <h1>a</h1>,
+      iconNode: <img src={menuIcon} alt="menu" />,
       action: () => dispatch(openScreenMenu()),
     },
   ];

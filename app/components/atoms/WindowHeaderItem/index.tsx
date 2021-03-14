@@ -9,6 +9,9 @@ type Props = {
 const WindowHeaderItem: React.FC<Props> = ({ menu }) => {
   return <Button onClick={menu.action}>{menu.iconNode}</Button>;
 };
-const Button = styled.button``;
+const Button = styled.button`
+  background: none;
+  border: none;
+`;
 
 export default WindowHeaderItem;

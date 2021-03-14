@@ -41,7 +41,10 @@ const Container = styled.div`
   -webkit-app-region: drag;
 `;
 
-const List = styled.ul``;
+const List = styled.ul`
+  display: flex;
+  justify-content: flex-end;
+`;
 
 const Item = styled.li``;
 
