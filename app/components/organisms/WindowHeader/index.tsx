@@ -20,7 +20,7 @@ const WindowHeader: React.FC<Props> = ({ headerMenus, screenMenus }) => {
           </Item>
         ))}
       </List>
-      <ScreenMenu menus={screenMenus} />
+      {screenMenus.length && <ScreenMenu menus={screenMenus} />}
     </Container>
   );
 };
