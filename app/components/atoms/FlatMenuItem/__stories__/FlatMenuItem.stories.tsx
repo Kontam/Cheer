@@ -13,10 +13,6 @@ const menu: FlatMenu = {
   name: 'test',
   label: 'FlatMenuItem',
   action: action('action'),
-}
+};
 
-export const Default = () => (
-    <FlatMenuItem
-      menu={menu}
-    />
-);
+export const Default = () => <FlatMenuItem menu={menu} />;

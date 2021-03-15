@@ -9,6 +9,7 @@ import screenMenuUI, {
   openScreenMenu,
 } from '../../../../redux/modules/ui/screenMenuUI';
 import menuIcon from '../../../../static/image/menuIcon.svg';
+import { useCommonWindowHeader } from '../useCommonWindoHeader';
 
 export default {
   title: 'organisms/WindowHeader',
@@ -28,18 +29,11 @@ const store = createStore(
 );
 
 const WindowHeaderWithScreenMenu = () => {
-  const dispatch = useDispatch();
-  const menus: HeaderMenu[] = [
-    {
-      name: 'quit',
-      iconNode: <img src={menuIcon} alt="menu" />,
-      action: () => dispatch(openScreenMenu()),
-    },
-  ];
+  const { headerMenus } = useCommonWindowHeader();
   return (
     <WindowHeaderComponent
       withMenu={boolean('withMenu', true)}
-      headerMenus={menus}
+      headerMenus={headerMenus}
       screenMenus={screenMenus}
     />
   );

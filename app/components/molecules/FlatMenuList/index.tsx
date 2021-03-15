@@ -22,7 +22,6 @@ const FlatMenuList: React.FC<Props> = ({ menus }) => {
 const List = styled.ul`
   width: 160px;
 `;
-const Item = styled.li`
-`;
+const Item = styled.li``;
 
 export default FlatMenuList;

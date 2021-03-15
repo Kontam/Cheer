@@ -2,6 +2,7 @@ import React from 'react';
 import { HeaderMenu } from '../../types';
 import { useScreenMenu } from '../ScreenMenu/useScreenMenu';
 import menuIcon from '../../../static/image/menuIcon.svg';
+import Icon from '../../atoms/Icon';
 
 export function useCommonWindowHeader() {
   const { isOpen, openScreenMenu, closeScreenMenu } = useScreenMenu();
@@ -10,7 +11,7 @@ export function useCommonWindowHeader() {
   const headerMenus: HeaderMenu[] = [
     {
       name: 'open',
-      iconNode: <img src={menuIcon} alt="menu" />,
+      iconNode: <Icon src={menuIcon} />,
       action: () => (isOpen ? closeScreenMenu() : openScreenMenu()),
     },
   ];

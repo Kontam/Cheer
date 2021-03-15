@@ -12,6 +12,11 @@ const WindowHeaderItem: React.FC<Props> = ({ menu }) => {
 const Button = styled.button`
   background: none;
   border: none;
+  display: flex;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  align-items: center;
 `;
 
 export default WindowHeaderItem;

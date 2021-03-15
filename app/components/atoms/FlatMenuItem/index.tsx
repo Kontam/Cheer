@@ -19,6 +19,7 @@ const Button = styled.button`
   background-color: ${styleConst.thinPink};
   color: ${styleConst.messageLabel};
   border: none;
+  font-size: 16px;
 
   :hover {
     background-color: ${styleConst.thinGreen};
