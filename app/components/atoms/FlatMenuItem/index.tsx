@@ -20,6 +20,7 @@ const Button = styled.button`
   color: ${styleConst.messageLabel};
   border: none;
   font-size: 16px;
+  outline-offset: -3px;
 
   :hover {
     background-color: ${styleConst.thinGreen};

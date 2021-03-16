@@ -54,7 +54,9 @@ const List = styled.ul`
   height: 30px;
 `;
 
-const Item = styled.li``;
+const Item = styled.li`
+  margin-left: 30px;
+`;
 
 const ScreenMenuContainer = styled.div`
   position: absolute;
