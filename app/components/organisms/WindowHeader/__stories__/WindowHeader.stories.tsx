@@ -1,14 +1,11 @@
 import React from 'react';
 import { combineReducers, createStore } from 'redux';
-import { Provider, useDispatch } from 'react-redux';
+import { Provider } from 'react-redux';
 import { actions } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import WindowHeaderComponent from '..';
-import { FlatMenu, HeaderMenu } from '../../../types';
-import screenMenuUI, {
-  openScreenMenu,
-} from '../../../../redux/modules/ui/screenMenuUI';
-import menuIcon from '../../../../static/image/menuIcon.svg';
+import { FlatMenu } from '../../../types';
+import screenMenuUI from '../../../../redux/modules/ui/screenMenuUI';
 import { useCommonWindowHeader } from '../useCommonWindoHeader';
 
 export default {
