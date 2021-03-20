@@ -1,7 +1,6 @@
-import { push } from 'connected-react-router';
 import { useDispatch } from 'react-redux';
-import { routes } from '../../../modules/constants/routes';
 import { openPreference, quitApp } from '../../../redux/effects/app';
+import { pushSelectChannel } from '../../../redux/modules/api/slackChannelList';
 import { FlatMenu } from '../../types';
 import { useScreenMenu } from '../ScreenMenu/useScreenMenu';
 
@@ -17,7 +16,7 @@ export const useWatchScreenMenu = () => {
     },
     {
       name: 'select channel',
-      action: () => dispatch(push(routes.HOME)),
+      action: () => dispatch(pushSelectChannel()),
       label: 'select channel',
     },
     {

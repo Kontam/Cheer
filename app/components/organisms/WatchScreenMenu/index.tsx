@@ -5,10 +5,18 @@ import { useWatchScreenMenu } from './useWatchScreenMenu';
 import buttonIcon from '../../../static/image/megaphoneIcon.svg';
 import { styleConst } from '../../../modules/styles/styleConst';
 
-const WatchScreenMenu: React.FC = () => {
+type Props = {
+  handleMouseEnter?: React.MouseEventHandler<HTMLDivElement>;
+  handleMouseLeave?: React.MouseEventHandler<HTMLDivElement>;
+};
+
+const WatchScreenMenu: React.FC<Props> = ({
+  handleMouseEnter,
+  handleMouseLeave,
+}) => {
   const { menus, handleMenuButtonClick } = useWatchScreenMenu();
   return (
-    <Container>
+    <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Button onClick={handleMenuButtonClick}>
         <Img src={buttonIcon} alt="menu" />
       </Button>
