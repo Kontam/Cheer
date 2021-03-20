@@ -9,7 +9,7 @@ export function makeCurrentWindowTransparent() {
   window.resizable = true;
   window.maximize();
   window.setBackgroundColor('#00CCCCCC');
-  window.setIgnoreMouseEvents(true);
+  window.setIgnoreMouseEvents(true, { forward: true });
   window.setAlwaysOnTop(true);
   window.setHasShadow(false);
 }
