@@ -25,7 +25,11 @@ const WatchScreenMenu: React.FC<Props> = ({
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+`;
 
 const Button = styled.button`
   background-color: ${styleConst.basicWhite};

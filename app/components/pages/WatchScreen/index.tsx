@@ -30,6 +30,8 @@ const Screen = styled.div`
 `;
 
 const MenuContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
   position: absolute;
   top: 100px;
   right: 100px;
