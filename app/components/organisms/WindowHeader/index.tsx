@@ -6,9 +6,9 @@ import ScreenMenu from '../ScreenMenu';
 import WindowHeaderItem from '../../atoms/WindowHeaderItem';
 
 type Props = {
-  withMenu: boolean;
-  headerMenus: HeaderMenu[];
-  screenMenus: FlatMenu[];
+  withMenu?: boolean;
+  headerMenus?: HeaderMenu[];
+  screenMenus?: FlatMenu[];
 };
 
 const WindowHeader: React.FC<Props> = ({
@@ -19,7 +19,7 @@ const WindowHeader: React.FC<Props> = ({
   return (
     <Container>
       <Draggable />
-      {withMenu && (
+      {withMenu && headerMenus && screenMenus && (
         <MenuContainer>
           <List>
             {headerMenus.map((menu) => (
@@ -48,6 +48,7 @@ const Container = styled.div`
   padding: 0 10px;
 `;
 
+// windowsではdrag上のbuttonをクリックできないので領域を分ける
 const Draggable = styled.div`
   height: 30px;
   -webkit-app-region: drag;
