@@ -18,8 +18,9 @@ const WindowHeader: React.FC<Props> = ({
 }) => {
   return (
     <Container>
+      <Draggable />
       {withMenu && (
-        <>
+        <MenuContainer>
           <List>
             {headerMenus.map((menu) => (
               <Item key={menu.name}>
@@ -32,20 +33,28 @@ const WindowHeader: React.FC<Props> = ({
               <ScreenMenu menus={screenMenus} />
             </ScreenMenuContainer>
           )}
-        </>
+        </MenuContainer>
       )}
     </Container>
   );
 };
 
 const Container = styled.div`
+  display: flex;
   position: relative;
   background-color: ${styleConst.lightPink};
   width: 100%;
   height: 30px;
   padding: 0 10px;
-  -webkit-app-region: drag;
 `;
+
+const Draggable = styled.div`
+  height: 30px;
+  -webkit-app-region: drag;
+  width: 100%;
+`;
+
+const MenuContainer = styled.div``;
 
 const List = styled.ul`
   display: flex;

@@ -17,6 +17,7 @@ const Button = styled.button`
   height: 24px;
   width: 24px;
   align-items: center;
+  -webkit-app-region: no-drag;
 `;
 
 export default WindowHeaderItem;
