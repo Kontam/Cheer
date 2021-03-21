@@ -8,8 +8,9 @@ export const useMenu = () => {
   const handleMenuButtonMouseLeave: React.MouseEventHandler<HTMLDivElement> = () => {
     window.setIgnoreMouseEvents(true, { forward: true });
   };
+  const hasMenu = process.platform !== 'darwin';
   return {
-    hasMenu: true,
+    hasMenu,
     handleMenuButtonMouseEnter,
     handleMenuButtonMouseLeave,
   };
