@@ -7,7 +7,7 @@ const RecommendBot: React.FC = () => {
   const { headerMenus, screenMenus } = useRecommendBotHeaderMenu();
   return (
     <>
-      <Header headerMenus={headerMenus} screenMenus={screenMenus} />
+      <Header withMenu headerMenus={headerMenus} screenMenus={screenMenus} />
       <RecommendBotContent />
     </>
   );

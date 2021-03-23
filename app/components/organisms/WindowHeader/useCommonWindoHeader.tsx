@@ -11,7 +11,6 @@ export function useCommonWindowHeader() {
   const { isOpen, openScreenMenu, closeScreenMenu } = useScreenMenu();
   const dispatch = useDispatch();
 
-  // 開いた時にclose用のイベントハンドラをセットする処理(useScreenMenuにあるべき？)
   const headerMenus: HeaderMenu[] = [
     {
       name: 'open',

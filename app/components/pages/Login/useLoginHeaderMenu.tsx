@@ -1,19 +1,19 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { quitApp } from '../../../redux/effects/app';
-import { FlatMenu } from '../../types';
-import { useCommonWindowHeader } from '../../organisms/WindowHeader/useCommonWindoHeader';
+import Icon from '../../atoms/Icon';
+import { HeaderMenu } from '../../types';
+import closeIcon from '../../../static/image/closeIcon.svg';
 
 export function useLoginHeaderMenu() {
   const dispatch = useDispatch();
-  const { headerMenus } = useCommonWindowHeader();
-
-  const screenMenus: FlatMenu[] = [
+  const headerMenus: HeaderMenu[] = [
     {
-      name: 'quit',
+      name: 'close',
+      iconNode: <Icon src={closeIcon} />,
       action: () => dispatch(quitApp()),
-      label: 'quit',
     },
   ];
 
-  return { headerMenus, screenMenus };
+  return { headerMenus };
 }

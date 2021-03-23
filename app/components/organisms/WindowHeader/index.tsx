@@ -19,7 +19,7 @@ const WindowHeader: React.FC<Props> = ({
   return (
     <Container>
       <Draggable />
-      {withMenu && headerMenus && screenMenus && (
+      {withMenu && headerMenus && (
         <MenuContainer>
           <List>
             {headerMenus.map((menu) => (
@@ -28,7 +28,7 @@ const WindowHeader: React.FC<Props> = ({
               </Item>
             ))}
           </List>
-          {screenMenus.length && (
+          {screenMenus && screenMenus.length && (
             <ScreenMenuContainer>
               <ScreenMenu menus={screenMenus} />
             </ScreenMenuContainer>
@@ -73,6 +73,7 @@ const ScreenMenuContainer = styled.div`
   right: 0;
   top: 30px;
   box-shadow: rgba(193, 118, 95, 0.3) -3px 3px 6px;
+  z-index: ${styleConst.zScreenMenu};
 `;
 
 export default WindowHeader;

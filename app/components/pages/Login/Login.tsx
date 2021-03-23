@@ -5,10 +5,10 @@ import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 import { useLoginHeaderMenu } from './useLoginHeaderMenu';
 
 const Login: React.FC = () => {
-  const { headerMenus, screenMenus } = useLoginHeaderMenu();
+  const { headerMenus } = useLoginHeaderMenu();
   return (
     <div {...QA_ATTRIBUTES.LOGIN}>
-      <Header headerMenus={headerMenus} screenMenus={screenMenus} />
+      <Header withMenu headerMenus={headerMenus} />
       <LoginForm />
     </div>
   );

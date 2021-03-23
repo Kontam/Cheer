@@ -24,4 +24,7 @@ export const styleConst = {
     'YuGothic, "Yu Gothic", "Hiragino Kaku Gothic ProN",' +
     '"ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif',
   englishFont: 'Varela Round',
+
+  // z-index
+  zScreenMenu: 10,
 } as const;
