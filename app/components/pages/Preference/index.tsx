@@ -4,10 +4,10 @@ import WindowHeader from '../../organisms/WindowHeader';
 import { usePreferenceHeaderMenu } from './usePreferenceHeaderMenu';
 
 const Preference: React.FC = () => {
-  const { headerMenus, screenMenus } = usePreferenceHeaderMenu();
+  const { headerMenus } = usePreferenceHeaderMenu();
   return (
     <>
-      <WindowHeader headerMenus={headerMenus} screenMenus={screenMenus} />
+      <WindowHeader headerMenus={headerMenus} withMenu />
       <ScreenSetting />
     </>
   );

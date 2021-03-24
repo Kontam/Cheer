@@ -1,6 +1,6 @@
-import { ipcRenderer } from 'electron';
+import { ipcRenderer, remote } from 'electron';
 import { call, takeEvery } from 'redux-saga/effects';
-import { QUIT_APP, OPEN_PREFERENCE } from './app';
+import { QUIT_APP, OPEN_PREFERENCE, CLOSE_WINDOW } from './app';
 import appConst from '../../modules/constants/appConst';
 import {
   makeCurrentWindowTransparent,
@@ -36,10 +36,16 @@ export function* makeListWindowFlow() {
   yield makeCurrentWindowList();
 }
 
+export function* closeWindowFlow() {
+  const window = remote.getCurrentWindow();
+  yield window.close();
+}
+
 export const electronSagas = [
   takeEvery(QUIT_APP, quitAppFlow),
   takeEvery(OPEN_PREFERENCE, openPreferenceFlow),
   takeEvery(MAKE_WATCH_WINDOW, makeWatchWindowFlow),
   takeEvery(MAKE_GENERAL_WINDOW, makeGeneralWindowFlow),
   takeEvery(MAKE_LIST_WINDOW, makeListWindowFlow),
+  takeEvery(CLOSE_WINDOW, closeWindowFlow),
 ];

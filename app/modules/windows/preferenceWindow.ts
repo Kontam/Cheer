@@ -26,6 +26,9 @@ export const createPreferenceWindow = async (parent: BrowserWindow) => {
     height: 700,
     backgroundColor: '#FFFFFF',
     titleBarStyle: 'hidden',
+    frame: false,
+    resizable: false,
+    maximizable: false,
     webPreferences:
       process.env.NODE_ENV === 'development' || process.env.E2E_BUILD === 'true'
         ? {

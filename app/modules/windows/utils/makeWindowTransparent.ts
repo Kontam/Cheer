@@ -19,7 +19,7 @@ export function makeCurrentWindowTransparent() {
  */
 export function makeCurrentWindowDefault() {
   const window = remote.getCurrentWindow();
-  window.resizable = true;
+  window.resizable = false;
   window.unmaximize();
   window.setIgnoreMouseEvents(false);
   window.setAlwaysOnTop(false);
