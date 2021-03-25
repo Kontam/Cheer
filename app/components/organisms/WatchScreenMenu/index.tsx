@@ -35,8 +35,8 @@ const Button = styled.button`
   background-color: ${styleConst.basicWhite};
   border: 3px solid ${styleConst.basicPink};
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
