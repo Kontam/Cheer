@@ -14,10 +14,10 @@ const WatchScreenMenu: React.FC<Props> = ({
   handleMouseEnter,
   handleMouseLeave,
 }) => {
-  const { menus, handleMenuButtonClick } = useWatchScreenMenu();
+  const { menus, handleMenuButtonClick, menuButtonRef } = useWatchScreenMenu();
   return (
     <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <Button onClick={handleMenuButtonClick}>
+      <Button onClick={handleMenuButtonClick} ref={menuButtonRef}>
         <Img src={buttonIcon} alt="menu" />
       </Button>
       <ScreenMenu menus={menus} />

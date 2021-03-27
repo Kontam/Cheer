@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { openPreference, quitApp } from '../../../redux/effects/app';
 import { pushSelectChannel } from '../../../redux/modules/api/slackChannelList';
@@ -26,13 +27,25 @@ export const useWatchScreenMenu = () => {
     },
   ];
 
-  const handleMenuButtonClick: React.MouseEventHandler<HTMLButtonElement> = () => {
-    if (isOpen) {
-      closeScreenMenu();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  const handleClickDocument = (e: MouseEvent) => {
+    if (!e.target) return;
+    // targetがItemの要素か
+    if (menuButtonRef.current?.contains(e.target as any)) {
       return;
     }
-    openScreenMenu();
+    handleCloseScreenMenu();
   };
 
-  return { menus, handleMenuButtonClick };
+  const handleCloseScreenMenu = () => {
+    document.removeEventListener('click', handleClickDocument);
+    closeScreenMenu();
+  };
+  const handleMenuButtonClick: React.MouseEventHandler<HTMLButtonElement> = () => {
+    document.addEventListener('click', handleClickDocument);
+    return isOpen ? handleCloseScreenMenu() : openScreenMenu();
+  };
+
+  return { menus, handleMenuButtonClick, menuButtonRef };
 };
