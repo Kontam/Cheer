@@ -15,24 +15,24 @@ export const useWatchScreenMenu = (
     {
       name: 'preference',
       action: (e) => {
-        dispatch(openPreference());
         if (handleMenuItemClick) handleMenuItemClick(e);
+        dispatch(openPreference());
       },
       label: 'preference',
     },
     {
       name: 'select channel',
       action: (e) => {
-        dispatch(pushSelectChannel());
         if (handleMenuItemClick) handleMenuItemClick(e);
+        dispatch(pushSelectChannel());
       },
       label: 'select channel',
     },
     {
       name: 'quit',
       action: (e) => {
-        dispatch(quitApp());
         if (handleMenuItemClick) handleMenuItemClick(e);
+        dispatch(quitApp());
       },
       label: 'quit',
     },
