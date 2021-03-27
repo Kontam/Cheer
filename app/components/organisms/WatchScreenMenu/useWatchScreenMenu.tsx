@@ -5,24 +5,35 @@ import { pushSelectChannel } from '../../../redux/modules/api/slackChannelList';
 import { FlatMenu } from '../../types';
 import { useScreenMenu } from '../ScreenMenu/useScreenMenu';
 
-export const useWatchScreenMenu = () => {
+export const useWatchScreenMenu = (
+  handleMenuItemClick?: React.MouseEventHandler<HTMLButtonElement>
+) => {
   const dispatch = useDispatch();
   const { isOpen, openScreenMenu, closeScreenMenu } = useScreenMenu();
 
   const menus: FlatMenu[] = [
     {
       name: 'preference',
-      action: () => dispatch(openPreference()),
+      action: (e) => {
+        dispatch(openPreference());
+        if (handleMenuItemClick) handleMenuItemClick(e);
+      },
       label: 'preference',
     },
     {
       name: 'select channel',
-      action: () => dispatch(pushSelectChannel()),
+      action: (e) => {
+        dispatch(pushSelectChannel());
+        if (handleMenuItemClick) handleMenuItemClick(e);
+      },
       label: 'select channel',
     },
     {
       name: 'quit',
-      action: () => dispatch(quitApp()),
+      action: (e) => {
+        dispatch(quitApp());
+        if (handleMenuItemClick) handleMenuItemClick(e);
+      },
       label: 'quit',
     },
   ];

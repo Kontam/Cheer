@@ -9,6 +9,7 @@ const WatchScreen: React.FC = () => {
     hasMenu,
     handleMenuButtonMouseEnter,
     handleMenuButtonMouseLeave,
+    handleMenuItemClick,
   } = useMenu();
   return (
     <Screen>
@@ -17,6 +18,7 @@ const WatchScreen: React.FC = () => {
           <WatchScreenMenu
             handleMouseEnter={handleMenuButtonMouseEnter}
             handleMouseLeave={handleMenuButtonMouseLeave}
+            handleMenuItemClick={handleMenuItemClick}
           />
         </MenuContainer>
       )}

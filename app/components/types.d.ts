@@ -36,5 +36,5 @@ export type HeaderMenu = {
 export type FlatMenu = {
   name: string;
   label: string;
-  action: () => void;
+  action: React.MouseEventHandler<HTMLButtonElement>;
 };

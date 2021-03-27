@@ -8,13 +8,17 @@ import { styleConst } from '../../../modules/styles/styleConst';
 type Props = {
   handleMouseEnter?: React.MouseEventHandler<HTMLDivElement>;
   handleMouseLeave?: React.MouseEventHandler<HTMLDivElement>;
+  handleMenuItemClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 const WatchScreenMenu: React.FC<Props> = ({
   handleMouseEnter,
   handleMouseLeave,
+  handleMenuItemClick,
 }) => {
-  const { menus, handleMenuButtonClick, menuButtonRef } = useWatchScreenMenu();
+  const { menus, handleMenuButtonClick, menuButtonRef } = useWatchScreenMenu(
+    handleMenuItemClick
+  );
   return (
     <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Button onClick={handleMenuButtonClick} ref={menuButtonRef}>

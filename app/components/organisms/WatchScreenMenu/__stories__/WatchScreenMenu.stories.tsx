@@ -2,6 +2,7 @@ import React from 'react';
 import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { withKnobs } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import WatchScreenMenu from '..';
 import screenMenuUI from '../../../../redux/modules/ui/screenMenuUI';
 
@@ -15,7 +16,13 @@ const store = createStore(
 );
 
 const WindowHeaderWithScreenMenu = () => {
-  return <WatchScreenMenu />;
+  return (
+    <WatchScreenMenu
+      handleMouseLeave={action('handleMouseLeave')}
+      handleMouseEnter={action('handleMouseEnter')}
+      handleMenuItemClick={action('handleMenuItemClick')}
+    />
+  );
 };
 
 export const withReduxAndScreenMenu = () => {
