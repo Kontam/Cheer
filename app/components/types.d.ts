@@ -27,6 +27,10 @@ export type HeaderMenu = {
   name: string;
   iconNode: any;
   action: () => void;
+  itemProps?: React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >;
 };
 
 export type FlatMenu = {

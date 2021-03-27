@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { HeaderMenu } from '../../types';
 import { useScreenMenu } from '../ScreenMenu/useScreenMenu';
@@ -10,12 +10,32 @@ import { quitApp } from '../../../redux/effects/app';
 export function useCommonWindowHeader() {
   const { isOpen, openScreenMenu, closeScreenMenu } = useScreenMenu();
   const dispatch = useDispatch();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  const handleClickDocument = (e: MouseEvent) => {
+    if (!e.target) return;
+    // targetがItemの要素か
+    if (menuButtonRef.current?.contains(e.target as any)) {
+      return;
+    }
+    handleCloseScreenMenu();
+  };
+
+  const handleCloseScreenMenu = () => {
+    document.removeEventListener('click', handleClickDocument);
+    closeScreenMenu();
+  };
+  const handleClickOpen = () => {
+    document.addEventListener('click', handleClickDocument);
+    return isOpen ? handleCloseScreenMenu() : openScreenMenu();
+  };
 
   const headerMenus: HeaderMenu[] = [
     {
       name: 'open',
       iconNode: <Icon src={menuIcon} />,
-      action: () => (isOpen ? closeScreenMenu() : openScreenMenu()),
+      action: handleClickOpen,
+      itemProps: { ref: menuButtonRef },
     },
     {
       name: 'close',

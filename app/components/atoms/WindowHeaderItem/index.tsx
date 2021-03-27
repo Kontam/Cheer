@@ -7,9 +7,13 @@ type Props = {
 };
 
 const WindowHeaderItem: React.FC<Props> = ({ menu }) => {
-  return <Button onClick={menu.action}>{menu.iconNode}</Button>;
+  return (
+    <Button {...(menu.itemProps && menu.itemProps)} onClick={menu.action}>
+      {menu.iconNode}
+    </Button>
+  );
 };
-const Button = styled.button`
+const Button = styled.button<any>`
   background: none;
   border: none;
   display: flex;
