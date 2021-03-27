@@ -276,6 +276,7 @@ exports[`Storyshots atoms/Icon Icon 1`] = `
 .c0 {
   height: 20px;
   width: 20px;
+  cursor: inherit;
 }
 
 <div>
@@ -955,6 +956,7 @@ exports[`Storyshots atoms/WindowHeaderItem Default 1`] = `
   -ms-flex-align: center;
   align-items: center;
   -webkit-app-region: no-drag;
+  cursor: pointer;
 }
 
 <div>
@@ -5796,6 +5798,8 @@ exports[`Storyshots organisms/WatchScreenMenu With Redux And Screen Menu 1`] = `
 <div>
   <div
     className="c0"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <button
       className="c1"
@@ -5815,6 +5819,7 @@ exports[`Storyshots organisms/WindowHeader With Redux And Screen Menu 1`] = `
 .c5 {
   height: 20px;
   width: 20px;
+  cursor: inherit;
 }
 
 .c4 {
@@ -5835,6 +5840,7 @@ exports[`Storyshots organisms/WindowHeader With Redux And Screen Menu 1`] = `
   -ms-flex-align: center;
   align-items: center;
   -webkit-app-region: no-drag;
+  cursor: pointer;
 }
 
 .c0 {

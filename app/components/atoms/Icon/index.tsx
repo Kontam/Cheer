@@ -14,4 +14,5 @@ export default Icon;
 const Img = styled.img`
   height: 20px;
   width: 20px;
+  cursor: inherit; // for button
 `;
