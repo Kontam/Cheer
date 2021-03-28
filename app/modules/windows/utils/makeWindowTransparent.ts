@@ -26,7 +26,6 @@ export function makeCurrentWindowDefault() {
   window.resizable = true; // windowsではresizable falseではsetSizeが効かない
   window.setSize(appConst.DEFAULT_WINDOW_X, appConst.DEFAULT_WINDOW_Y);
   window.resizable = false;
-  console.log('default', window.getSize());
   return window;
 }
 
@@ -36,5 +35,4 @@ export function makeCurrentWindowDefault() {
 export function makeCurrentWindowList() {
   const window = makeCurrentWindowDefault();
   window.setSize(800, 600);
-  console.log('List', window.getSize());
 }

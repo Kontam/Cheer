@@ -71,7 +71,6 @@ app.on('activate', () => {
  * preference画面から設定情報を受け取る
  */
 ipcMain.on(appConst.IPC_REQUEST_PREFERENCE, async (event, arg) => {
-  console.log('got message from setting', arg);
   mainWindow?.webContents.send(appConst.IPC_REQUEST_SETTING, arg);
   event.reply(appConst.IPC_RESPONCE_PREFERENCE, 'recieved');
 });
