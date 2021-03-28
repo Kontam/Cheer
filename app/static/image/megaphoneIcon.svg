@@ -1,0 +1,20 @@
+<svg id="メガホン" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.54" height="16.043" viewBox="0 0 29.54 16.043">
+  <defs>
+    <clipPath id="clip">
+      <use xlink:href="#fill"/>
+    </clipPath>
+  </defs>
+  <path id="パス_15" data-name="パス 15" d="M526.2,83.4,506.028,79.7V72.329L526.2,68.6Z" transform="translate(-503.948 -68.283)" fill="#f490a7"/>
+  <rect id="長方形_25" data-name="長方形 25" width="1.34" height="7.353" rx="0.67" transform="translate(0 4.041)" fill="#f490a7"/>
+  <rect id="長方形_26" data-name="長方形 26" width="3.701" height="0.74" rx="0.37" transform="translate(24.929 2.452) rotate(-27.996)" fill="#f490a7"/>
+  <g id="パス_16" data-name="パス 16" transform="translate(-507.969 -84.483)" fill="none" stroke-linecap="round" stroke-miterlimit="10">
+    <path d="M519.037,100.525l-6.626-1.456.2-4.753,8.006,1.759Z" stroke="none"/>
+    <path d="M 519.0366821289062 100.5251617431641 L 512.41064453125 99.06906890869141 L 512.6139526367188 94.31626892089844 L 520.6204223632812 96.07573699951172 L 519.0366821289062 100.5251617431641 Z" stroke="none" fill="#f490a7"/>
+  </g>
+  <rect id="長方形_27" data-name="長方形 27" width="3.701" height="0.74" rx="0.37" transform="translate(25.839 6.977)" fill="#f490a7"/>
+  <rect id="長方形_28" data-name="長方形 28" width="3.701" height="0.74" rx="0.37" transform="translate(25.319 11.692) rotate(30)" fill="#f490a7"/>
+  <g id="長方形_29" data-name="長方形 29" transform="translate(20.061 0)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6">
+    <rect id="fill" width="0.74" height="15.808" stroke="none"/>
+    <path d="M0,3h0.7402330636978149M3,0v15.808414459228516M0.7402330636978149,12.808414459228516h-0.7402330636978149M-2.259766936302185,15.808414459228516v-15.808414459228516" fill="none" clip-path="url(#clip)"/>
+  </g>
+</svg>

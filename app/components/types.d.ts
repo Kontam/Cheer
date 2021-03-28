@@ -22,3 +22,19 @@ export type TabInfo = {
   name: SelectChannelTab;
   label: string;
 };
+
+export type HeaderMenu = {
+  name: string;
+  iconNode: any;
+  action: () => void;
+  itemProps?: React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >;
+};
+
+export type FlatMenu = {
+  name: string;
+  label: string;
+  action: React.MouseEventHandler<HTMLButtonElement>;
+};

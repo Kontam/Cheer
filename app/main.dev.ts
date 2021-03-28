@@ -13,6 +13,8 @@ import 'babel-polyfill';
 import appConst from './modules/constants/appConst';
 import { createMainWindow } from './modules/windows/mainWindow';
 import { setMainUrlSchemeEventHandler } from './modules/eventHandlers/main/urlSchemeEventHandler';
+import { setAppQuitEventhandler } from './modules/eventHandlers/main/appQuitEventHandler';
+import { setOpenPreferenceEventhandler } from './modules/eventHandlers/main/preferenceEventHandler';
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -25,10 +27,6 @@ if (
 ) {
   require('electron-debug')();
 }
-
-/**
- * Add event listeners...
- */
 
 app.on('window-all-closed', () => {
   // Respect the OSX convention of having the application in memory even
@@ -47,7 +45,12 @@ async function readyMainWindow() {
   const windowAndMenu = await createMainWindow();
   mainWindow = windowAndMenu.mainWindow;
   mainMenu = windowAndMenu.mainMenu;
+  /*
+   * Add event listeners...
+   */
+  setAppQuitEventhandler(app);
   setMainUrlSchemeEventHandler(mainWindow);
+  setOpenPreferenceEventhandler(mainWindow);
   // 閉じられた時にmainWindowの参照をnullにする Docには残り続けるがwindowがない状態
   mainWindow.on('closed', () => {
     mainWindow = null;

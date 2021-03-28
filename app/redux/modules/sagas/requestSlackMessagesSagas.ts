@@ -11,14 +11,17 @@ import {
   requestMessagesAPISuccess,
 } from '../api/slackMessages';
 import { enqueueMessageQueue } from '../app/messageQueue';
-import { AuthInfo, RootState } from '../types';
+import { AuthInfo, RootState, SlackMessages } from '../types';
 import { overflowMessageQueue } from '../util/overflowMessageQueue';
 import { addUserListFlow, authInfoSelector } from './utils/addUserListFlow';
 
+export const slackMessagesSelector = (state: RootState) =>
+  state.api.slackMessages;
 export const lastRequestTimeSelector = (state: RootState) =>
   state.app.requestInfo.lastRequestTime;
 export const selectedChannelSelector = (state: RootState) =>
   state.ui.selectChannelUI.selectedChannel;
+
 export const REQUEST_SLACK_MESSAGES = 'REQUEST_SLACK_MESSAGES';
 export const requestSlackMessages = createAction<Partial<
   ConversationsHistoryArguments
@@ -28,6 +31,9 @@ export const requestSlackMessages = createAction<Partial<
 export function* requestSlackMessagesFlow(
   options: Partial<ConversationsHistoryArguments>
 ): any {
+  const slackMessages: SlackMessages = yield select(slackMessagesSelector);
+  if (slackMessages.loading) return;
+
   const selectedChannel: string = yield select(selectedChannelSelector);
   const authInfo: AuthInfo = yield select(authInfoSelector);
   const botWeb = getWebClientBotInstance(authInfo.botToken);

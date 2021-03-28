@@ -160,6 +160,33 @@ exports[`Storyshots atoms/FieldTitle Field Title 1`] = `
 </div>
 `;
 
+exports[`Storyshots atoms/FlatMenuItem Default 1`] = `
+.c0 {
+  width: 100%;
+  height: 40px;
+  text-align: left;
+  padding: 0 0 0 15px;
+  background-color: #FFF4F6;
+  color: #444444;
+  border: none;
+  font-size: 16px;
+  outline-offset: -3px;
+}
+
+.c0:hover {
+  background-color: #F1FDF0;
+}
+
+<div>
+  <button
+    className="c0"
+    onClick={[Function]}
+  >
+    FlatMenuItem
+  </button>
+</div>
+`;
+
 exports[`Storyshots atoms/GeneralButton Active 1`] = `
 .c0 {
   background-color: #B5E0B3;
@@ -242,6 +269,22 @@ exports[`Storyshots atoms/GeneralButton Passive 1`] = `
       value="label"
     />
   </div>
+</div>
+`;
+
+exports[`Storyshots atoms/Icon Icon 1`] = `
+.c0 {
+  height: 20px;
+  width: 20px;
+  cursor: inherit;
+}
+
+<div>
+  <img
+    alt="menu"
+    className="c0"
+    src="test-file-stub"
+  />
 </div>
 `;
 
@@ -894,6 +937,40 @@ exports[`Storyshots atoms/UserIcon User Icon 1`] = `
 </div>
 `;
 
+exports[`Storyshots atoms/WindowHeaderItem Default 1`] = `
+.c0 {
+  background: none;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}
+
+<div>
+  <button
+    className="c0"
+    onClick={[Function]}
+  >
+    <h1>
+      a
+    </h1>
+  </button>
+</div>
+`;
+
 exports[`Storyshots molecules/ActiveCellSetting Default 1`] = `
 .c1 {
   display: -webkit-box;
@@ -1465,6 +1542,51 @@ exports[`Storyshots molecules/ConveyorSettingFields Overflow 1`] = `
       </div>
     </form>
   </div>
+</div>
+`;
+
+exports[`Storyshots molecules/FlatMenuList Default 1`] = `
+.c1 {
+  width: 100%;
+  height: 40px;
+  text-align: left;
+  padding: 0 0 0 15px;
+  background-color: #FFF4F6;
+  color: #444444;
+  border: none;
+  font-size: 16px;
+  outline-offset: -3px;
+}
+
+.c1:hover {
+  background-color: #F1FDF0;
+}
+
+.c0 {
+  width: 160px;
+}
+
+<div>
+  <ul
+    className="c0"
+  >
+    <li
+      className=""
+    >
+      <button
+        className="c1"
+        onClick={[Function]}
+      >
+        Item1
+      </button>
+      <button
+        className="c1"
+        onClick={[Function]}
+      >
+        Item2
+      </button>
+    </li>
+  </ul>
 </div>
 `;
 
@@ -4604,6 +4726,45 @@ exports[`Storyshots organisms/RecommendBotContent Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots organisms/ScreenMenu Screen Menu 1`] = `
+.c1 {
+  width: 100%;
+  height: 40px;
+  text-align: left;
+  padding: 0 0 0 15px;
+  background-color: #FFF4F6;
+  color: #444444;
+  border: none;
+  font-size: 16px;
+  outline-offset: -3px;
+}
+
+.c1:hover {
+  background-color: #F1FDF0;
+}
+
+.c0 {
+  width: 160px;
+}
+
+<div>
+  <ul
+    className="c0"
+  >
+    <li
+      className=""
+    >
+      <button
+        className="c1"
+        onClick={[Function]}
+      >
+        quit
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Storyshots organisms/ScreenSetting Conveyor 1`] = `
 .c9 {
   font-size: 2rem;
@@ -5589,19 +5750,191 @@ exports[`Storyshots organisms/SelectChannel Select Channel 1`] = `
 </div>
 `;
 
-exports[`Storyshots organisms/WindowHeader Window Header 1`] = `
+exports[`Storyshots organisms/WatchScreenMenu With Redux And Screen Menu 1`] = `
 .c0 {
-  background-color: #FFE6EB;
-  width: 100%;
-  height: 30px;
-  -webkit-app-region: drag;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  background-color: #FFFFFF;
+  border: 3px solid #F490A7;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  cursor: pointer;
+}
+
+.c1:hover {
+  background-color: #E2F5E1;
+}
+
+.c2 {
+  width: 30px;
 }
 
 <div>
-  <div>
+  <div
+    className="c0"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <button
+      className="c1"
+      onClick={[Function]}
+    >
+      <img
+        alt="menu"
+        className="c2"
+        src="test-file-stub"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots organisms/WindowHeader With Redux And Screen Menu 1`] = `
+.c5 {
+  height: 20px;
+  width: 20px;
+  cursor: inherit;
+}
+
+.c4 {
+  background: none;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  background-color: #FFE6EB;
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.c1 {
+  height: 30px;
+  -webkit-app-region: drag;
+  width: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 30px;
+}
+
+.c3 {
+  margin-left: 30px;
+}
+
+.c6 {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  box-shadow: rgba(193,118,95,0.3) -3px 3px 6px;
+  z-index: 10;
+}
+
+<div>
+  <div
+    className="c0"
+  >
     <div
-      className="c0"
+      className="c1"
     />
+    <div
+      className=""
+    >
+      <ul
+        className="c2"
+      >
+        <li
+          className="c3"
+        >
+          <button
+            className="c4"
+            onClick={[Function]}
+          >
+            <img
+              alt="menu"
+              className="c5"
+              src="test-file-stub"
+            />
+          </button>
+        </li>
+        <li
+          className="c3"
+        >
+          <button
+            className="c4"
+            onClick={[Function]}
+          >
+            <img
+              alt="menu"
+              className="c5"
+              src="test-file-stub"
+            />
+          </button>
+        </li>
+      </ul>
+      <div
+        className="c6"
+      />
+    </div>
   </div>
 </div>
 `;

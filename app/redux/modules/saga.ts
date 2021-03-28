@@ -5,7 +5,7 @@ import { configSagas } from '../effects/config';
 import { startWatchSagas } from './sagas/startWatchSagas';
 import { authSagas } from './user/authInfo';
 import { channelListSagas } from './api/slackChannelList';
-import { windowSagas } from '../effects/window';
+import { electronSagas } from '../effects/electron';
 import { selectChannelUISagas } from './ui/selectChannelUI';
 import { channelHistoriesSagas } from './sagas/channelHistories';
 import { loginSagas } from './sagas/loginSagas';
@@ -21,7 +21,7 @@ function* rootSaga() {
     ...configSagas,
     ...authSagas,
     ...channelHistoriesSagas,
-    ...windowSagas,
+    ...electronSagas,
     ...selectChannelUISagas,
     ...loginSagas,
     ...authStorageSagas,

@@ -8,6 +8,7 @@ import slackChannelInfo from './api/slackChannelInfo';
 import slackChannelList from './api/slackChannelList';
 import appUserInfo from './api/appUserInfo';
 import selectChannelUI from './ui/selectChannelUI';
+import screenMenuUI from './ui/screenMenuUI';
 import channelHistories from './app/channelHistories';
 import searchedChannels from './app/searchedChannels';
 import messageQueue from './app/messageQueue';
@@ -43,6 +44,7 @@ export default function createRootReducer(history: History) {
     }),
     ui: combineReducers({
       selectChannelUI,
+      screenMenuUI,
     }),
     app: combineReducers({
       searchedChannels,

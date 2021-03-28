@@ -1,7 +1,10 @@
-import { expectSaga } from 'redux-saga-test-plan';
+import { ExpectApi, expectSaga } from 'redux-saga-test-plan';
 import * as matchers from 'redux-saga-test-plan/matchers';
 import { getUnixTime } from 'date-fns';
-import { requestMessagesAPISuccess } from '../../api/slackMessages';
+import {
+  requestMessagesAPI,
+  requestMessagesAPISuccess,
+} from '../../api/slackMessages';
 import {
   requestSlackMessages,
   lastRequestTimeSelector,
@@ -135,4 +138,17 @@ describe('Slack APIからメッセージを取得するフローのテスト', (
       );
     }
   );
+
+  describe('すでにメッセージリクエスト中の時', () => {
+    let expect: ExpectApi;
+    beforeEach(() => {
+      expect = expectSaga(saga)
+        .withReducer(createRootReducer({} as any))
+        .dispatch(requestMessagesAPI())
+        .dispatch(requestSlackMessages());
+    });
+    test('何も処理をせず終了する', async () => {
+      return expect.not.select(selectedChannelSelector).run();
+    });
+  });
 });
