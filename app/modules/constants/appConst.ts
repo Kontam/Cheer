@@ -11,8 +11,6 @@ const appConst = {
   DEFAULT_WINDOW_X: 500,
   DEFAULT_WINDOW_Y: 500,
 
-  ENV_DEBUG: 'DEBUG',
-
   ACCOUNT_NAME_API_KEY: 'apiKey',
   ACCOUNT_NAME_CHANNEL_ID: 'channelId',
   SERVICE_NAME: 'Cheer',

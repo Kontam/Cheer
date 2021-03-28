@@ -61,6 +61,7 @@ export default merge.smart(baseConfig, {
       DEBUG_PROD: false,
       START_MINIMIZED: false,
       E2E_BUILD: false,
+      DEBUG_MODE: false,
     }),
   ],
 
