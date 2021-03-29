@@ -12,5 +12,6 @@ module.exports = {
     'ts-jest': {
       tsconfig: 'puppeteer/tsconfig.json'
     }
-  }
+  },
+  "testEnvironment": "./custom-environment.js"
 };

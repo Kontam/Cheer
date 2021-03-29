@@ -4,12 +4,9 @@ import { setupElectron } from './modules/util/setupElectron';
 import { Browser, Keyboard, Page } from 'puppeteer';
 import { QA_ATTRIBUTES, createQAAttributeSelector } from '../../app/modules/testUtil/testAttributes';
 
-const timeout = 20000;
 let electronBrowser: Browser;
 let electronPage: Page;
 let pid: number;
-
-jest.setTimeout(timeout);
 
 beforeAll(async () => {
   // jest-puppeteerが立ち上げるブラウザを閉じる
@@ -20,12 +17,8 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  try {
-    console.log('afterAll', pid);
-    await electronPage.close();
-  } catch (error) {
-    kill(pid);
-  }
+  electronPage.close();
+  kill(pid);
 });
 
 describe('App', () => {
@@ -45,7 +38,7 @@ describe('App', () => {
     await electronPage.keyboard.down('Meta');
     await electronPage.keyboard.press('p');
     //await electronPage.keyboard.up('Meta');
-    await electronPage.waitFor(10000);
+    //await electronPage.waitFor(2000);
   });
 
 });
