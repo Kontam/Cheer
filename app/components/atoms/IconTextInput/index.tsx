@@ -7,6 +7,10 @@ type Props = {
   value: string;
   imgSrc?: string;
   placeholder?: string;
+  inputProps?: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >;
 };
 
 const IconTextInput: React.FC<Props> = ({
@@ -14,6 +18,7 @@ const IconTextInput: React.FC<Props> = ({
   value,
   imgSrc,
   placeholder,
+  inputProps,
 }) => {
   return (
     <Container>
@@ -26,6 +31,7 @@ const IconTextInput: React.FC<Props> = ({
           onChange={onChange}
           value={value}
           placeholder={placeholder}
+          {...inputProps}
         />
       </FlexContainer>
     </Container>
@@ -38,7 +44,7 @@ const Container = styled.div`
   padding: 0 7px;
 `;
 
-const Text = styled.input`
+const Text = styled.input<any>`
   border: none;
   height: 40px;
   border-radius: 7px;

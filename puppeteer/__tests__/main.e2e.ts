@@ -1,8 +1,8 @@
 import kill from 'tree-kill';
 import assert from 'power-assert';
 import { setupElectron } from './modules/util/setupElectron';
-import { Browser, Keyboard, Page } from 'puppeteer';
-import { QA_ATTRIBUTES, createQAAttributeSelector } from '../../app/modules/testUtil/testAttributes';
+import { Browser, Page } from 'puppeteer';
+import { createQAAttributeSelector } from '../../app/modules/testUtil/testAttributes';
 
 let electronBrowser: Browser;
 let electronPage: Page;
@@ -34,11 +34,8 @@ describe('App', () => {
     await electronPage.waitFor(2000);
   });
 
-  test('トップ画面のLoginボタン押下でリスト画面に遷移する', async () => {
-    await electronPage.keyboard.down('Meta');
-    await electronPage.keyboard.press('p');
-    //await electronPage.keyboard.up('Meta');
-    //await electronPage.waitFor(2000);
+  test('Channel検索テキストボックスに文字列が入力すると該当チャンネルが表示される', async () => {
+    // inputのQA属性は埋めたのでそれを取り出す
   });
 
 });

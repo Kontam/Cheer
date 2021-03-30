@@ -3,6 +3,7 @@ export const QA_ATTRIBUTE_NAME = 'data-qa' as const;
 export const QA_ATTRIBUTES: any = {
   LOGIN: { [QA_ATTRIBUTE_NAME]: 'Login' },
   SLACK_AUTH_BUTTON: { [QA_ATTRIBUTE_NAME]: 'SlackAuthButton' },
+  SEARCH_CHANNEL_INPUT: { [QA_ATTRIBUTE_NAME]: 'SearchChannelInput' },
 };
 
 export function createQAAttributeSelector(key: string) {
