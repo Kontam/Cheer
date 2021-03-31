@@ -10,7 +10,7 @@ let pid: number;
 
 beforeAll(async () => {
   // jest-puppeteerが立ち上げるブラウザを閉じる
-  const pages = await (browser as any).pages(); 
+  const pages = await (browser as any).pages();
   await Promise.all(pages.map((page) => page.close()));
 
   [electronBrowser, electronPage, pid] = await setupElectron();
@@ -36,6 +36,12 @@ describe('App', () => {
 
   test('Channel検索テキストボックスに文字列が入力すると該当チャンネルが表示される', async () => {
     // inputのQA属性は埋めたのでそれを取り出す
+    await electronPage.type(
+      createQAAttributeSelector('SEARCH_CHANNEL_INPUT'),
+      'bots_debug'
+    );
+    await electronPage.click(createQAAttributeSelector('CHANNEL_LIST_ITEM'));
+    await electronPage.click(createQAAttributeSelector('WATCH_BUTTON'));
+    await electronPage.waitFor(5000);
   });
-
 });

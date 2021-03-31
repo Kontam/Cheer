@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { styleConst } from '../../../modules/styles/styleConst';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 
 type ButtonType = 'active' | 'passive';
 
@@ -11,16 +12,20 @@ type Props = {
   full?: boolean;
   disabled?: boolean;
   buttonType?: ButtonType;
+  'data-qa'?: string;
 };
 
-const GeneralButton: React.FC<Props> = ({
-  label,
-  type,
-  onClick,
-  disabled = false,
-  full = false,
-  buttonType = 'active',
-}) => {
+const GeneralButton: React.FC<Props> = (
+  {
+    label,
+    type,
+    onClick,
+    disabled = false,
+    full = false,
+    buttonType = 'active',
+  },
+  props
+) => {
   return (
     <>
       <Input
@@ -30,6 +35,7 @@ const GeneralButton: React.FC<Props> = ({
         full={full}
         disabled={disabled}
         buttonType={buttonType}
+        {...props}
       />
     </>
   );
@@ -64,7 +70,7 @@ export const Input = styled.input<{ full: boolean; buttonType: ButtonType }>`
       `;
     return `
       background-color: ${bgc};
-      color: ${color};    
+      color: ${color};
       ${disabled ? disabledStyle : enabledStyle}
       ${full ? `width: 100%;` : ``}
     `;
