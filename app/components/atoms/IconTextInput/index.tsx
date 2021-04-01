@@ -7,10 +7,7 @@ type Props = {
   value: string;
   imgSrc?: string;
   placeholder?: string;
-  inputProps?: React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  >;
+  inputProps?: any;
 };
 
 const IconTextInput: React.FC<Props> = ({

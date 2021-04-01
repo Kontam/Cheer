@@ -91,7 +91,7 @@ const SelectChannel: React.FC<Props> = ({
             }
             full
             disabled={selectedChannel === ''}
-            {...QA_ATTRIBUTES.WATCH_BUTTON}
+            exAttributes={QA_ATTRIBUTES.WATCH_BUTTON}
           />
         </ButtonContainer>
       </Wrapper>

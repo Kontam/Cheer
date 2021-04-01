@@ -12,20 +12,18 @@ type Props = {
   full?: boolean;
   disabled?: boolean;
   buttonType?: ButtonType;
-  'data-qa'?: string;
+  exAttributes?: any;
 };
 
-const GeneralButton: React.FC<Props> = (
-  {
-    label,
-    type,
-    onClick,
-    disabled = false,
-    full = false,
-    buttonType = 'active',
-  },
-  props
-) => {
+const GeneralButton: React.FC<Props> = ({
+  label,
+  type,
+  onClick,
+  disabled = false,
+  full = false,
+  buttonType = 'active',
+  exAttributes,
+}) => {
   return (
     <>
       <Input
@@ -35,7 +33,7 @@ const GeneralButton: React.FC<Props> = (
         full={full}
         disabled={disabled}
         buttonType={buttonType}
-        {...props}
+        {...exAttributes}
       />
     </>
   );
