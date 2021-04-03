@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import MessageComponent from '../index';
 import iconForStory from '../../../../static/image/iconForStory.png';
+import { QA_ATTRIBUTES } from '../../../../modules/testUtil/testAttributes';
 
 export default {
   title: 'molecules/Message',
@@ -16,6 +17,7 @@ export const VeryShortMessage = () => (
       iconUrl={text('src', iconForStory)}
       name={text('name', 'Nekoyama Cat')}
       color={text('color', '#B9CEF3')}
+      exAttributes={QA_ATTRIBUTES.CONVEYOR_MESSAGE}
     />
   </Container>
 );

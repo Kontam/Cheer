@@ -6,6 +6,7 @@ export const QA_ATTRIBUTES = {
   SEARCH_CHANNEL_INPUT: { [QA_ATTRIBUTE_NAME]: 'SearchChannelInput' },
   CHANNEL_LIST_ITEM: { [QA_ATTRIBUTE_NAME]: 'ChannelListItem' },
   WATCH_BUTTON: { [QA_ATTRIBUTE_NAME]: 'WatchButton' },
+  CONVEYOR_MESSAGE: { [QA_ATTRIBUTE_NAME]: 'ConveyorMessage' },
 } as const;
 
 export function createQAAttributeSelector(key: keyof typeof QA_ATTRIBUTES) {

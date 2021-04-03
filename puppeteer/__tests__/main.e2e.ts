@@ -31,17 +31,37 @@ describe('App', () => {
   test('トップ画面のLoginボタン押下でリスト画面に遷移する', async () => {
     // E2Eビルドでは認証をスキップしている
     await electronPage.click(createQAAttributeSelector('SLACK_AUTH_BUTTON'));
-    await electronPage.waitFor(2000);
   });
 
   test('Channel検索テキストボックスに文字列が入力すると該当チャンネルが表示される', async () => {
-    // inputのQA属性は埋めたのでそれを取り出す
+    // TODO: Menuの検証？
+    // TODO: HorizonConveyorに明示的に変更する
+    await electronPage.waitForSelector(
+      createQAAttributeSelector('SEARCH_CHANNEL_INPUT')
+    );
     await electronPage.type(
       createQAAttributeSelector('SEARCH_CHANNEL_INPUT'),
       'bots_debug'
     );
+    const text = await electronPage.$(
+      createQAAttributeSelector('CHANNEL_LIST_ITEM')
+    );
+    expect(text).toMatch('bots_debug');
+  });
+
+  test('チャンネルを選択してWatchボタンを押下するとWatchが開始される', async () => {
     await electronPage.click(createQAAttributeSelector('CHANNEL_LIST_ITEM'));
     await electronPage.click(createQAAttributeSelector('WATCH_BUTTON'));
-    await electronPage.waitFor(5000);
+    // TODO: ScreenにAttribute埋めて遷移を確認する
+  });
+
+  test('メッセージが表示される', async () => {
+    await electronPage.waitForSelector(
+      createQAAttributeSelector('CONVEYOR_MESSAGE')
+    );
+    const messageElement = electronPage.$(
+      createQAAttributeSelector('CONVEYOR_MESSAGE')
+    );
+    expect(messageElement).toBeTruthy();
   });
 });
