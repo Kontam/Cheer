@@ -40,11 +40,11 @@ describe('App', () => {
     expect(await electronPage.waitForSelector(createQAAttributeSelector('SCREEN_MENU'))).toBeTruthy();
   });
 
-  test('menuアイコンを押すとメニューが開く', () => {
-    // 画面のどこか押下
-    // メニューが閉じるをアサーション
+  test('menuアイコン以外の場所を押すとメニューが閉じる', async () => {
+    // 画面のアンクリッカブルな箇所をクリック
+    await electronPage.click(createQAAttributeSelector('CHANNEL_LIST'));
+    expect(await electronPage.$(createQAAttributeSelector('SCREEN_MENU'))).toBeFalsy();
   });
-
 
   test('Channel検索テキストボックスに文字列が入力すると該当チャンネルが表示される', async () => {
     // TODO: Menuの検証？
