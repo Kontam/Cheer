@@ -33,6 +33,19 @@ describe('App', () => {
     await electronPage.click(createQAAttributeSelector('SLACK_AUTH_BUTTON'));
   });
 
+  test('menuアイコンを押すとメニューが開く', async () => {
+    // メニューアイコン押下
+    await (await electronPage.waitForSelector(createQAAttributeSelector('OPEN_MENU_ICON'))).click();
+    // メニューが開くをアサーション
+    expect(await electronPage.waitForSelector(createQAAttributeSelector('SCREEN_MENU'))).toBeTruthy();
+  });
+
+  test('menuアイコンを押すとメニューが開く', () => {
+    // 画面のどこか押下
+    // メニューが閉じるをアサーション
+  });
+
+
   test('Channel検索テキストボックスに文字列が入力すると該当チャンネルが表示される', async () => {
     // TODO: Menuの検証？
     // TODO: HorizonConveyorに明示的に変更する

@@ -6,6 +6,7 @@ import menuIcon from '../../../static/image/menuIcon.svg';
 import closeIcon from '../../../static/image/closeIcon.svg';
 import Icon from '../../atoms/Icon';
 import { quitApp } from '../../../redux/effects/app';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 
 export function useCommonWindowHeader() {
   const { isOpen, openScreenMenu, closeScreenMenu } = useScreenMenu();
@@ -35,7 +36,7 @@ export function useCommonWindowHeader() {
       name: 'open',
       iconNode: <Icon src={menuIcon} />,
       action: handleClickOpen,
-      itemProps: { ref: menuButtonRef },
+      itemProps: { ref: menuButtonRef, ...QA_ATTRIBUTES.OPEN_MENU_ICON },
     },
     {
       name: 'close',

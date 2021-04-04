@@ -5,11 +5,12 @@ import FlatMenuItem from '../../atoms/FlatMenuItem';
 
 type Props = {
   menus: FlatMenu[];
+  exAttributes?: any;
 };
 
-const FlatMenuList: React.FC<Props> = ({ menus }) => {
+const FlatMenuList: React.FC<Props> = ({ menus, exAttributes }) => {
   return (
-    <List>
+    <List {...exAttributes}>
       <Item>
         {menus.map((menu) => (
           <FlatMenuItem key={menu.name} menu={menu} />
