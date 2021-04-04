@@ -48,7 +48,7 @@ const SelectChannel: React.FC<Props> = ({
 }) => {
   const { searchString, selectedChannel, selectedTab } = selectChannelUI;
   return (
-    <Container>
+    <Container {...QA_ATTRIBUTES.CHANNEL_LIST}>
       <Wrapper>
         <InputContainer>
           <IconTextInput

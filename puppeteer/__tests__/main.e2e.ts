@@ -31,12 +31,12 @@ describe('App', () => {
   test('トップ画面のLoginボタン押下でリスト画面に遷移する', async () => {
     // E2Eビルドでは認証をスキップしている
     await electronPage.click(createQAAttributeSelector('SLACK_AUTH_BUTTON'));
+    // 画面到達のアサーション
+    expect(await electronPage.waitForSelector(createQAAttributeSelector('CHANNEL_LIST')));
   });
 
   test('menuアイコンを押すとメニューが開く', async () => {
-    // メニューアイコン押下
     await (await electronPage.waitForSelector(createQAAttributeSelector('OPEN_MENU_ICON'))).click();
-    // メニューが開くをアサーション
     expect(await electronPage.waitForSelector(createQAAttributeSelector('SCREEN_MENU'))).toBeTruthy();
   });
 
