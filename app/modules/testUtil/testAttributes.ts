@@ -7,6 +7,7 @@ export const QA_ATTRIBUTES = {
   CHANNEL_LIST_ITEM: { [QA_ATTRIBUTE_NAME]: 'ChannelListItem' },
   WATCH_BUTTON: { [QA_ATTRIBUTE_NAME]: 'WatchButton' },
   CONVEYOR_MESSAGE: { [QA_ATTRIBUTE_NAME]: 'ConveyorMessage' },
+  WATCH_SCREEN: { [QA_ATTRIBUTE_NAME]: 'WatchScreen' },
 } as const;
 
 export function createQAAttributeSelector(key: keyof typeof QA_ATTRIBUTES) {

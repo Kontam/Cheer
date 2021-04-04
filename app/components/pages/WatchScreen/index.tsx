@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 import MessageBoard from '../../organisms/MessageBoard';
 import WatchScreenMenu from '../../organisms/WatchScreenMenu';
 import { useMenu } from './useMenu';
@@ -12,7 +13,7 @@ const WatchScreen: React.FC = () => {
     handleMenuItemClick,
   } = useMenu();
   return (
-    <Screen>
+    <Screen {...QA_ATTRIBUTES.WATCH_SCREEN}>
       {hasMenu && (
         <MenuContainer>
           <WatchScreenMenu

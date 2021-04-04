@@ -52,16 +52,13 @@ describe('App', () => {
   test('チャンネルを選択してWatchボタンを押下するとWatchが開始される', async () => {
     await electronPage.click(createQAAttributeSelector('CHANNEL_LIST_ITEM'));
     await electronPage.click(createQAAttributeSelector('WATCH_BUTTON'));
-    // TODO: ScreenにAttribute埋めて遷移を確認する
+
+    expect(await electronPage.waitForSelector(createQAAttributeSelector('WATCH_SCREEN'))).toBeTruthy();
   });
 
   test('メッセージが表示される', async () => {
-    await electronPage.waitForSelector(
+    expect(await electronPage.waitForSelector(
       createQAAttributeSelector('CONVEYOR_MESSAGE')
-    );
-    const messageElement = electronPage.$(
-      createQAAttributeSelector('CONVEYOR_MESSAGE')
-    );
-    expect(messageElement).toBeTruthy();
+    )).toBeTruthy();
   });
 });
