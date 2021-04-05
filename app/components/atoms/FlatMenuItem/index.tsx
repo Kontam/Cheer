@@ -8,10 +8,14 @@ type Props = {
 };
 
 const FlatMenuButton: React.FC<Props> = ({ menu }) => {
-  return <Button onClick={menu.action}>{menu.label}</Button>;
+  return (
+    <Button onClick={menu.action} {...menu.itemProps}>
+      {menu.label}
+    </Button>
+  );
 };
 
-const Button = styled.button`
+const Button = styled.button<any>`
   width: 100%;
   height: 40px;
   text-align: left;

@@ -15,6 +15,7 @@ const menus: FlatMenu[] = [
     name: 'test1',
     label: 'Item1',
     action: action('action'),
+    itemProps: { ...QA_ATTRIBUTES.SCREEM_MENU_PREFERENCE } as any,
   },
   {
     name: 'test2',

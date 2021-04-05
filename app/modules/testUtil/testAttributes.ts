@@ -11,6 +11,7 @@ export const QA_ATTRIBUTES = {
   WATCH_SCREEN: { [QA_ATTRIBUTE_NAME]: 'WatchScreen' },
   OPEN_MENU_ICON: { [QA_ATTRIBUTE_NAME]: 'OpenMenuIcon' },
   SCREEN_MENU: { [QA_ATTRIBUTE_NAME]: 'ScreenMenu' },
+  SCREEM_MENU_PREFERENCE: { [QA_ATTRIBUTE_NAME]: 'ScreenMenuPreference' },
 } as const;
 
 export function createQAAttributeSelector(key: keyof typeof QA_ATTRIBUTES) {
