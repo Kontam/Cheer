@@ -50,9 +50,17 @@ describe('App', () => {
   test('menuから設定画面を開ける', async () => {
     await electronPage.click(createQAAttributeSelector('OPEN_MENU_ICON'));
     await (await electronPage.waitForSelector(createQAAttributeSelector('SCREEM_MENU_PREFERENCE'))).click();
-    electronBrowser.on('targetcreated', (p) => {
-      console.log('created', p)
-      // TODO: HorizonConveyorを選択する
+    electronBrowser.on('targetcreated', async (target) => {
+      const newPage = await target.page();
+      if (!newPage) {
+        console.log('invalid page');
+        return;
+      }
+      if (await newPage.title() !== 'preference') {
+        console.log('not preference');
+        return;
+      }
+      console.log('finaly', await newPage.title())
     })
   });
 
