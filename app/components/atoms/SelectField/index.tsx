@@ -8,6 +8,7 @@ export const Input = styled.input``;
 type Props = {
   name: string;
   options: Option[];
+  exAttributes?: any;
 };
 
 export type Option = {
@@ -15,9 +16,9 @@ export type Option = {
   value: string;
 };
 
-const SelectField: React.FC<Props> = ({ name, options }) => {
+const SelectField: React.FC<Props> = ({ name, options, exAttributes }) => {
   return (
-    <StyledField name={name} type="text" component="select">
+    <StyledField name={name} type="text" component="select" {...exAttributes}>
       {options.map((option) => (
         <option key={option.label} value={option.value}>
           {option.label}

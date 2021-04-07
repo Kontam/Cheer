@@ -4,6 +4,7 @@ import { reduxForm, reducer } from 'redux-form';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import SelectFieldComponent, { Option } from '../index';
+import { QA_ATTRIBUTES } from '../../../../modules/testUtil/testAttributes';
 
 export default {
   title: 'atoms/SelectField',
@@ -30,7 +31,11 @@ const mockOption: Option[] = [
 
 const Component = () => (
   <form>
-    <SelectFieldComponent name="option" options={mockOption} />
+    <SelectFieldComponent
+      name="option"
+      options={mockOption}
+      exAttributes={QA_ATTRIBUTES.SCREEN_MODE_SELECT}
+    />
   </form>
 );
 

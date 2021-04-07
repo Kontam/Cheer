@@ -9,6 +9,7 @@ import FieldTitle from '../../atoms/FieldTitle';
 import ConveyorSettingFields from '../ConveyorSettingFields';
 import GridSettingFields from '../GridSettingFields';
 import { ScreenSettingFormData } from '../../types';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 
 export type OwnProps = {
   formValues: ScreenSettingFormData | undefined;
@@ -44,6 +45,7 @@ const ScreenSettingForm: React.FC<Props> = ({
         <SelectField
           name={appConst.FIELD_SCREEN_SETTING_MODE}
           options={modeOptions}
+          exAttributes={QA_ATTRIBUTES.SCREEN_MODE_SELECT}
         />
       </InputContainer>
       {formValues && formValues.mode === appConst.SCREEN_MODE_CONVEYOR ? (
