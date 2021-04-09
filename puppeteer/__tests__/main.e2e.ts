@@ -3,7 +3,7 @@ import assert from 'power-assert';
 import { setupElectron } from './modules/util/setupElectron';
 import { Browser, Page } from 'puppeteer';
 import { createQAAttributeSelector } from '../../app/modules/testUtil/testAttributes';
-import { create } from 'react-test-renderer';
+import { waitForNewWindowByTitle } from './modules/util/waitForNewWindowByTitle';
 
 let electronBrowser: Browser;
 let electronPage: Page;
@@ -50,18 +50,8 @@ describe('App', () => {
   test('menuから設定画面を開ける', async () => {
     await electronPage.click(createQAAttributeSelector('OPEN_MENU_ICON'));
     await (await electronPage.waitForSelector(createQAAttributeSelector('SCREEM_MENU_PREFERENCE'))).click();
-    electronBrowser.on('targetcreated', async (target) => {
-      const newPage = await target.page();
-      if (!newPage) {
-        console.log('invalid page');
-        return;
-      }
-      if (await newPage.title() !== 'preference') {
-        console.log('not preference');
-        return;
-      }
-      console.log('finaly', await newPage.title())
-    })
+    const preferencePage: Page = await waitForNewWindowByTitle(electronBrowser, 'preference');
+    console.log('result', await preferencePage.title());
   });
 
   test('Channel検索テキストボックスに文字列が入力すると該当チャンネルが表示される', async () => {
