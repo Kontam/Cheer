@@ -4,9 +4,11 @@ import { setupElectron } from './modules/util/setupElectron';
 import { Browser, Page } from 'puppeteer';
 import { createQAAttributeSelector } from '../../app/modules/testUtil/testAttributes';
 import { waitForNewWindowByTitle } from './modules/util/waitForNewWindowByTitle';
+import appConst from '../../app/modules/constants/appConst';
 
 let electronBrowser: Browser;
 let electronPage: Page;
+let preferencePage: Page;
 let pid: number;
 
 beforeAll(async () => {
@@ -33,25 +35,62 @@ describe('App', () => {
     // E2Eビルドでは認証をスキップしている
     await electronPage.click(createQAAttributeSelector('SLACK_AUTH_BUTTON'));
     // 画面到達のアサーション
-    expect(await electronPage.waitForSelector(createQAAttributeSelector('CHANNEL_LIST')));
+    expect(
+      await electronPage.waitForSelector(
+        createQAAttributeSelector('CHANNEL_LIST')
+      )
+    );
   });
 
   test('menuアイコンを押すとメニューが開く', async () => {
-    await (await electronPage.waitForSelector(createQAAttributeSelector('OPEN_MENU_ICON'))).click();
-    expect(await electronPage.waitForSelector(createQAAttributeSelector('SCREEN_MENU'))).toBeTruthy();
+    await (
+      await electronPage.waitForSelector(
+        createQAAttributeSelector('OPEN_MENU_ICON')
+      )
+    ).click();
+    expect(
+      await electronPage.waitForSelector(
+        createQAAttributeSelector('SCREEN_MENU')
+      )
+    ).toBeTruthy();
   });
 
   test('menuアイコン以外の場所を押すとメニューが閉じる', async () => {
     // 画面のアンクリッカブルな箇所をクリック
     await electronPage.click(createQAAttributeSelector('CHANNEL_LIST'));
-    expect(await electronPage.$(createQAAttributeSelector('SCREEN_MENU'))).toBeFalsy();
+    expect(
+      await electronPage.$(createQAAttributeSelector('SCREEN_MENU'))
+    ).toBeFalsy();
   });
 
   test('menuから設定画面を開ける', async () => {
     await electronPage.click(createQAAttributeSelector('OPEN_MENU_ICON'));
-    await (await electronPage.waitForSelector(createQAAttributeSelector('SCREEM_MENU_PREFERENCE'))).click();
-    const preferencePage: Page = await waitForNewWindowByTitle(electronBrowser, 'preference');
-    console.log('result', await preferencePage.title());
+    await (
+      await electronPage.waitForSelector(
+        createQAAttributeSelector('SCREEM_MENU_PREFERENCE')
+      )
+    ).click();
+    preferencePage = await waitForNewWindowByTitle(
+      electronBrowser,
+      'preference'
+    );
+    expect(preferencePage).toBeTruthy();
+  });
+
+  test('preferenceからconveyorモードを選択して保存できる', async () => {
+    await (
+      await preferencePage.waitForSelector(
+        createQAAttributeSelector('SCREEN_MODE_SELECT')
+      )
+    ).select(appConst.SCREEN_MODE_CONVEYOR);
+    await preferencePage.click(
+      createQAAttributeSelector('SCREEN_SETTING_SUBMIT')
+    );
+    expect(
+      await preferencePage.waitForSelector(
+        createQAAttributeSelector('SCREEN_SETTING_SAVED')
+      )
+    );
   });
 
   test('Channel検索テキストボックスに文字列が入力すると該当チャンネルが表示される', async () => {
@@ -74,12 +113,18 @@ describe('App', () => {
     await electronPage.click(createQAAttributeSelector('CHANNEL_LIST_ITEM'));
     await electronPage.click(createQAAttributeSelector('WATCH_BUTTON'));
 
-    expect(await electronPage.waitForSelector(createQAAttributeSelector('WATCH_SCREEN'))).toBeTruthy();
+    expect(
+      await electronPage.waitForSelector(
+        createQAAttributeSelector('WATCH_SCREEN')
+      )
+    ).toBeTruthy();
   });
 
   test('メッセージが表示される', async () => {
-    expect(await electronPage.waitForSelector(
-      createQAAttributeSelector('CONVEYOR_MESSAGE')
-    )).toBeTruthy();
+    expect(
+      await electronPage.waitForSelector(
+        createQAAttributeSelector('CONVEYOR_MESSAGE')
+      )
+    ).toBeTruthy();
   });
 });

@@ -60,7 +60,11 @@ const ScreenSettingForm: React.FC<Props> = ({
       )}
       <FieldContainer>
         <ButtonWrapper>
-          <GeneralButton label="Save" type="submit" />
+          <GeneralButton
+            label="Save"
+            type="submit"
+            exAttributes={QA_ATTRIBUTES.SCREEN_SETTING_SUBMIT}
+          />
         </ButtonWrapper>
       </FieldContainer>
     </Form>

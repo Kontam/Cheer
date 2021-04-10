@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { styleConst } from '../../../modules/styles/styleConst';
-import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 
 type ButtonType = 'active' | 'passive';
 

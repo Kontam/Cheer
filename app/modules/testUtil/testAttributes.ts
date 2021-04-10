@@ -14,6 +14,8 @@ export const QA_ATTRIBUTES = {
   SCREEM_MENU_PREFERENCE: { [QA_ATTRIBUTE_NAME]: 'ScreenMenuPreference' },
   PREFERENCE: { [QA_ATTRIBUTE_NAME]: 'Preference' },
   SCREEN_MODE_SELECT: { [QA_ATTRIBUTE_NAME]: 'ScreenModeSelect' },
+  SCREEN_SETTING_SUBMIT: { [QA_ATTRIBUTE_NAME]: 'ScreenSettingSubmit' },
+  SCREEN_SETTING_SAVED: { [QA_ATTRIBUTE_NAME]: 'ScreenSettingSaved' },
 } as const;
 
 export function createQAAttributeSelector(key: keyof typeof QA_ATTRIBUTES) {
