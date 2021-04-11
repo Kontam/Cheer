@@ -5,6 +5,7 @@ import { Browser, Page } from 'puppeteer';
 import { createQAAttributeSelector } from '../../app/modules/testUtil/testAttributes';
 import { waitForNewWindowByTitle } from './modules/util/waitForNewWindowByTitle';
 import appConst from '../../app/modules/constants/appConst';
+import {create} from 'react-test-renderer';
 
 let electronBrowser: Browser;
 let electronPage: Page;
@@ -77,12 +78,19 @@ describe('App', () => {
     expect(preferencePage).toBeTruthy();
   });
 
-  test('preferenceからconveyorモードを選択して保存できる', async () => {
+  test('preferenceからconveyorモード, amount:3を設定して保存できる', async () => {
     await (
       await preferencePage.waitForSelector(
         createQAAttributeSelector('SCREEN_MODE_SELECT')
       )
     ).select(appConst.SCREEN_MODE_CONVEYOR);
+
+    const amountField = await preferencePage.waitForSelector(
+        createQAAttributeSelector('SCREEN_AMOUNT_FIELD')
+      );
+    await amountField.press('Backspace');
+    await amountField.type('3');
+
     await preferencePage.click(
       createQAAttributeSelector('SCREEN_SETTING_SUBMIT')
     );

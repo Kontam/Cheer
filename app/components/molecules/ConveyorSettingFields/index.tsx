@@ -5,6 +5,7 @@ import NumberField from '../../atoms/NumberField';
 import appConst from '../../../modules/constants/appConst';
 import CheckboxField from '../../atoms/ChekboxField';
 import { ScreenSettingFormData } from '../../types';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 
 type Props = {
   formValues: ScreenSettingFormData | undefined;
@@ -20,6 +21,7 @@ const ConveyorSettingFields: React.FC<Props> = ({ formValues }) => {
             name={appConst.FIELD_SCREEN_SETTING_CONVEYOR_AMOUNT}
             min={1}
             max={10}
+            exAttributes={QA_ATTRIBUTES.SCREEN_AMOUNT_FIELD}
           />
         </InputContainer>
       </FieldContainer>
