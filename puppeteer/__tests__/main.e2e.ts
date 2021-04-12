@@ -135,4 +135,13 @@ describe('App', () => {
       )
     ).toBeTruthy();
   });
+
+  // しばらく待って３個メッセージが出ることをアサーションする
+  test('8秒後には設定したamount+1の数だけメッセージが表示されている', async () => {
+    await electronPage.waitFor(8000);
+    const messages = await electronPage.$$(createQAAttributeSelector('CONVEYOR_MESSAGE'));
+    expect(messages.length).toBe(4);
+  });
+
+  // Amount2に切り替えて反映されるかアサーションする
 });
