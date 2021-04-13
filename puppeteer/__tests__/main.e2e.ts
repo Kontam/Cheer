@@ -144,4 +144,19 @@ describe('App', () => {
   });
 
   // Amount2に切り替えて反映されるかアサーションする
+  test('amount設定の変更が反映される', async () => {
+    const amountField = await preferencePage.waitForSelector(
+      createQAAttributeSelector('SCREEN_AMOUNT_FIELD')
+    );
+    await amountField.press('Backspace');
+    await amountField.type('2');
+    await preferencePage.click(
+      createQAAttributeSelector('SCREEN_SETTING_SUBMIT')
+    );
+    await preferencePage.waitForSelector(createQAAttributeSelector('SCREEN_SETTING_SAVED'));
+
+    await electronPage.waitFor(2000);
+    const messages = await electronPage.$$(createQAAttributeSelector('CONVEYOR_MESSAGE'));
+    expect(messages.length).toBe(3);
+  });
 });
