@@ -13,10 +13,6 @@ let preferencePage: Page;
 let pid: number;
 
 beforeAll(async () => {
-  // jest-puppeteerが立ち上げるブラウザを閉じる
-  const pages = await (browser as any).pages();
-  await Promise.all(pages.map((page) => page.close()));
-
   [electronBrowser, electronPage, pid] = await setupElectron();
 });
 
