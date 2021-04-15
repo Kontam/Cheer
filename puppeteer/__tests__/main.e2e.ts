@@ -5,7 +5,6 @@ import { Browser, Page } from 'puppeteer';
 import { createQAAttributeSelector } from '../../app/modules/testUtil/testAttributes';
 import { waitForNewWindowByTitle } from './modules/util/waitForNewWindowByTitle';
 import appConst from '../../app/modules/constants/appConst';
-import {create} from 'react-test-renderer';
 
 let electronBrowser: Browser;
 let electronPage: Page;
