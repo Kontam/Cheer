@@ -32,6 +32,7 @@ export const QA_ATTRIBUTES = {
     [QA_ATTRIBUTE_NAME]: 'GridMessageBottomCenter',
   },
   GRID_MESSAGE_BOTTOM_RIGHT: { [QA_ATTRIBUTE_NAME]: 'GridMessageBottomRight' },
+  GRID_SETTING_CELL: { [QA_ATTRIBUTE_NAME]: 'GridSettingCell' },
 } as const;
 
 export function createQAAttributeSelector(key: keyof typeof QA_ATTRIBUTES) {

@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { styleConst } from '../../../modules/styles/styleConst';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 import checkIcon from '../../../static/image/checkIcon.svg';
 
 export type SettingCell = {
@@ -32,7 +33,12 @@ const CellSetting: React.FC<Props> = ({
     : handleInactiveCellClick;
 
   return (
-    <CellButton type="button" onClick={onClick} isActive={settingCell.isActive}>
+    <CellButton
+      type="button"
+      onClick={onClick}
+      isActive={settingCell.isActive}
+      {...QA_ATTRIBUTES.GRID_SETTING_CELL}
+    >
       {settingCell.isActive ? <Icon src={checkIcon} alt="checked" /> : null}
     </CellButton>
   );
