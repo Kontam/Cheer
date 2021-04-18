@@ -1,8 +1,12 @@
 import { kill } from 'process';
 import { Browser, Page } from 'puppeteer';
-import { createQAAttributeSelector } from '../../app/modules/testUtil/testAttributes';
+import appConst from '../../app/modules/constants/appConst';
+import {
+  createQAAttributeSelector,
+  QA_ATTRIBUTES,
+} from '../../app/modules/testUtil/testAttributes';
 import { setupElectron } from './modules/util/setupElectron';
-import {waitForNewWindowByTitle} from './modules/util/waitForNewWindowByTitle';
+import { waitForNewWindowByTitle } from './modules/util/waitForNewWindowByTitle';
 
 let electronBrowser: Browser;
 let electronPage: Page;
@@ -39,9 +43,31 @@ describe('App', () => {
       electronBrowser,
       'preference'
     );
-    await electronPage.waitFor(5000);
   });
-  test('gridモードに変更して全てのセルを有効化できる', async () => {
+  test('gridモードに変更', async () => {
     // TODO
+    await (
+      await preferencePage.waitForSelector(
+        createQAAttributeSelector('SCREEN_MODE_SELECT')
+      )
+    ).select(appConst.SCREEN_MODE_GRID);
+  });
+  test('全てのセルを有効化する', async () => {
+    const cells = await preferencePage.$$(
+      createQAAttributeSelector('GRID_SETTING_CELL')
+    );
+
+    const promisses = cells.map(async (cell) => {
+      const checkedIcon = await cell.$('[alt="checked"]');
+      if (!checkedIcon) return cell;
+      return null;
+    });
+    const innactiveCell = (await Promise.all(promisses)).filter(
+      (result) => result
+    );
+    // 有効化されていないセルを全てクリックする
+    await Promise.all(innactiveCell.map((cell) => cell.click()));
+
+    await electronPage.waitFor(5000);
   });
 });

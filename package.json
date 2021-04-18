@@ -38,7 +38,7 @@
     "storyshots": "npx jest --config=.storybook/jest.config.js",
     "build-storybook": "build-storybook",
     "puppeteer": "yarn electron ./puppeteer/dist/main.js",
-    "jest:puppeteer": "HEADLESS=false JEST_PUPPETEER_CONFIG=./puppeteer/jest-puppeteer.config.js jest --config ./puppeteer/jest.config.js"
+    "jest:puppeteer": "HEADLESS=false JEST_PUPPETEER_CONFIG=./puppeteer/jest-puppeteer.config.js jest --config ./puppeteer/jest.config.js --runInBand"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [],
