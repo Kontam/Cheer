@@ -3,10 +3,8 @@ import styled from 'styled-components';
 import { GridMessage, Member } from '../../../redux/modules/types';
 import Message from '../Message';
 import removeSlackExpression from '../../../modules/util/removeSlackExpression';
-
-export type PositionX = 'left' | 'right' | 'center';
-export type PositionY = 'top' | 'bottom' | 'center';
-export type Position = { positionX: PositionX; positionY: PositionY };
+import { Position, PositionX, PositionY } from '../../types';
+import { getQAAttributeByPosition } from '../../../modules/testUtil/testAttributes';
 
 type Props = {
   gridMessage?: GridMessage;
@@ -43,6 +41,7 @@ const GridCell: React.FC<Props> = ({
           iconUrl={member?.iconUrl}
           name={member?.name}
           color={gridMessage.color}
+          exAttributes={getQAAttributeByPosition(positionX, positionY)}
         />
       )}
     </Container>

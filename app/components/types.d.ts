@@ -42,3 +42,7 @@ export type FlatMenu = {
     HTMLButtonElement
   >;
 };
+
+export type PositionX = 'left' | 'right' | 'center';
+export type PositionY = 'top' | 'bottom' | 'center';
+export type Position = { positionX: PositionX; positionY: PositionY };

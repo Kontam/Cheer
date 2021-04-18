@@ -1,4 +1,4 @@
-import { PositionX, PositionY } from '../../components/molecules/GridCell';
+import { PositionX, PositionY } from '../../components/types';
 
 export const QA_ATTRIBUTE_NAME = 'data-qa' as const;
 
