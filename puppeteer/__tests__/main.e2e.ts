@@ -97,8 +97,6 @@ describe('App', () => {
   });
 
   test('Channel検索テキストボックスに文字列が入力すると該当チャンネルが表示される', async () => {
-    // TODO: Menuの検証？
-    // TODO: HorizonConveyorに明示的に変更する
     await electronPage.waitForSelector(
       createQAAttributeSelector('SEARCH_CHANNEL_INPUT')
     );

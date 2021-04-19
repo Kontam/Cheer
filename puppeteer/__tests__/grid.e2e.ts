@@ -3,6 +3,7 @@ import { Browser, Page } from 'puppeteer';
 import appConst from '../../app/modules/constants/appConst';
 import {
   createQAAttributeSelector,
+  getQASelectorByPosition,
   QA_ATTRIBUTES,
 } from '../../app/modules/testUtil/testAttributes';
 import { setupElectron } from './modules/util/setupElectron';
@@ -67,7 +68,38 @@ describe('App', () => {
     );
     // 有効化されていないセルを全てクリックする
     await Promise.all(innactiveCell.map((cell) => cell.click()));
+    await preferencePage.click(
+      createQAAttributeSelector('SCREEN_SETTING_SUBMIT')
+    );
+    console.log('b',innactiveCell.length);
+    expect(
+      await preferencePage.waitForSelector(
+        createQAAttributeSelector('SCREEN_SETTING_SAVED')
+      )
+    );
+  });
+  xtest('デバッグ用チャンネルでwatchを開始する', async () => {
+    await electronPage.waitForSelector(
+      createQAAttributeSelector('SEARCH_CHANNEL_INPUT')
+    );
+    await electronPage.type(
+      createQAAttributeSelector('SEARCH_CHANNEL_INPUT'),
+      'bots_debug'
+    );
+    await electronPage.click(createQAAttributeSelector('CHANNEL_LIST_ITEM'));
+    await electronPage.click(createQAAttributeSelector('WATCH_BUTTON'));
+    expect(
+      await electronPage.waitForSelector(
+        createQAAttributeSelector('WATCH_SCREEN')
+      )
+    ).toBeTruthy();
+  });
 
-    await electronPage.waitFor(5000);
+  xtest('メッセージが表示される', async () => {
+    expect(
+      await electronPage.waitForSelector(
+        getQASelectorByPosition('left', 'top')
+      )
+    ).toBeTruthy();
   });
 });

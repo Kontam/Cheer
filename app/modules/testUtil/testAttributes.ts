@@ -39,7 +39,7 @@ export function createQAAttributeSelector(key: keyof typeof QA_ATTRIBUTES) {
   return `[${QA_ATTRIBUTE_NAME}=${QA_ATTRIBUTES[key][QA_ATTRIBUTE_NAME]}]` as string;
 }
 
-export function getQAAttributeByPosition(x: PositionX, y: PositionY) {
+function getQAAttributeNameByPosition(x: PositionX, y: PositionY) {
   const prefix = 'GRID_MESSAGE';
   let body = '';
   switch (y) {
@@ -69,6 +69,17 @@ export function getQAAttributeByPosition(x: PositionX, y: PositionY) {
       body = `${body}_RIGHT`;
       break;
   }
-  const key = `${prefix}${body}` as keyof typeof QA_ATTRIBUTES;
+  const name = `${prefix}${body}` as keyof typeof QA_ATTRIBUTES;
+  return name;
+}
+
+export function getQAAttributeByPosition(x: PositionX, y: PositionY) {
+  const key = getQAAttributeNameByPosition(x, y);
   return QA_ATTRIBUTES[key];
+}
+
+export function getQASelectorByPosition(x: PositionX, y: PositionY) {
+  return `[${QA_ATTRIBUTE_NAME}=${
+    getQAAttributeByPosition(x, y)[QA_ATTRIBUTE_NAME]
+  }]`;
 }
