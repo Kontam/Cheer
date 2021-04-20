@@ -22,12 +22,11 @@ afterAll(async () => {
   electronPage.close();
   kill(pid);
 });
-
+jest.setTimeout(300000);
 // 網羅テストはmain.e2eで実施する
 // こちらはgridに特化したケースとする
-
 describe('App', () => {
-  beforeEach(async () => {
+  beforeAll(async () => {
     await electronPage.waitForSelector(createQAAttributeSelector('LOGIN'));
     await electronPage.click(createQAAttributeSelector('SLACK_AUTH_BUTTON'));
     await (
@@ -53,6 +52,7 @@ describe('App', () => {
       )
     ).select(appConst.SCREEN_MODE_GRID);
   });
+
   test('全てのセルを有効化する', async () => {
     const cells = await preferencePage.$$(
       createQAAttributeSelector('GRID_SETTING_CELL')
@@ -67,18 +67,24 @@ describe('App', () => {
       (result) => result
     );
     // 有効化されていないセルを全てクリックする
-    await Promise.all(innactiveCell.map((cell) => cell.click()));
+    const innactivePromisses = innactiveCell.map((cell) => cell.click());
+    await Promise.all(innactivePromisses);
+    const checked = await preferencePage.$$('[alt="checked"]');
+    expect(checked.length).toBe(9);
+  });
+
+  test('設定を保存できる', async () => {
     await preferencePage.click(
       createQAAttributeSelector('SCREEN_SETTING_SUBMIT')
     );
-    console.log('b',innactiveCell.length);
     expect(
       await preferencePage.waitForSelector(
         createQAAttributeSelector('SCREEN_SETTING_SAVED')
       )
     );
   });
-  xtest('デバッグ用チャンネルでwatchを開始する', async () => {
+
+  test('デバッグ用チャンネルでwatchを開始する', async () => {
     await electronPage.waitForSelector(
       createQAAttributeSelector('SEARCH_CHANNEL_INPUT')
     );
@@ -95,11 +101,13 @@ describe('App', () => {
     ).toBeTruthy();
   });
 
-  xtest('メッセージが表示される', async () => {
+  test('メッセージが表示される', async () => {
+    console.log(getQASelectorByPosition('left', 'top'));
     expect(
       await electronPage.waitForSelector(
         getQASelectorByPosition('left', 'top')
       )
     ).toBeTruthy();
+    // TODO: 不具合修正
   });
 });
