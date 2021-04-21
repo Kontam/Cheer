@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
 import MessageGridComponent from './MessageGrid';
@@ -28,21 +28,23 @@ const MessageGrid: React.FC = () => {
   const gridSetting = useSelector((state) => state.settings.screen.grid);
   const gridMessages = useSelector((state) => state.app.grid.gridMessages);
   const members = useSelector((state) => state.app.members);
+  const requestRef = useRef<number>();
+  const intervalsRef = useRef<number[]>();
   useEffect(() => {
     dispatch(initializeGridMessages(gridSetting.activeCell));
-    const requestIntervalId = setInterval(() => {
+    requestRef.current = setInterval(() => {
       dispatch(requestSlackMessages());
     }, 2000);
     // 一定間隔ごとに表示メッセージをキューから取り出す
-    const IntervalIds: number[] = [];
+    intervalsRef.current = [];
     gridSetting.activeCell.map((cellNum, index) => {
       return setTimeout(() => {
-        IntervalIds.push(setEnqueInterval(cellNum, dispatch));
+        intervalsRef.current!.push(setEnqueInterval(cellNum, dispatch));
       }, index * 1300);
     });
     return () => {
-      clearInterval(requestIntervalId);
-      IntervalIds.forEach((id) => clearInterval(id));
+      clearInterval(requestRef.current);
+      intervalsRef.current!.forEach((id) => clearInterval(id));
     };
   }, [gridSetting, dispatch]);
 
