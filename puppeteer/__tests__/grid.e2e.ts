@@ -4,7 +4,6 @@ import appConst from '../../app/modules/constants/appConst';
 import {
   createQAAttributeSelector,
   getQASelectorByPosition,
-  QA_ATTRIBUTES,
 } from '../../app/modules/testUtil/testAttributes';
 import { setupElectron } from './modules/util/setupElectron';
 import { waitForNewWindowByTitle } from './modules/util/waitForNewWindowByTitle';
@@ -22,7 +21,7 @@ afterAll(async () => {
   electronPage.close();
   kill(pid);
 });
-jest.setTimeout(300000);
+jest.setTimeout(10000);
 // 網羅テストはmain.e2eで実施する
 // こちらはgridに特化したケースとする
 describe('App', () => {
@@ -106,7 +105,7 @@ describe('App', () => {
       expect(
         await electronPage.waitForSelector(getQASelectorByPosition('left', 'top'))
       ).toBeTruthy();
-    });
+    }, 30000);
     test('メッセージが表示される 中央 上', async () => {
       expect(
         await electronPage.waitForSelector(
