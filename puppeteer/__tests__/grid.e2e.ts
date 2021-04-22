@@ -101,65 +101,67 @@ describe('App', () => {
     ).toBeTruthy();
   });
 
-  test('メッセージが表示される 左 上', async () => {
-    expect(
-      await electronPage.waitForSelector(getQASelectorByPosition('left', 'top'))
-    ).toBeTruthy();
-  });
-  test('メッセージが表示される 中央 上', async () => {
-    expect(
-      await electronPage.waitForSelector(
-        getQASelectorByPosition('center', 'top')
-      )
-    ).toBeTruthy();
-  });
-  test('メッセージが表示される 右 上', async () => {
-    expect(
-      await electronPage.waitForSelector(
-        getQASelectorByPosition('right', 'top')
-      )
-    ).toBeTruthy();
-  });
-  test('メッセージが表示される 左 中央', async () => {
-    expect(
-      await electronPage.waitForSelector(
-        getQASelectorByPosition('left', 'center')
-      )
-    ).toBeTruthy();
-  });
-  test('メッセージが表示される 中央　中央', async () => {
-    expect(
-      await electronPage.waitForSelector(
-        getQASelectorByPosition('center', 'center')
-      )
-    ).toBeTruthy();
-  });
-  test('メッセージが表示される 右 中央', async () => {
-    expect(
-      await electronPage.waitForSelector(
-        getQASelectorByPosition('right', 'center')
-      )
-    ).toBeTruthy();
-  });
-  test('メッセージが表示される 左 下', async () => {
-    expect(
-      await electronPage.waitForSelector(
-        getQASelectorByPosition('left', 'bottom')
-      )
-    ).toBeTruthy();
-  });
-  test('メッセージが表示される 中央 下', async () => {
-    expect(
-      await electronPage.waitForSelector(
-        getQASelectorByPosition('center', 'bottom')
-      )
-    ).toBeTruthy();
-  });
-  test('メッセージが表示される 右 下', async () => {
-    expect(
-      await electronPage.waitForSelector(
-        getQASelectorByPosition('right', 'bottom')
-      )
-    ).toBeTruthy();
-  });
+  describe('メッセージ表示確認', () => {
+    test('メッセージが表示される 左 上', async () => {
+      expect(
+        await electronPage.waitForSelector(getQASelectorByPosition('left', 'top'))
+      ).toBeTruthy();
+    });
+    test('メッセージが表示される 中央 上', async () => {
+      expect(
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('center', 'top')
+        )
+      ).toBeTruthy();
+    });
+    test('メッセージが表示される 右 上', async () => {
+      expect(
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('right', 'top')
+        )
+      ).toBeTruthy();
+    });
+    test('メッセージが表示される 左 中央', async () => {
+      expect(
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('left', 'center')
+        )
+      ).toBeTruthy();
+    });
+    test('メッセージが表示される 中央　中央', async () => {
+      expect(
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('center', 'center')
+        )
+      ).toBeTruthy();
+    });
+    test('メッセージが表示される 右 中央', async () => {
+      expect(
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('right', 'center')
+        )
+      ).toBeTruthy();
+    });
+    test('メッセージが表示される 左 下', async () => {
+      expect(
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('left', 'bottom')
+        )
+      ).toBeTruthy();
+    });
+    test('メッセージが表示される 中央 下', async () => {
+      expect(
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('center', 'bottom')
+        )
+      ).toBeTruthy();
+    });
+    test('メッセージが表示される 右 下', async () => {
+      expect(
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('right', 'bottom')
+        )
+      ).toBeTruthy();
+    });
+  })
 });
