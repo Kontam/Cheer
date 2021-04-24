@@ -5,6 +5,7 @@ import {
   createQAAttributeSelector,
   getQASelectorByPosition,
 } from '../../app/modules/testUtil/testAttributes';
+import { getGridSettingCells } from './modules/util/getGridCells';
 import { setupElectron } from './modules/util/setupElectron';
 import { waitForNewWindowByTitle } from './modules/util/waitForNewWindowByTitle';
 
@@ -53,18 +54,7 @@ describe('App', () => {
   });
 
   test('全てのセルを有効化する', async () => {
-    const cells = await preferencePage.$$(
-      createQAAttributeSelector('GRID_SETTING_CELL')
-    );
-
-    const promisses = cells.map(async (cell) => {
-      const checkedIcon = await cell.$('[alt="checked"]');
-      if (!checkedIcon) return cell;
-      return null;
-    });
-    const innactiveCell = (await Promise.all(promisses)).filter(
-      (result) => result
-    );
+    const innactiveCell = await getGridSettingCells(preferencePage, false);
     // 有効化されていないセルを全てクリックする
     const innactivePromisses = innactiveCell.map((cell) => cell.click());
     await Promise.all(innactivePromisses);
