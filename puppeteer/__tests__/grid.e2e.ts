@@ -44,56 +44,60 @@ describe('App', () => {
       'preference'
     );
   });
-  test('gridモードに変更', async () => {
-    // TODO
-    await (
-      await preferencePage.waitForSelector(
-        createQAAttributeSelector('SCREEN_MODE_SELECT')
-      )
-    ).select(appConst.SCREEN_MODE_GRID);
-  });
+  describe('メッセージ表示確認', () => {
+    test('gridモードに変更', async () => {
+      // TODO
+      await (
+        await preferencePage.waitForSelector(
+          createQAAttributeSelector('SCREEN_MODE_SELECT')
+        )
+      ).select(appConst.SCREEN_MODE_GRID);
+    });
 
-  test('全てのセルを有効化する', async () => {
-    const innactiveCell = await getGridSettingCells(preferencePage, false);
-    // 有効化されていないセルを全てクリックする
-    const innactivePromisses = innactiveCell.map((cell) => cell.click());
-    await Promise.all(innactivePromisses);
-    const checked = await preferencePage.$$('[alt="checked"]');
-    expect(checked.length).toBe(9);
-  });
+    test('全てのセルを有効化する', async () => {
+      const innactiveCell = await getGridSettingCells(preferencePage, false);
+      // 有効化されていないセルを全てクリックする
+      const innactivePromisses = innactiveCell.map((cell) => cell.click());
+      await Promise.all(innactivePromisses);
+      const checked = await preferencePage.$$('[alt="checked"]');
+      expect(checked.length).toBe(9);
+    });
 
-  test('設定を保存できる', async () => {
-    await preferencePage.click(
-      createQAAttributeSelector('SCREEN_SETTING_SUBMIT')
-    );
-    expect(
-      await preferencePage.waitForSelector(
-        createQAAttributeSelector('SCREEN_SETTING_SAVED')
-      )
-    );
-  });
+    test('設定を保存できる', async () => {
+      await preferencePage.click(
+        createQAAttributeSelector('SCREEN_SETTING_SUBMIT')
+      );
+      expect(
+        await preferencePage.waitForSelector(
+          createQAAttributeSelector('SCREEN_SETTING_SAVED')
+        )
+      );
+    });
 
-  test('デバッグ用チャンネルでwatchを開始する', async () => {
-    await electronPage.waitForSelector(
-      createQAAttributeSelector('SEARCH_CHANNEL_INPUT')
-    );
-    await electronPage.type(
-      createQAAttributeSelector('SEARCH_CHANNEL_INPUT'),
-      'bots_debug'
-    );
-    await electronPage.click(createQAAttributeSelector('CHANNEL_LIST_ITEM'));
-    await electronPage.click(createQAAttributeSelector('WATCH_BUTTON'));
-    expect(
+    test('デバッグ用チャンネルでwatchを開始する', async () => {
       await electronPage.waitForSelector(
-        createQAAttributeSelector('WATCH_SCREEN')
-      )
-    ).toBeTruthy();
+        createQAAttributeSelector('SEARCH_CHANNEL_INPUT')
+      );
+      await electronPage.type(
+        createQAAttributeSelector('SEARCH_CHANNEL_INPUT'),
+        'bots_debug'
+      );
+      await electronPage.click(createQAAttributeSelector('CHANNEL_LIST_ITEM'));
+      await electronPage.click(createQAAttributeSelector('WATCH_BUTTON'));
+      expect(
+        await electronPage.waitForSelector(
+          createQAAttributeSelector('WATCH_SCREEN')
+        )
+      ).toBeTruthy();
+    });
   });
 
   describe('メッセージ表示確認', () => {
     test('メッセージが表示される 左 上', async () => {
       expect(
-        await electronPage.waitForSelector(getQASelectorByPosition('left', 'top'))
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('left', 'top')
+        )
       ).toBeTruthy();
     }, 30000);
     test('メッセージが表示される 中央 上', async () => {
@@ -151,6 +155,20 @@ describe('App', () => {
           getQASelectorByPosition('right', 'bottom')
         )
       ).toBeTruthy();
+    });
+  });
+
+  describe('設定変更反映確認', () => {
+    test('グリッド設定を1セルを残して他を無効化する', async () => {
+      const activeCell = await getGridSettingCells(preferencePage, true);
+      const activePromisses = activeCell.map((cell, index) => {
+        if(index !== 0) return cell.click();
+        return new Promise((resolve => resolve(undefined)));
+      });
+      await Promise.all(activePromisses);
+      const checked = await preferencePage.$$('[alt="checked"]');
+      expect(checked.length).toBe(1);
+      await preferencePage.waitFor(5000);
     });
   })
 });
