@@ -1,4 +1,4 @@
-import { Position } from '../../molecules/GridCell';
+import { Position } from '../../types';
 
 type GridInfo = {
   cellNum: number;

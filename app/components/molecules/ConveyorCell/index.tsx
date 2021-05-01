@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { SlideMessage, Member } from '../../../redux/modules/types';
 import Message from '../Message';
 import removeSlackExpression from '../../../modules/util/removeSlackExpression';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 
 type Direction = 'left' | 'up';
 type Props = {
@@ -26,6 +27,7 @@ const ConveyorCell: React.FC<Props> = ({
           text={removeSlackExpression(slideMessage.message.text)}
           iconUrl={member?.iconUrl}
           name={member?.name}
+          exAttributes={QA_ATTRIBUTES.CONVEYOR_MESSAGE}
         />
       )}
     </Container>

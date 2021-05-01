@@ -10,9 +10,16 @@ type Props = {
   min?: number;
   max?: number;
   disabled?: boolean;
+  exAttributes?: any;
 };
 
-const NumberField: React.FC<Props> = ({ name, min, max, disabled }) => {
+const NumberField: React.FC<Props> = ({
+  name,
+  min,
+  max,
+  disabled,
+  exAttributes,
+}) => {
   return (
     <StyledField
       name={name}
@@ -21,6 +28,7 @@ const NumberField: React.FC<Props> = ({ name, min, max, disabled }) => {
       max={max}
       min={min}
       disabled={disabled}
+      {...exAttributes}
     />
   );
 };

@@ -8,6 +8,7 @@ type Props = {
   open: boolean;
   duration?: number;
   onClose: () => void;
+  exAttributes?: any;
 };
 
 const MessageSnackbar: React.FC<Props> = ({
@@ -15,10 +16,16 @@ const MessageSnackbar: React.FC<Props> = ({
   open,
   onClose,
   duration = 6000,
+  exAttributes,
 }) => {
   return (
     <Container>
-      <Snackbar open={open} autoHideDuration={duration} onClose={onClose}>
+      <Snackbar
+        {...exAttributes}
+        open={open}
+        autoHideDuration={duration}
+        onClose={onClose}
+      >
         <StyledAlert variant="filled" severity="success">
           {text}
         </StyledAlert>

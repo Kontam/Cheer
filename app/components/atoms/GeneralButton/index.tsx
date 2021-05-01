@@ -11,6 +11,7 @@ type Props = {
   full?: boolean;
   disabled?: boolean;
   buttonType?: ButtonType;
+  exAttributes?: any;
 };
 
 const GeneralButton: React.FC<Props> = ({
@@ -20,6 +21,7 @@ const GeneralButton: React.FC<Props> = ({
   disabled = false,
   full = false,
   buttonType = 'active',
+  exAttributes,
 }) => {
   return (
     <>
@@ -30,6 +32,7 @@ const GeneralButton: React.FC<Props> = ({
         full={full}
         disabled={disabled}
         buttonType={buttonType}
+        {...exAttributes}
       />
     </>
   );
@@ -64,7 +67,7 @@ export const Input = styled.input<{ full: boolean; buttonType: ButtonType }>`
       `;
     return `
       background-color: ${bgc};
-      color: ${color};    
+      color: ${color};
       ${disabled ? disabledStyle : enabledStyle}
       ${full ? `width: 100%;` : ``}
     `;

@@ -37,4 +37,12 @@ export type FlatMenu = {
   name: string;
   label: string;
   action: React.MouseEventHandler<HTMLButtonElement>;
+  itemProps?: React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >;
 };
+
+export type PositionX = 'left' | 'right' | 'center';
+export type PositionY = 'top' | 'bottom' | 'center';
+export type Position = { positionX: PositionX; positionY: PositionY };

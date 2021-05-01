@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { SlackChannelState } from '../../../redux/modules/types';
 import { styleConst } from '../../../modules/styles/styleConst';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 
 type Props = {
   slackChannel: SlackChannelState;
@@ -15,7 +16,12 @@ const SelectChannelItem: React.FC<Props> = ({
   selected = false,
 }) => {
   return (
-    <Button type="button" onClick={onClick} selected={selected}>
+    <Button
+      type="button"
+      onClick={onClick}
+      selected={selected}
+      {...QA_ATTRIBUTES.CHANNEL_LIST_ITEM}
+    >
       {`# ${slackChannel.name}`}
     </Button>
   );

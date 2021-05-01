@@ -1,4 +1,3 @@
-
 <div style="text-align:center">
   <img src=".cheer/img/cheer_main_image.png" width=500  />
 </div>
@@ -42,6 +41,14 @@ Those are not included in this repo, and those should be included in sectet.ts b
 | STORAGE_AUTH_TOKEN | storage name for electron-store (specific for secret value) |
 
 For development, you should get Slack tokens. (WIP)
+
+### Build environment variables
+
+|    Name    |                             Description                              |
+| :--------: | :------------------------------------------------------------------: |
+| DEBUG_MODE |        Using debug behaver (ex: using past messages on Slack)        |
+| DEBUG_PROD | For production build with inspect tools (ex: enable chrome devtools) |
+| BUILD_E2E  |   For e2e build. It includes minimum special behaver for e2e test    |
 
 ## Author
 

@@ -13,6 +13,7 @@ export const Active = () => (
       label={text('label', 'label')}
       type="submit"
       disabled={boolean('disabled', false)}
+      exAttributes={{ 'data-qa': 'test' }}
     />
   </div>
 );
@@ -24,6 +25,7 @@ export const Passive = () => (
       type="submit"
       disabled={boolean('disabled', false)}
       buttonType="passive"
+      exAttributes={{ 'data-qa': 'test' }}
     />
   </div>
 );
@@ -35,6 +37,7 @@ export const Full = () => (
       type="submit"
       disabled={boolean('disabled', false)}
       full
+      exAttributes={{ 'data-qa': 'test' }}
     />
   </div>
 );

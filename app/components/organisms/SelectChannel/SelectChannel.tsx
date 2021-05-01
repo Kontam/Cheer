@@ -17,6 +17,7 @@ import searchIcon from '../../../static/image/searchIcon.svg';
 import LoadingImage from '../../atoms/LoadingImage';
 import { TabInfo } from '../../types';
 import ErrorSnackbar from '../../atoms/ErrorSnackBar';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 
 type Props = {
   channelList: SlackChannelState[];
@@ -47,7 +48,7 @@ const SelectChannel: React.FC<Props> = ({
 }) => {
   const { searchString, selectedChannel, selectedTab } = selectChannelUI;
   return (
-    <Container>
+    <Container {...QA_ATTRIBUTES.CHANNEL_LIST}>
       <Wrapper>
         <InputContainer>
           <IconTextInput
@@ -55,6 +56,7 @@ const SelectChannel: React.FC<Props> = ({
             value={searchString}
             placeholder="Channel name"
             imgSrc={searchIcon}
+            inputProps={QA_ATTRIBUTES.SEARCH_CHANNEL_INPUT}
           />
         </InputContainer>
         <ListContainer>
@@ -89,6 +91,7 @@ const SelectChannel: React.FC<Props> = ({
             }
             full
             disabled={selectedChannel === ''}
+            exAttributes={QA_ATTRIBUTES.WATCH_BUTTON}
           />
         </ButtonContainer>
       </Wrapper>

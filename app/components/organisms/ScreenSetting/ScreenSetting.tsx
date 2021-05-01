@@ -5,6 +5,7 @@ import { styleConst } from '../../../modules/styles/styleConst';
 import { FormActiveCell, SystemMessage } from '../../../redux/modules/types';
 import { ScreenSettingFormData } from '../../types';
 import MessageSnackbar from '../../atoms/MessageSnackBar';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 
 export type Props = {
   handleSubmit: any;
@@ -42,6 +43,7 @@ const ScreenSetting: React.FC<Props> = ({
         open={systemMessage.showing}
         duration={2000}
         onClose={onHideMessage}
+        exAttributes={QA_ATTRIBUTES.SCREEN_SETTING_SAVED}
       />
     </Container>
   );

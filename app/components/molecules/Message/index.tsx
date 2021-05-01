@@ -10,6 +10,7 @@ type Props = {
   fadeIn?: boolean;
   name?: string;
   iconUrl?: string;
+  exAttributes?: any;
 };
 
 const Message: React.FC<Props> = ({
@@ -18,11 +19,12 @@ const Message: React.FC<Props> = ({
   name,
   fadeIn = false,
   color = 'random',
+  exAttributes,
 }) => {
   const containerColor = color === 'random' ? getRandomColor() : color;
   const formattedText = text.length > 65 ? `${text.slice(0, 65)}...` : text;
   return (
-    <Container>
+    <Container {...exAttributes}>
       <IconWrapper>
         <MessageIcon bgColor={containerColor} src={iconUrl} />
       </IconWrapper>

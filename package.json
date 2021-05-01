@@ -7,8 +7,11 @@
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
     "build-main": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.main.prod.babel.js --colors",
     "build-renderer": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.renderer.prod.babel.js --colors",
+    "build:e2e": "concurrently \"yarn build-main:e2e\" \"yarn build-renderer:e2e\"",
+    "build-main:e2e": "cross-env NODE_ENV=production DEBUG_PROD=true DEBUG_MODE=true E2E_BUILD=true webpack --config ./configs/webpack.config.main.prod.babel.js --colors",
+    "build-renderer:e2e": "cross-env NODE_ENV=production DEBUG_PROD=true DEBUG_MODE=true E2E_BUILD=true webpack --config ./configs/webpack.config.renderer.prod.babel.js --colors",
     "dev": "cross-env START_HOT=1 node -r @babel/register ./internals/scripts/CheckPortInUse.js && cross-env START_HOT=1 yarn start-renderer-dev",
-    "dev:debug": "cross-env START_HOT=1 node -r @babel/register ./internals/scripts/CheckPortInUse.js && cross-env DEBUG=true START_HOT=1 yarn start-renderer-dev",
+    "dev:debug": "cross-env START_HOT=1 node -r @babel/register ./internals/scripts/CheckPortInUse.js && cross-env DEBUG_MODE=true START_HOT=1 yarn start-renderer-dev",
     "electron-rebuild": "electron-rebuild --parallel --force --types prod,dev,optional --module-dir app",
     "ts": "tsc",
     "lint": "cross-env NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx",
@@ -35,8 +38,7 @@
     "storyshots": "npx jest --config=.storybook/jest.config.js",
     "build-storybook": "build-storybook",
     "puppeteer": "yarn electron ./puppeteer/dist/main.js",
-    "build:puppeteer": "yarn tsc --build ./puppeteer/tsconfig.json",
-    "jest:puppeteer": "HEADLESS=false JEST_PUPPETEER_CONFIG=./puppeteer/jest-puppeteer.config.js jest --config ./puppeteer/jest.config.js"
+    "jest:puppeteer": "HEADLESS=false JEST_PUPPETEER_CONFIG=./puppeteer/jest-puppeteer.config.js jest --config ./puppeteer/jest.config.js --runInBand"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [],

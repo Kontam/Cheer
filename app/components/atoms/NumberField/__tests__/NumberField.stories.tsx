@@ -5,6 +5,7 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import styled from 'styled-components';
 import NumberFieldComponent from '../index';
+import { QA_ATTRIBUTES } from '../../../../modules/testUtil/testAttributes';
 
 export default {
   title: 'atoms/NumberField',
@@ -16,6 +17,7 @@ const Component = () => (
       name="field"
       max={number('max', 10)}
       min={number('min', 0)}
+      exAttributes={QA_ATTRIBUTES.SCREEN_AMOUNT_FIELD}
     />
   </form>
 );
@@ -26,6 +28,7 @@ const DisabledComponent = () => (
       max={number('max', 10)}
       min={number('min', 0)}
       disabled
+      exAttributes={QA_ATTRIBUTES.SCREEN_AMOUNT_FIELD}
     />
   </form>
 );

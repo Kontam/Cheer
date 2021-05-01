@@ -3,6 +3,7 @@ import { openPreference } from '../../../redux/effects/app';
 import { FlatMenu } from '../../types';
 import { useCommonWindowHeader } from '../../organisms/WindowHeader/useCommonWindoHeader';
 import { logout } from '../../../redux/modules/sagas/loginSagas';
+import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
 
 export function useHomeHeaderMenu() {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ export function useHomeHeaderMenu() {
       name: 'preference',
       action: () => dispatch(openPreference()),
       label: 'preference',
+      itemProps: { ...QA_ATTRIBUTES.SCREEM_MENU_PREFERENCE } as any,
     },
     {
       name: 'logout',

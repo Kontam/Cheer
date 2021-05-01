@@ -89,7 +89,7 @@ export function* requestSlackChannelInfoFlow() {
       yield put(watchNewChannel()); // 直前と異なるchannelをwatchする時 or 初回
     }
     const firstMessageTS =
-      process.env[appConst.ENV_DEBUG] || process.env.NODE_ENV === 'test'
+      process.env.DEBUG_MODE || process.env.NODE_ENV === 'test'
         ? ''
         : getUnixTime(new Date()).toString();
     yield put(setLastRequestTime(firstMessageTS));
