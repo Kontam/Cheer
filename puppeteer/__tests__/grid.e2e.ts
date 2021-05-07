@@ -170,5 +170,16 @@ describe('App', () => {
       expect(checked.length).toBe(1);
       await preferencePage.waitFor(5000);
     });
+
+    test('設定を保存できる', async () => {
+      await preferencePage.click(
+        createQAAttributeSelector('SCREEN_SETTING_SUBMIT')
+      );
+      expect(
+        await preferencePage.waitForSelector(
+          createQAAttributeSelector('SCREEN_SETTING_SAVED')
+        )
+      );
+    });
   })
 });
