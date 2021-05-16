@@ -46,7 +46,6 @@ describe('App', () => {
   });
   describe('メッセージ表示確認', () => {
     test('gridモードに変更', async () => {
-      // TODO
       await (
         await preferencePage.waitForSelector(
           createQAAttributeSelector('SCREEN_MODE_SELECT')
@@ -99,7 +98,7 @@ describe('App', () => {
           getQASelectorByPosition('left', 'top')
         )
       ).toBeTruthy();
-    }, 30000);
+    });
     test('メッセージが表示される 中央 上', async () => {
       expect(
         await electronPage.waitForSelector(
@@ -180,6 +179,24 @@ describe('App', () => {
           createQAAttributeSelector('SCREEN_SETTING_SAVED')
         )
       );
+    });
+
+    test('メッセージが表示される 左 上', async () => {
+      expect(
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('left', 'top')
+        )
+      ).toBeTruthy();
+    });
+
+    test('メッセージが表示されない 中央 上', async () => {
+      expect.assertions(1);
+        await electronPage.waitForSelector(
+          getQASelectorByPosition('center', 'top'),
+          {timeout: 5000})
+        .catch(err => {
+          expect(err).toBeTruthy();
+        })
     });
   })
 });
