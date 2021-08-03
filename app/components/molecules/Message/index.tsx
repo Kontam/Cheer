@@ -79,9 +79,10 @@ const MessageBox = styled.div<{
 `;
 
 const Name = styled.p`
-  font-size: 12px;
+  font-size: 13px;
   width: 100%;
   overflow: hidden;
+  font-weight: bold;
   white-space: nowrap;
 `;
 
@@ -95,6 +96,7 @@ const Text = styled.p<{ length: number }>`
   height: 60px;
   display: flex;
   align-items: flex-start;
+  font-weight: bold;
   word-break: break-all;
   line-height: ${({ length }) => {
     if (length < 20) return '1.3';

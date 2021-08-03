@@ -1,6 +1,6 @@
 export const styleConst = {
   // label
-  messageLabel: '#444444',
+  messageLabel: '#000',
   basicLabel: '#6E6E6E',
   lightLabel: '#C7C7C7',
 
