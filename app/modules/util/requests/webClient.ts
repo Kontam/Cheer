@@ -200,6 +200,15 @@ export type SlackChannelListResponse = {
   };
 };
 
+export type SlackEmoji = {
+  [key: string]: string;
+};
+
+export type SlackEmojiListResponse = {
+  ok: boolean;
+  emoji: SlackEmoji;
+};
+
 class SlackWebClient {
   instance: WebClient | null;
 
