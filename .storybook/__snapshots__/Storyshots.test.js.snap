@@ -32,6 +32,7 @@ exports[`Storyshots atoms/CellSetting Active 1`] = `
   <div>
     <button
       className="c0"
+      data-qa="GridSettingCell"
       onClick={[Function]}
       type="button"
     >
@@ -77,6 +78,7 @@ exports[`Storyshots atoms/CellSetting Inactive 1`] = `
   <div>
     <button
       className="c0"
+      data-qa="GridSettingCell"
       onClick={[Function]}
       type="button"
     />
@@ -207,6 +209,7 @@ exports[`Storyshots atoms/GeneralButton Active 1`] = `
   <div>
     <input
       className="c0"
+      data-qa="test"
       disabled={false}
       type="submit"
       value="label"
@@ -236,6 +239,7 @@ exports[`Storyshots atoms/GeneralButton Full 1`] = `
   <div>
     <input
       className="c0"
+      data-qa="test"
       disabled={false}
       type="submit"
       value="label"
@@ -264,6 +268,7 @@ exports[`Storyshots atoms/GeneralButton Passive 1`] = `
   <div>
     <input
       className="c0"
+      data-qa="test"
       disabled={false}
       type="submit"
       value="label"
@@ -542,6 +547,7 @@ exports[`Storyshots atoms/NumberField Default 1`] = `
     <form>
       <input
         className="c1"
+        data-qa="ScreenAmountField"
         max={10}
         min={0}
         name="field"
@@ -588,6 +594,7 @@ exports[`Storyshots atoms/NumberField Disabled 1`] = `
     <form>
       <input
         className="c1"
+        data-qa="ScreenAmountField"
         disabled={true}
         max={10}
         min={0}
@@ -639,6 +646,7 @@ exports[`Storyshots atoms/SelectChannelItem Select Channel Item 1`] = `
   >
     <button
       className="c1"
+      data-qa="ChannelListItem"
       onClick={[Function]}
       selected={false}
       type="button"
@@ -674,6 +682,7 @@ exports[`Storyshots atoms/SelectField Select Field 1`] = `
     <form>
       <select
         className="c1"
+        data-qa="ScreenModeSelect"
         name="option"
         onBlur={[Function]}
         onChange={[Function]}
@@ -1044,11 +1053,13 @@ exports[`Storyshots molecules/ActiveCellSetting Default 1`] = `
     >
       <button
         className="c1"
+        data-qa="GridSettingCell"
         onClick={[Function]}
         type="button"
       />
       <button
         className="c2"
+        data-qa="GridSettingCell"
         onClick={[Function]}
         type="button"
       >
@@ -1060,6 +1071,7 @@ exports[`Storyshots molecules/ActiveCellSetting Default 1`] = `
       </button>
       <button
         className="c2"
+        data-qa="GridSettingCell"
         onClick={[Function]}
         type="button"
       >
@@ -1071,6 +1083,7 @@ exports[`Storyshots molecules/ActiveCellSetting Default 1`] = `
       </button>
       <button
         className="c2"
+        data-qa="GridSettingCell"
         onClick={[Function]}
         type="button"
       >
@@ -1082,6 +1095,7 @@ exports[`Storyshots molecules/ActiveCellSetting Default 1`] = `
       </button>
       <button
         className="c2"
+        data-qa="GridSettingCell"
         onClick={[Function]}
         type="button"
       >
@@ -1093,21 +1107,25 @@ exports[`Storyshots molecules/ActiveCellSetting Default 1`] = `
       </button>
       <button
         className="c1"
+        data-qa="GridSettingCell"
         onClick={[Function]}
         type="button"
       />
       <button
         className="c1"
+        data-qa="GridSettingCell"
         onClick={[Function]}
         type="button"
       />
       <button
         className="c1"
+        data-qa="GridSettingCell"
         onClick={[Function]}
         type="button"
       />
       <button
         className="c1"
+        data-qa="GridSettingCell"
         onClick={[Function]}
         type="button"
       />
@@ -1223,6 +1241,7 @@ exports[`Storyshots molecules/ConveyorCell Conveyor 1`] = `
   >
     <div
       className="c1"
+      data-qa="ConveyorMessage"
     >
       <div
         className="c2"
@@ -1335,6 +1354,7 @@ exports[`Storyshots molecules/ConveyorSettingFields Default 1`] = `
         >
           <input
             className="c4"
+            data-qa="ScreenAmountField"
             max={10}
             min={1}
             name="conveyorAmount"
@@ -1477,6 +1497,7 @@ exports[`Storyshots molecules/ConveyorSettingFields Overflow 1`] = `
         >
           <input
             className="c4"
+            data-qa="ScreenAmountField"
             max={10}
             min={1}
             name="conveyorAmount"
@@ -1569,12 +1590,14 @@ exports[`Storyshots molecules/FlatMenuList Default 1`] = `
 <div>
   <ul
     className="c0"
+    data-qa="ScreenMenu"
   >
     <li
       className=""
     >
       <button
         className="c1"
+        data-qa="ScreenMenuPreference"
         onClick={[Function]}
       >
         Item1
@@ -1696,6 +1719,7 @@ exports[`Storyshots molecules/GridCell Conveyor 1`] = `
   >
     <div
       className="c1"
+      data-qa="GridMessageTopLeft"
     >
       <div
         className="c2"
@@ -1876,11 +1900,13 @@ exports[`Storyshots molecules/GridSettingFields Default 1`] = `
           >
             <button
               className="c5"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c6"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -1892,6 +1918,7 @@ exports[`Storyshots molecules/GridSettingFields Default 1`] = `
             </button>
             <button
               className="c6"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -1903,6 +1930,7 @@ exports[`Storyshots molecules/GridSettingFields Default 1`] = `
             </button>
             <button
               className="c6"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -1914,6 +1942,7 @@ exports[`Storyshots molecules/GridSettingFields Default 1`] = `
             </button>
             <button
               className="c6"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -1925,21 +1954,25 @@ exports[`Storyshots molecules/GridSettingFields Default 1`] = `
             </button>
             <button
               className="c5"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c5"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c5"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c5"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
@@ -2143,11 +2176,13 @@ exports[`Storyshots molecules/GridSettingFields Overflow 1`] = `
           >
             <button
               className="c5"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c6"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -2159,6 +2194,7 @@ exports[`Storyshots molecules/GridSettingFields Overflow 1`] = `
             </button>
             <button
               className="c6"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -2170,6 +2206,7 @@ exports[`Storyshots molecules/GridSettingFields Overflow 1`] = `
             </button>
             <button
               className="c6"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -2181,6 +2218,7 @@ exports[`Storyshots molecules/GridSettingFields Overflow 1`] = `
             </button>
             <button
               className="c6"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -2192,21 +2230,25 @@ exports[`Storyshots molecules/GridSettingFields Overflow 1`] = `
             </button>
             <button
               className="c5"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c5"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c5"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c5"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
@@ -2880,6 +2922,7 @@ exports[`Storyshots molecules/Message Very Short Message 1`] = `
   >
     <div
       className="c1"
+      data-qa="ConveyorMessage"
     >
       <div
         className="c2"
@@ -3105,6 +3148,7 @@ exports[`Storyshots molecules/ScreenSettingForm Default 1`] = `
       >
         <select
           className="c4"
+          data-qa="ScreenModeSelect"
           name="mode"
           onBlur={[Function]}
           onChange={[Function]}
@@ -3142,11 +3186,13 @@ exports[`Storyshots molecules/ScreenSettingForm Default 1`] = `
           >
             <button
               className="c8"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c9"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -3158,6 +3204,7 @@ exports[`Storyshots molecules/ScreenSettingForm Default 1`] = `
             </button>
             <button
               className="c9"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -3169,6 +3216,7 @@ exports[`Storyshots molecules/ScreenSettingForm Default 1`] = `
             </button>
             <button
               className="c9"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -3180,6 +3228,7 @@ exports[`Storyshots molecules/ScreenSettingForm Default 1`] = `
             </button>
             <button
               className="c9"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             >
@@ -3191,21 +3240,25 @@ exports[`Storyshots molecules/ScreenSettingForm Default 1`] = `
             </button>
             <button
               className="c8"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c8"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c8"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
             <button
               className="c8"
+              data-qa="GridSettingCell"
               onClick={[Function]}
               type="button"
             />
@@ -3270,6 +3323,7 @@ exports[`Storyshots molecules/ScreenSettingForm Default 1`] = `
         >
           <input
             className="c16"
+            data-qa="ScreenSettingSubmit"
             disabled={false}
             type="submit"
             value="Save"
@@ -3344,6 +3398,7 @@ exports[`Storyshots molecules/SelectChannelList Select Channel List 1`] = `
         >
           <button
             className="c2"
+            data-qa="ChannelListItem"
             onClick={[Function]}
             selected={true}
             type="button"
@@ -3356,6 +3411,7 @@ exports[`Storyshots molecules/SelectChannelList Select Channel List 1`] = `
         >
           <button
             className="c3"
+            data-qa="ChannelListItem"
             onClick={[Function]}
             selected={false}
             type="button"
@@ -3605,6 +3661,7 @@ exports[`Storyshots organisms/HorizonConveyor Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="ConveyorMessage"
       >
         <div
           className="c3"
@@ -3646,6 +3703,7 @@ exports[`Storyshots organisms/HorizonConveyor Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="ConveyorMessage"
       >
         <div
           className="c3"
@@ -3687,6 +3745,7 @@ exports[`Storyshots organisms/HorizonConveyor Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="ConveyorMessage"
       >
         <div
           className="c3"
@@ -4154,6 +4213,7 @@ exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="GridMessageTopLeft"
       >
         <div
           className="c3"
@@ -4194,6 +4254,7 @@ exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="GridMessageTopCenter"
       >
         <div
           className="c3"
@@ -4234,6 +4295,7 @@ exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="GridMessageTopRight"
       >
         <div
           className="c3"
@@ -4274,6 +4336,7 @@ exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="GridMessageCenterLeft"
       >
         <div
           className="c3"
@@ -4314,6 +4377,7 @@ exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="GridMessageCenterCenter"
       >
         <div
           className="c3"
@@ -4354,6 +4418,7 @@ exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="GridMessageCenterRight"
       >
         <div
           className="c3"
@@ -4394,6 +4459,7 @@ exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="GridMessageBottomLeft"
       >
         <div
           className="c3"
@@ -4434,6 +4500,7 @@ exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="GridMessageBottomCenter"
       >
         <div
           className="c3"
@@ -4474,6 +4541,7 @@ exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
     >
       <div
         className="c2"
+        data-qa="GridMessageBottomRight"
       >
         <div
           className="c3"
@@ -4750,6 +4818,7 @@ exports[`Storyshots organisms/ScreenMenu Screen Menu 1`] = `
 <div>
   <ul
     className="c0"
+    data-qa="ScreenMenu"
   >
     <li
       className=""
@@ -4912,6 +4981,7 @@ exports[`Storyshots organisms/ScreenSetting Conveyor 1`] = `
         >
           <select
             className="c5"
+            data-qa="ScreenModeSelect"
             name="mode"
             onBlur={[Function]}
             onChange={[Function]}
@@ -4946,6 +5016,7 @@ exports[`Storyshots organisms/ScreenSetting Conveyor 1`] = `
           >
             <input
               className="c8"
+              data-qa="ScreenAmountField"
               max={10}
               min={1}
               name="conveyorAmount"
@@ -5017,6 +5088,7 @@ exports[`Storyshots organisms/ScreenSetting Conveyor 1`] = `
           >
             <input
               className="c14"
+              data-qa="ScreenSettingSubmit"
               disabled={false}
               type="submit"
               value="Save"
@@ -5244,6 +5316,7 @@ exports[`Storyshots organisms/ScreenSetting Grid 1`] = `
         >
           <select
             className="c5"
+            data-qa="ScreenModeSelect"
             name="mode"
             onBlur={[Function]}
             onChange={[Function]}
@@ -5281,11 +5354,13 @@ exports[`Storyshots organisms/ScreenSetting Grid 1`] = `
             >
               <button
                 className="c9"
+                data-qa="GridSettingCell"
                 onClick={[Function]}
                 type="button"
               />
               <button
                 className="c10"
+                data-qa="GridSettingCell"
                 onClick={[Function]}
                 type="button"
               >
@@ -5297,6 +5372,7 @@ exports[`Storyshots organisms/ScreenSetting Grid 1`] = `
               </button>
               <button
                 className="c10"
+                data-qa="GridSettingCell"
                 onClick={[Function]}
                 type="button"
               >
@@ -5308,6 +5384,7 @@ exports[`Storyshots organisms/ScreenSetting Grid 1`] = `
               </button>
               <button
                 className="c10"
+                data-qa="GridSettingCell"
                 onClick={[Function]}
                 type="button"
               >
@@ -5319,6 +5396,7 @@ exports[`Storyshots organisms/ScreenSetting Grid 1`] = `
               </button>
               <button
                 className="c10"
+                data-qa="GridSettingCell"
                 onClick={[Function]}
                 type="button"
               >
@@ -5330,21 +5408,25 @@ exports[`Storyshots organisms/ScreenSetting Grid 1`] = `
               </button>
               <button
                 className="c9"
+                data-qa="GridSettingCell"
                 onClick={[Function]}
                 type="button"
               />
               <button
                 className="c9"
+                data-qa="GridSettingCell"
                 onClick={[Function]}
                 type="button"
               />
               <button
                 className="c9"
+                data-qa="GridSettingCell"
                 onClick={[Function]}
                 type="button"
               />
               <button
                 className="c9"
+                data-qa="GridSettingCell"
                 onClick={[Function]}
                 type="button"
               />
@@ -5409,6 +5491,7 @@ exports[`Storyshots organisms/ScreenSetting Grid 1`] = `
           >
             <input
               className="c17"
+              data-qa="ScreenSettingSubmit"
               disabled={false}
               type="submit"
               value="Save"
@@ -5624,6 +5707,7 @@ exports[`Storyshots organisms/SelectChannel Select Channel 1`] = `
   >
     <div
       className="c1"
+      data-qa="ChannelList"
     >
       <div
         className="c2"
@@ -5647,6 +5731,7 @@ exports[`Storyshots organisms/SelectChannel Select Channel 1`] = `
               </div>
               <input
                 className="c6"
+                data-qa="SearchChannelInput"
                 onChange={[Function]}
                 placeholder="Channel name"
                 type="text"
@@ -5693,6 +5778,7 @@ exports[`Storyshots organisms/SelectChannel Select Channel 1`] = `
               >
                 <button
                   className="c12"
+                  data-qa="ChannelListItem"
                   onClick={[Function]}
                   selected={false}
                   type="button"
@@ -5705,6 +5791,7 @@ exports[`Storyshots organisms/SelectChannel Select Channel 1`] = `
               >
                 <button
                   className="c12"
+                  data-qa="ChannelListItem"
                   onClick={[Function]}
                   selected={false}
                   type="button"
@@ -5735,6 +5822,7 @@ exports[`Storyshots organisms/SelectChannel Select Channel 1`] = `
         >
           <input
             className="c17"
+            data-qa="WatchButton"
             disabled={true}
             onClick={[Function]}
             type="button"
@@ -5907,6 +5995,7 @@ exports[`Storyshots organisms/WindowHeader With Redux And Screen Menu 1`] = `
         >
           <button
             className="c4"
+            data-qa="OpenMenuIcon"
             onClick={[Function]}
           >
             <img
