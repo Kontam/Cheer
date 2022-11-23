@@ -37,7 +37,7 @@ const GridCell: React.FC<Props> = ({
       {gridMessage && gridMessage.message && (
         <Message
           fadeIn
-          text={removeSlackExpression(gridMessage.message.text)}
+          text={gridMessage.message.text}
           iconUrl={member?.iconUrl}
           name={member?.name}
           color={gridMessage.color}

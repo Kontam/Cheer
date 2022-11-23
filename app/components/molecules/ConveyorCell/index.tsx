@@ -24,7 +24,7 @@ const ConveyorCell: React.FC<Props> = ({
       {slideMessage && slideMessage.message && (
         <Message
           color={slideMessage.color}
-          text={removeSlackExpression(slideMessage.message.text)}
+          text={slideMessage.message.text}
           iconUrl={member?.iconUrl}
           name={member?.name}
           exAttributes={QA_ATTRIBUTES.CONVEYOR_MESSAGE}

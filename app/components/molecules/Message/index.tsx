@@ -3,6 +3,7 @@ import styled, { keyframes, css } from 'styled-components';
 import { getRandomColor } from '../../../modules/util/getRandomColor';
 import MessageIcon from '../../atoms/MessageIcon';
 import { styleConst } from '../../../modules/styles/styleConst';
+import { removeUnusedExpression } from '../../../modules/util/removeSlackExpression';
 
 type Props = {
   text: string;
@@ -22,7 +23,9 @@ const Message: React.FC<Props> = ({
   exAttributes,
 }) => {
   const containerColor = color === 'random' ? getRandomColor() : color;
-  const formattedText = text.length > 65 ? `${text.slice(0, 65)}...` : text;
+  const removedText = removeUnusedExpression(text);
+  const formattedText =
+    removedText.length > 65 ? `${text.slice(0, 65)}...` : removedText;
   return (
     <Container {...exAttributes}>
       <IconWrapper>
@@ -30,7 +33,10 @@ const Message: React.FC<Props> = ({
       </IconWrapper>
       <MessageBox color={containerColor} fadeIn={fadeIn}>
         <Name>{name}</Name>
-        <Text length={formattedText.length}>{formattedText}</Text>
+        <Text
+          length={formattedText.length}
+          dangerouslySetInnerHTML={{ __html: formattedText }}
+        ></Text>
       </MessageBox>
     </Container>
   );
