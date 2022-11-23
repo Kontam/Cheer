@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { memo } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { getRandomColor } from '../../../modules/util/getRandomColor';
@@ -5,28 +6,10 @@ import MessageIcon from '../../atoms/MessageIcon';
 import { styleConst } from '../../../modules/styles/styleConst';
 import { removeUnusedExpression } from '../../../modules/util/removeSlackExpression';
 import { getMessageLengthWithEmoji } from './getMessageLengthWithEmoji';
+import { MessageProps, useMessage } from './__tests__/useMessage';
 
-type Props = {
-  text: string;
-  color?: 'ramdom' | string;
-  fadeIn?: boolean;
-  name?: string;
-  iconUrl?: string;
-  exAttributes?: any;
-};
-
-const Message: React.FC<Props> = ({
-  text,
-  iconUrl,
-  name,
-  fadeIn = false,
-  color = 'random',
-  exAttributes,
-}) => {
-  const containerColor = color === 'random' ? getRandomColor() : color;
-  const removedText = removeUnusedExpression(text);
-  const messageLengthWithEmoji = getMessageLengthWithEmoji(removedText);
-  const formattedText = removedText;
+const Message: React.FC<MessageProps> = (props) => {
+  const { values } = useMessage(props);
   /*
   TODO: ...置換の必要性を検討してから再使用するか決める
   const formattedText =
@@ -35,15 +18,15 @@ const Message: React.FC<Props> = ({
       : removedText;
       */
   return (
-    <Container {...exAttributes}>
+    <Container {...props.exAttributes}>
       <IconWrapper>
-        <MessageIcon bgColor={containerColor} src={iconUrl} />
+        <MessageIcon bgColor={values.containerColor} src={props.iconUrl} />
       </IconWrapper>
-      <MessageBox color={containerColor} fadeIn={fadeIn}>
-        <Name>{name}</Name>
+      <MessageBox color={values.containerColor} fadeIn={!!props.fadeIn}>
+        <Name>{props.name}</Name>
         <Text
-          length={messageLengthWithEmoji}
-          dangerouslySetInnerHTML={{ __html: formattedText }}
+          length={values.messageLength}
+          dangerouslySetInnerHTML={{ __html: values.displayMessage }}
         />
       </MessageBox>
     </Container>
