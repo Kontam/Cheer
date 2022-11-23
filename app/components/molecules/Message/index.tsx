@@ -4,6 +4,7 @@ import { getRandomColor } from '../../../modules/util/getRandomColor';
 import MessageIcon from '../../atoms/MessageIcon';
 import { styleConst } from '../../../modules/styles/styleConst';
 import { removeUnusedExpression } from '../../../modules/util/removeSlackExpression';
+import { getMessageLengthWithEmoji } from './getMessageLengthWithEmoji';
 
 type Props = {
   text: string;
@@ -24,8 +25,15 @@ const Message: React.FC<Props> = ({
 }) => {
   const containerColor = color === 'random' ? getRandomColor() : color;
   const removedText = removeUnusedExpression(text);
+  const messageLengthWithEmoji = getMessageLengthWithEmoji(removedText);
+  const formattedText = removedText;
+  /*
+  TODO: ...置換の必要性を検討してから再使用するか決める
   const formattedText =
-    removedText.length > 65 ? `${text.slice(0, 65)}...` : removedText;
+    messageLengthWithEmoji > 65
+      ? `${removedText.slice(0, 65)}...`
+      : removedText;
+      */
   return (
     <Container {...exAttributes}>
       <IconWrapper>
@@ -34,9 +42,9 @@ const Message: React.FC<Props> = ({
       <MessageBox color={containerColor} fadeIn={fadeIn}>
         <Name>{name}</Name>
         <Text
-          length={formattedText.length}
+          length={messageLengthWithEmoji}
           dangerouslySetInnerHTML={{ __html: formattedText }}
-        ></Text>
+        />
       </MessageBox>
     </Container>
   );
