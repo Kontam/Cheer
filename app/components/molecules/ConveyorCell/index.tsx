@@ -2,8 +2,8 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { SlideMessage, Member } from '../../../redux/modules/types';
 import Message from '../Message';
-import removeSlackExpression from '../../../modules/util/removeSlackExpression';
 import { QA_ATTRIBUTES } from '../../../modules/testUtil/testAttributes';
+import { SlackEmoji } from '../../../modules/util/requests/webClient';
 
 type Direction = 'left' | 'up';
 type Props = {
@@ -11,6 +11,7 @@ type Props = {
   length: number;
   direction: Direction;
   member?: Member;
+  emoji: SlackEmoji;
 };
 
 const ConveyorCell: React.FC<Props> = ({
@@ -18,6 +19,7 @@ const ConveyorCell: React.FC<Props> = ({
   length,
   direction = 'left',
   member,
+  emoji,
 }) => {
   return (
     <Container length={length} direction={direction}>
@@ -28,6 +30,7 @@ const ConveyorCell: React.FC<Props> = ({
           iconUrl={member?.iconUrl}
           name={member?.name}
           exAttributes={QA_ATTRIBUTES.CONVEYOR_MESSAGE}
+          emoji={emoji}
         />
       )}
     </Container>

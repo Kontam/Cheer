@@ -1,12 +1,11 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { memo } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import { getRandomColor } from '../../../modules/util/getRandomColor';
 import MessageIcon from '../../atoms/MessageIcon';
 import { styleConst } from '../../../modules/styles/styleConst';
-import { removeUnusedExpression } from '../../../modules/util/removeSlackExpression';
-import { getMessageLengthWithEmoji } from './getMessageLengthWithEmoji';
 import { MessageProps, useMessage } from './__tests__/useMessage';
+import { divideMessageIntoEmoji } from './divideMessageIntoEmoji';
+import Emoji from '../../atoms/Emoji';
 
 const Message: React.FC<MessageProps> = (props) => {
   const { values } = useMessage(props);
@@ -24,10 +23,21 @@ const Message: React.FC<MessageProps> = (props) => {
       </IconWrapper>
       <MessageBox color={values.containerColor} fadeIn={!!props.fadeIn}>
         <Name>{props.name}</Name>
-        <Text
-          length={values.messageLength}
-          dangerouslySetInnerHTML={{ __html: values.displayMessage }}
-        />
+        <Text length={values.messageLength}>
+          {values.dividedMessageEmoji[0].map((message, index) => {
+            return (
+              <>
+                {message}
+                {values.dividedMessageEmoji[1][index] && (
+                  <Emoji
+                    emoji={props.emoji}
+                    emojiExpression={values.dividedMessageEmoji[1][index]}
+                  />
+                )}
+              </>
+            );
+          })}
+        </Text>
       </MessageBox>
     </Container>
   );

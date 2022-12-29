@@ -160,6 +160,7 @@ export type RootState = {
     slackMessages: SlackMessages;
     slackChannelInfo: SlackChannelInfo;
     slackChannelList: SlackChannelList;
+    slackEmojiList: SlackEmojiList;
     appUserInfo: AppUserInfo;
   };
   ui: {

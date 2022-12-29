@@ -1,5 +1,7 @@
 import { getRandomColor } from '../../../../modules/util/getRandomColor';
 import { removeUnusedExpression } from '../../../../modules/util/removeSlackExpression';
+import { SlackEmoji } from '../../../../modules/util/requests/webClient';
+import { divideMessageIntoEmoji } from '../divideMessageIntoEmoji';
 import { getMessageLengthWithEmoji } from '../getMessageLengthWithEmoji';
 
 export type MessageProps = {
@@ -9,6 +11,7 @@ export type MessageProps = {
   name?: string;
   iconUrl?: string;
   exAttributes?: any;
+  emoji: SlackEmoji;
 };
 
 export function useMessage(props: MessageProps) {
@@ -16,12 +19,12 @@ export function useMessage(props: MessageProps) {
     props.color === 'random' ? getRandomColor() : props.color || 'random';
   const removedText = removeUnusedExpression(props.text);
   const messageLengthWithEmoji = getMessageLengthWithEmoji(removedText);
-  const formattedText = removedText;
+  const dividedMessageEmoji = divideMessageIntoEmoji(removedText);
 
   return {
     values: {
       containerColor,
-      displayMessage: formattedText,
+      dividedMessageEmoji,
       messageLength: messageLengthWithEmoji,
     },
   };

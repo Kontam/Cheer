@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
+import { SlackEmoji } from '../../../modules/util/requests/webClient';
 import { GridMessages, Members } from '../../../redux/modules/types';
 import GridCell from '../../molecules/GridCell';
 import gridInfo from './gridInfo';
@@ -7,9 +8,10 @@ import gridInfo from './gridInfo';
 type Props = {
   gridMessages: GridMessages;
   members: Members;
+  emoji: SlackEmoji;
 };
 
-const MessageGrid: React.FC<Props> = ({ gridMessages, members }) => {
+const MessageGrid: React.FC<Props> = ({ gridMessages, members, emoji }) => {
   const getMember = useCallback(
     (id: string) => members.find((member) => id === member.id),
     [members]
@@ -29,6 +31,7 @@ const MessageGrid: React.FC<Props> = ({ gridMessages, members }) => {
             member={getMember(
               (gridMessage && gridMessage?.message?.user) || ''
             )}
+            emoji={emoji}
           />
         );
       })}

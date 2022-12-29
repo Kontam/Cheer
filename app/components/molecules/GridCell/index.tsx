@@ -5,10 +5,12 @@ import Message from '../Message';
 import removeSlackExpression from '../../../modules/util/removeSlackExpression';
 import { Position, PositionX, PositionY } from '../../types';
 import { getQAAttributeByPosition } from '../../../modules/testUtil/testAttributes';
+import { SlackEmoji } from '../../../modules/util/requests/webClient';
 
 type Props = {
   gridMessage?: GridMessage;
   member?: Member;
+  emoji: SlackEmoji;
 } & Position;
 
 function convertToFlexParam(param: PositionX | PositionY) {
@@ -31,12 +33,14 @@ const GridCell: React.FC<Props> = ({
   positionX = 'left',
   positionY = 'top',
   member,
+  emoji,
 }) => {
   return (
     <Container positionX={positionX} positionY={positionY}>
       {gridMessage && gridMessage.message && (
         <Message
           fadeIn
+          emoji={emoji}
           text={gridMessage.message.text}
           iconUrl={member?.iconUrl}
           name={member?.name}
