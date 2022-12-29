@@ -4,7 +4,6 @@ import styled, { keyframes, css } from 'styled-components';
 import MessageIcon from '../../atoms/MessageIcon';
 import { styleConst } from '../../../modules/styles/styleConst';
 import { MessageProps, useMessage } from './__tests__/useMessage';
-import { divideMessageIntoEmoji } from './divideMessageIntoEmoji';
 import Emoji from '../../atoms/Emoji';
 
 const Message: React.FC<MessageProps> = (props) => {
@@ -100,8 +99,6 @@ const Text = styled.p<{ length: number }>`
     return '5px';
   }};
   height: 60px;
-  display: flex;
-  align-items: flex-start;
   word-break: break-all;
   line-height: ${({ length }) => {
     if (length < 20) return '1.3';
@@ -115,6 +112,16 @@ const Text = styled.p<{ length: number }>`
     if (length < 45) return '14px';
     return '12px';
   }};
+  img {
+    vertical-align: text-top;
+    width: ${({ length }) => {
+      if (length === 1) return '48px';
+      if (length < 23) return '18px';
+      if (length < 27) return '16px';
+      if (length < 45) return '14px';
+      return '12px';
+    }};
+  }
 `;
 
 export default memo(Message);
