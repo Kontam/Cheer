@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { text, withKnobs } from '@storybook/addon-knobs';
 import EmojiComponent from '../index';
 
 export default {
@@ -10,6 +10,6 @@ export default {
 export const Component = () => (
   <EmojiComponent
     emoji={{ test: 'https://placehold.jp/150x150.png' }}
-    emojiExpression=":test:"
+    emojiExpression={text('emojiExpression', ':test:')}
   />
 );

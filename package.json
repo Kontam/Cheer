@@ -291,6 +291,7 @@
     "electron-log": "^4.2.4",
     "electron-store": "^6.0.1",
     "electron-updater": "^4.3.5",
+    "emoji-datasource": "^14.0.0",
     "history": "^4.10.1",
     "jest-puppeteer": "^4.4.0",
     "jest-styled-components": "^7.0.3",

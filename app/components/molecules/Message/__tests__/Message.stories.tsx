@@ -15,7 +15,6 @@ const emoji: SlackEmoji = {
   test: 'https://placehold.jp/150x150.png',
 };
 
-
 export const VeryShortMessage = () => (
   <Container>
     <MessageComponent
