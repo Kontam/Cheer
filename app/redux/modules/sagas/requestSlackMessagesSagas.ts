@@ -23,9 +23,10 @@ export const selectedChannelSelector = (state: RootState) =>
   state.ui.selectChannelUI.selectedChannel;
 
 export const REQUEST_SLACK_MESSAGES = 'REQUEST_SLACK_MESSAGES';
-export const requestSlackMessages = createAction<Partial<
-  ConversationsHistoryArguments
-> | void>(REQUEST_SLACK_MESSAGES);
+export const requestSlackMessages =
+  createAction<Partial<ConversationsHistoryArguments> | void>(
+    REQUEST_SLACK_MESSAGES
+  );
 
 // Slack APIにメッセージとユーザー情報をリクエストするフロー
 export function* requestSlackMessagesFlow(

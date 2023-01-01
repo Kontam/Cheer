@@ -25,9 +25,10 @@ const ActiveCellSetting: React.FC<Props> = ({
   onFormActiveCellClick,
   onFormInactiveCellClick,
 }) => {
-  const settingCells = useMemo(() => createSettingCells(activeCell), [
-    activeCell,
-  ]);
+  const settingCells = useMemo(
+    () => createSettingCells(activeCell),
+    [activeCell]
+  );
   return (
     <List>
       {settingCells.map((settingCell) => (

@@ -16,9 +16,8 @@ const WatchScreenMenu: React.FC<Props> = ({
   handleMouseLeave,
   handleMenuItemClick,
 }) => {
-  const { menus, handleMenuButtonClick, menuButtonRef } = useWatchScreenMenu(
-    handleMenuItemClick
-  );
+  const { menus, handleMenuButtonClick, menuButtonRef } =
+    useWatchScreenMenu(handleMenuItemClick);
   return (
     <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Button onClick={handleMenuButtonClick} ref={menuButtonRef}>

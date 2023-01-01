@@ -32,15 +32,17 @@ const SelectChannel: React.FC = () => {
     (channelId: string) => dispatch(selectChannel(channelId)),
     [dispatch]
   );
-  const handleStartWatch = useCallback(() => dispatch(startWatch()), [
-    dispatch,
-  ]);
-  const handleSearchStringChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(
-    (e) => {
-      dispatch(searchChannel(e.target.value));
-    },
+  const handleStartWatch = useCallback(
+    () => dispatch(startWatch()),
     [dispatch]
   );
+  const handleSearchStringChange: React.ChangeEventHandler<HTMLInputElement> =
+    useCallback(
+      (e) => {
+        dispatch(searchChannel(e.target.value));
+      },
+      [dispatch]
+    );
   const handleTabItemClick = useCallback(
     (name: SelectChannelTab) => {
       dispatch(selectTab(name));

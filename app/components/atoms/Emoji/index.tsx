@@ -19,7 +19,7 @@ const Emoji: React.FC<Props> = ({ emoji, emojiExpression }) => {
   return (
     <>
       {unicodeEmoji ? (
-        <div>{String.fromCodePoint(`0x${unicodeEmoji.unified}` as any)}</div>
+        <span>{String.fromCodePoint(`0x${unicodeEmoji.unified}` as any)}</span>
       ) : (
         <img src={src} alt={emojiExpression} />
       )}

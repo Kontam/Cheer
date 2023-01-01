@@ -53,7 +53,9 @@ export const useWatchScreenMenu = (
     document.removeEventListener('click', handleClickDocument);
     closeScreenMenu();
   };
-  const handleMenuButtonClick: React.MouseEventHandler<HTMLButtonElement> = () => {
+  const handleMenuButtonClick: React.MouseEventHandler<
+    HTMLButtonElement
+  > = () => {
     document.addEventListener('click', handleClickDocument);
     return isOpen ? handleCloseScreenMenu() : openScreenMenu();
   };

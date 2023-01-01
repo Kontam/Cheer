@@ -122,6 +122,12 @@ const Text = styled.p<{ length: number }>`
       return '12px';
     }};
   }
+  span {
+    font-size: ${({ length }) => {
+      if (length === 1) return '48px';
+      return 'inherit';
+    }};
+  }
 `;
 
 export default memo(Message);
