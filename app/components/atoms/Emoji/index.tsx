@@ -1,6 +1,7 @@
 import React from 'react';
 import emojiData from 'emoji-datasource';
 import { SlackEmoji } from '../../../modules/util/requests/webClient';
+import { getEmojiSrc } from './getEmojiSrc';
 
 type Props = {
   emoji: SlackEmoji;
@@ -14,14 +15,13 @@ const Emoji: React.FC<Props> = ({ emoji, emojiExpression }) => {
   const unicodeEmoji = (emojiData as EmojiDataSource).find(
     (emo) => emo.short_name === emojiName
   );
-  const src = emojiName ? emoji[emojiName] : '';
 
   return (
     <>
       {unicodeEmoji ? (
         <span>{String.fromCodePoint(`0x${unicodeEmoji.unified}` as any)}</span>
       ) : (
-        <img src={src} alt={emojiExpression} />
+        <img src={getEmojiSrc(emoji, emojiExpression)} alt={emojiExpression} />
       )}
     </>
   );
