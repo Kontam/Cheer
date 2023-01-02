@@ -112,19 +112,21 @@ const Text = styled.p<{ length: number }>`
     if (length < 45) return '14px';
     return '12px';
   }};
+  // Slack Emoji
   img {
     vertical-align: text-top;
     width: ${({ length }) => {
-      if (length === 1) return '48px';
+      if (length === 1) return '40px';
       if (length < 23) return '18px';
       if (length < 27) return '16px';
       if (length < 45) return '14px';
       return '12px';
     }};
   }
+  // Unicode絵文字
   span {
     font-size: ${({ length }) => {
-      if (length === 1) return '48px';
+      if (length === 1) return '40px';
       return 'inherit';
     }};
   }
