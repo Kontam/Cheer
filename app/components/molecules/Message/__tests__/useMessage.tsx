@@ -4,6 +4,7 @@ import { SlackEmoji } from '../../../../modules/util/requests/webClient';
 import { divideMessageIntoEmoji } from '../divideMessageIntoEmoji';
 import { getMessageLengthWithEmoji } from '../getMessageLengthWithEmoji';
 import { replaceSlackExpression } from '../replaceSlackExpression';
+import { sliceDividedMessageEmoji } from '../sliceDividedMessageEmoji';
 
 export type MessageProps = {
   text: string;
@@ -22,11 +23,15 @@ export function useMessage(props: MessageProps) {
   const replacedText = replaceSlackExpression(removedText);
   const messageLengthWithEmoji = getMessageLengthWithEmoji(replacedText);
   const dividedMessageEmoji = divideMessageIntoEmoji(replacedText);
+  const slicedDividedMessageEmoji = sliceDividedMessageEmoji(
+    dividedMessageEmoji,
+    65
+  );
 
   return {
     values: {
       containerColor,
-      dividedMessageEmoji,
+      slicedDividedMessageEmoji,
       messageLength: messageLengthWithEmoji,
     },
   };

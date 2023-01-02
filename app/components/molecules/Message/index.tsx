@@ -8,13 +8,6 @@ import Emoji from '../../atoms/Emoji';
 
 const Message: React.FC<MessageProps> = (props) => {
   const { values } = useMessage(props);
-  /*
-  TODO: ...置換の必要性を検討してから再使用するか決める
-  const formattedText =
-    messageLengthWithEmoji > 65
-      ? `${removedText.slice(0, 65)}...`
-      : removedText;
-      */
   return (
     <Container {...props.exAttributes}>
       <IconWrapper>
@@ -23,14 +16,14 @@ const Message: React.FC<MessageProps> = (props) => {
       <MessageBox color={values.containerColor} fadeIn={!!props.fadeIn}>
         <Name>{props.name}</Name>
         <Text length={values.messageLength}>
-          {values.dividedMessageEmoji[0].map((message, index) => {
+          {values.slicedDividedMessageEmoji[0].map((message, index) => {
             return (
               <>
                 {message}
-                {values.dividedMessageEmoji[1][index] && (
+                {values.slicedDividedMessageEmoji[1][index] && (
                   <Emoji
                     emoji={props.emoji}
-                    emojiExpression={values.dividedMessageEmoji[1][index]}
+                    emojiExpression={values.slicedDividedMessageEmoji[1][index]}
                   />
                 )}
               </>

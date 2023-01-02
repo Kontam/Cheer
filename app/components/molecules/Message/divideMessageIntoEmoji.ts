@@ -1,6 +1,6 @@
 export type DividedMessageEmoji = [string[], string[]];
 
-export function divideMessageIntoEmoji(message: string) {
+export function divideMessageIntoEmoji(message: string): DividedMessageEmoji {
   const slackEmojiRegex = /:[^:]*?:/g;
   const match = message.match(slackEmojiRegex);
   if (!match?.length) return [[message], []];
