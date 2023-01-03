@@ -40,15 +40,6 @@
     "puppeteer": "yarn electron ./puppeteer/dist/main.js",
     "jest:puppeteer": "HEADLESS=false JEST_PUPPETEER_CONFIG=./puppeteer/jest-puppeteer.config.js jest --config ./puppeteer/jest.config.js --runInBand"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [],
-    "{*.json,.{babelrc,eslintrc,prettierrc}}": [
-      "prettier --ignore-path .eslintignore --parser json --write"
-    ],
-    "*.{html,md,yml}": [
-      "prettier --ignore-path .eslintignore --single-quote --write"
-    ]
-  },
   "build": {
     "productName": "Cheer",
     "nsis": {
@@ -242,10 +233,8 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.1.1",
-    "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.1",
-    "lint-staged": "^10.4.2",
     "prettier": "^2.1.2",
     "react-test-renderer": "^16.14.0",
     "redux-logger": "^3.0.6",
@@ -345,10 +334,5 @@
     "extends": [
       "bliss"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
