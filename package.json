@@ -154,7 +154,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
-    "@babel/plugin-transform-react-inline-elements": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
     "@babel/preset-typescript": "^7.12.1",
@@ -188,7 +187,6 @@
     "babel-jest": "^26.6.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-dev-expression": "^0.2.2",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "chalk": "^4.1.0",
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.2",
