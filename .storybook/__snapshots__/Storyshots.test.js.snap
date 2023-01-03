@@ -135,6 +135,15 @@ exports[`Storyshots atoms/CheckboxField Checkbox Field 1`] = `
 </div>
 `;
 
+exports[`Storyshots atoms/Emoji Component 1`] = `
+<div>
+  <img
+    alt=":test:"
+    src="https://placehold.jp/150x150.png"
+  />
+</div>
+`;
+
 exports[`Storyshots atoms/FieldTitle Field Title 1`] = `
 .c1 {
   font-size: 2rem;
@@ -1203,17 +1212,18 @@ exports[`Storyshots molecules/ConveyorCell Conveyor 1`] = `
 .c8 {
   padding-top: 6px;
   height: 60px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   word-break: break-all;
   line-height: 1.3;
   font-size: 18px;
+}
+
+.c8 img {
+  vertical-align: text-top;
+  width: 18px;
+}
+
+.c8 span {
+  font-size: inherit;
 }
 
 .c0 {
@@ -1684,17 +1694,18 @@ exports[`Storyshots molecules/GridCell Conveyor 1`] = `
 .c8 {
   padding-top: 6px;
   height: 60px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   word-break: break-all;
   line-height: 1.3;
   font-size: 18px;
+}
+
+.c8 img {
+  vertical-align: text-top;
+  width: 18px;
+}
+
+.c8 span {
+  font-size: inherit;
 }
 
 .c0 {
@@ -2310,6 +2321,280 @@ exports[`Storyshots molecules/GridSettingFields Overflow 1`] = `
 </div>
 `;
 
+exports[`Storyshots molecules/Message Emoji Only 1`] = `
+.c4 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c5 {
+  width: 70px;
+  height: 70px;
+}
+
+.c3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #B9CEF3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c6 {
+  position: relative;
+  background-color: #B9CEF3;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c7 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c8 {
+  padding-top: 6px;
+  height: 60px;
+  word-break: break-all;
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+.c8 img {
+  vertical-align: text-top;
+  width: 40px;
+}
+
+.c8 span {
+  font-size: 40px;
+}
+
+.c0 {
+  padding: 100px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+      data-qa="ConveyorMessage"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          color="#B9CEF3"
+        >
+          <div
+            className="c4"
+          >
+            <img
+              className="c5"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+        color="#B9CEF3"
+      >
+        <p
+          className="c7"
+        >
+          Nekoyama Cat
+        </p>
+        <p
+          className="c8"
+        >
+          
+          <img
+            alt=":test:"
+            src="https://placehold.jp/150x150.png"
+          />
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots molecules/Message Emoji With Message 1`] = `
+.c4 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c5 {
+  width: 70px;
+  height: 70px;
+}
+
+.c3 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #B9CEF3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.c6 {
+  position: relative;
+  background-color: #B9CEF3;
+  border-radius: 3px;
+  color: #444444;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 2px 6px 6px rgba(0,0,0,0.3);
+  width: 270px;
+  padding: 5px 10px 5px 48px;
+}
+
+.c7 {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c8 {
+  padding-top: 6px;
+  height: 60px;
+  word-break: break-all;
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+.c8 img {
+  vertical-align: text-top;
+  width: 18px;
+}
+
+.c8 span {
+  font-size: inherit;
+}
+
+.c0 {
+  padding: 100px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+      data-qa="ConveyorMessage"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          color="#B9CEF3"
+        >
+          <div
+            className="c4"
+          >
+            <img
+              className="c5"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+        color="#B9CEF3"
+      >
+        <p
+          className="c7"
+        >
+          Nekoyama Cat
+        </p>
+        <p
+          className="c8"
+        >
+          絵文字を含んだ
+          <img
+            alt=":test:"
+            src="https://placehold.jp/150x150.png"
+          />
+          メッセージです
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots molecules/Message Long Message 1`] = `
 .c4 {
   width: 70px;
@@ -2379,17 +2664,18 @@ exports[`Storyshots molecules/Message Long Message 1`] = `
 .c8 {
   padding-top: 5px;
   height: 60px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   word-break: break-all;
   line-height: 1.1;
   font-size: 12px;
+}
+
+.c8 img {
+  vertical-align: text-top;
+  width: 12px;
+}
+
+.c8 span {
+  font-size: inherit;
 }
 
 .c0 {
@@ -2509,17 +2795,18 @@ exports[`Storyshots molecules/Message Midium Message 1`] = `
 .c8 {
   padding-top: 6px;
   height: 60px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   word-break: break-all;
   line-height: 1.2;
   font-size: 14px;
+}
+
+.c8 img {
+  vertical-align: text-top;
+  width: 14px;
+}
+
+.c8 span {
+  font-size: inherit;
 }
 
 .c0 {
@@ -2639,17 +2926,18 @@ exports[`Storyshots molecules/Message Short Message 1`] = `
 .c8 {
   padding-top: 8px;
   height: 60px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   word-break: break-all;
   line-height: 1.3;
   font-size: 18px;
+}
+
+.c8 img {
+  vertical-align: text-top;
+  width: 18px;
+}
+
+.c8 span {
+  font-size: inherit;
 }
 
 .c0 {
@@ -2769,17 +3057,18 @@ exports[`Storyshots molecules/Message Very Long Message 1`] = `
 .c8 {
   padding-top: 5px;
   height: 60px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   word-break: break-all;
   line-height: 1.1;
   font-size: 12px;
+}
+
+.c8 img {
+  vertical-align: text-top;
+  width: 12px;
+}
+
+.c8 span {
+  font-size: inherit;
 }
 
 .c0 {
@@ -2899,17 +3188,18 @@ exports[`Storyshots molecules/Message Very Short Message 1`] = `
 .c8 {
   padding-top: 6px;
   height: 60px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   word-break: break-all;
   line-height: 1.3;
   font-size: 18px;
+}
+
+.c8 img {
+  vertical-align: text-top;
+  width: 18px;
+}
+
+.c8 span {
+  font-size: inherit;
 }
 
 .c0 {
@@ -3587,17 +3877,18 @@ exports[`Storyshots organisms/HorizonConveyor Conveyor 1`] = `
 .c9 {
   padding-top: 6px;
   height: 60px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   word-break: break-all;
   line-height: 1.3;
   font-size: 18px;
+}
+
+.c9 img {
+  vertical-align: text-top;
+  width: 18px;
+}
+
+.c9 span {
+  font-size: inherit;
 }
 
 .c1 {
@@ -4039,17 +4330,18 @@ exports[`Storyshots organisms/MessageGrid Conveyor 1`] = `
 .c9 {
   padding-top: 6px;
   height: 60px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   word-break: break-all;
   line-height: 1.3;
   font-size: 18px;
+}
+
+.c9 img {
+  vertical-align: text-top;
+  width: 18px;
+}
+
+.c9 span {
+  font-size: inherit;
 }
 
 .c1 {

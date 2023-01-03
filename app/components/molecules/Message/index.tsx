@@ -18,7 +18,8 @@ const Message: React.FC<MessageProps> = (props) => {
         <Text length={values.messageLength}>
           {values.slicedDividedMessageEmoji[0].map((message, index) => {
             return (
-              <>
+              // eslint-disable-next-line react/no-array-index-key
+              <React.Fragment key={`message-${index}`}>
                 {message}
                 {values.slicedDividedMessageEmoji[1][index] && (
                   <Emoji
@@ -26,7 +27,7 @@ const Message: React.FC<MessageProps> = (props) => {
                     emojiExpression={values.slicedDividedMessageEmoji[1][index]}
                   />
                 )}
-              </>
+              </React.Fragment>
             );
           })}
         </Text>
