@@ -25,22 +25,7 @@ module.exports = (api) => {
       [require('@babel/preset-react'), { development }],
     ],
     plugins: [
-
-      // Stage 4
-      // 使用中 削除するとtsのoptional-chainingがコンパイルできない
       [require('@babel/plugin-proposal-optional-chaining'), { loose: false }],
-      [
-        require('@babel/plugin-proposal-nullish-coalescing-operator'),
-        { loose: false },
-      ],
-      require('@babel/plugin-proposal-numeric-separator'),
-
-      // Stage 3
-      require('@babel/plugin-syntax-dynamic-import'),
-      require('@babel/plugin-syntax-import-meta'),
-      [require('@babel/plugin-proposal-class-properties'), { loose: true }],
-      require('@babel/plugin-proposal-json-strings'),
-
       ...(development ? developmentPlugins : productionPlugins),
     ],
   };
