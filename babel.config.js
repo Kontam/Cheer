@@ -26,20 +26,14 @@ module.exports = (api) => {
     ],
     plugins: [
 
-      // Stage 1
+      // Stage 4
       // 使用中 削除するとtsのoptional-chainingがコンパイルできない
       [require('@babel/plugin-proposal-optional-chaining'), { loose: false }],
       [
         require('@babel/plugin-proposal-nullish-coalescing-operator'),
         { loose: false },
       ],
-
-      // Stage 2
-      [require('@babel/plugin-proposal-decorators'), { legacy: true }],
-      require('@babel/plugin-proposal-function-sent'),
-      require('@babel/plugin-proposal-export-namespace-from'),
       require('@babel/plugin-proposal-numeric-separator'),
-      require('@babel/plugin-proposal-throw-expressions'),
 
       // Stage 3
       require('@babel/plugin-syntax-dynamic-import'),
