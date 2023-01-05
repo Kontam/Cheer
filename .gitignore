@@ -47,4 +47,6 @@ npm-debug.log.*
 *.sass.d.ts
 *.scss.d.ts
 *.swp
+secret_memo.md
+.env
 
