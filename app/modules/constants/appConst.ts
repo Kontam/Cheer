@@ -24,7 +24,12 @@ const appConst = {
 
   // Slack認証
   SLACK_AUTH_URL: 'https://slack.com/oauth/v2/authorize',
-  SLACK_SCOPE: ['users:read', 'channels:read', 'users.profile:read'],
+  SLACK_SCOPE: [
+    'users:read',
+    'channels:read',
+    'users.profile:read',
+    'emoji:read',
+  ],
   SLACK_BOT_SCOPE: ['channels:history', 'chat:write'],
 
   // Slack情報フォーム
