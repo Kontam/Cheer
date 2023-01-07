@@ -25,8 +25,13 @@ const member: Member = {
     'https://avatars.slack-edge.com/2020-05-23/1165733145520_4dd3b24876a33b761675_192.jpg',
 };
 
+const emoji = {
+  test: 'https://placehold.jp/150x150.png',
+};
+
 export const Conveyor = () => (
   <GridCellComponent
+    emoji={emoji}
     gridMessage={gridMessage}
     member={member}
     positionX="left"

@@ -35,6 +35,14 @@ const members: Members = [
   },
 ];
 
+const emoji = {
+  test: 'https://placehold.jp/150x150.png',
+};
+
 export const Conveyor = () => (
-  <MessageGridComponent gridMessages={gridMessages} members={members} />
+  <MessageGridComponent
+    gridMessages={gridMessages}
+    members={members}
+    emoji={emoji}
+  />
 );

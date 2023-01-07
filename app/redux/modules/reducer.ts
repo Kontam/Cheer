@@ -21,6 +21,7 @@ import slideMessages from './app/slideMessages';
 import members from './app/members';
 import alert from './common/alert';
 import systemMessage from './common/systemMessage';
+import slackEmojiList from './api/slackEmojiList';
 
 // 設定画面と共有になる部分
 export const settingsReducers = combineReducers({
@@ -38,6 +39,7 @@ export default function createRootReducer(history: History) {
     }),
     api: combineReducers({
       slackMessages,
+      slackEmojiList,
       slackChannelInfo,
       slackChannelList,
       appUserInfo,

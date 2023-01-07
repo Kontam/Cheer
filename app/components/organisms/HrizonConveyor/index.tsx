@@ -12,6 +12,7 @@ const HorizonConveyor: React.FC = () => {
     (state) => state.settings.screen.horizonConveyor
   );
   const members = useSelector((state) => state.app.members);
+  const emoji = useSelector((state) => state.api.slackEmojiList.emoji);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,6 +34,7 @@ const HorizonConveyor: React.FC = () => {
       slideMessages={slideMessages}
       setting={settingHorizonConveyor}
       members={members}
+      emoji={emoji}
     />
   );
 };

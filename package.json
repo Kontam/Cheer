@@ -1,7 +1,7 @@
 {
   "name": "Cheer",
   "productName": "Cheer",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Slack App for showing messages on your screen.",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -286,10 +286,12 @@
     "core-js": "^3.6.5",
     "date-fns": "^2.16.1",
     "devtron": "^1.4.0",
+    "dotenv": "^16.0.3",
     "electron-debug": "^3.1.0",
     "electron-log": "^4.2.4",
     "electron-store": "^6.0.1",
     "electron-updater": "^4.3.5",
+    "emoji-datasource": "^14.0.0",
     "history": "^4.10.1",
     "jest-puppeteer": "^4.4.0",
     "jest-styled-components": "^7.0.3",

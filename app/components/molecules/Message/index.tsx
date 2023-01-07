@@ -1,36 +1,36 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { memo } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import { getRandomColor } from '../../../modules/util/getRandomColor';
 import MessageIcon from '../../atoms/MessageIcon';
 import { styleConst } from '../../../modules/styles/styleConst';
+import { MessageProps, useMessage } from './__tests__/useMessage';
+import Emoji from '../../atoms/Emoji';
 
-type Props = {
-  text: string;
-  color?: 'ramdom' | string;
-  fadeIn?: boolean;
-  name?: string;
-  iconUrl?: string;
-  exAttributes?: any;
-};
-
-const Message: React.FC<Props> = ({
-  text,
-  iconUrl,
-  name,
-  fadeIn = false,
-  color = 'random',
-  exAttributes,
-}) => {
-  const containerColor = color === 'random' ? getRandomColor() : color;
-  const formattedText = text.length > 65 ? `${text.slice(0, 65)}...` : text;
+const Message: React.FC<MessageProps> = (props) => {
+  const { values } = useMessage(props);
   return (
-    <Container {...exAttributes}>
+    <Container {...props.exAttributes}>
       <IconWrapper>
-        <MessageIcon bgColor={containerColor} src={iconUrl} />
+        <MessageIcon bgColor={values.containerColor} src={props.iconUrl} />
       </IconWrapper>
-      <MessageBox color={containerColor} fadeIn={fadeIn}>
-        <Name>{name}</Name>
-        <Text length={formattedText.length}>{formattedText}</Text>
+      <MessageBox color={values.containerColor} fadeIn={!!props.fadeIn}>
+        <Name>{props.name}</Name>
+        <Text length={values.messageLength}>
+          {values.slicedDividedMessageEmoji[0].map((message, index) => {
+            return (
+              // eslint-disable-next-line react/no-array-index-key
+              <React.Fragment key={`message-${index}`}>
+                {message}
+                {values.slicedDividedMessageEmoji[1][index] && (
+                  <Emoji
+                    emoji={props.emoji}
+                    emojiExpression={values.slicedDividedMessageEmoji[1][index]}
+                  />
+                )}
+              </React.Fragment>
+            );
+          })}
+        </Text>
       </MessageBox>
     </Container>
   );
@@ -93,8 +93,6 @@ const Text = styled.p<{ length: number }>`
     return '5px';
   }};
   height: 60px;
-  display: flex;
-  align-items: flex-start;
   word-break: break-all;
   line-height: ${({ length }) => {
     if (length < 20) return '1.3';
@@ -108,6 +106,24 @@ const Text = styled.p<{ length: number }>`
     if (length < 45) return '14px';
     return '12px';
   }};
+  // Slack Emoji
+  img {
+    vertical-align: text-top;
+    width: ${({ length }) => {
+      if (length === 1) return '40px';
+      if (length < 23) return '18px';
+      if (length < 27) return '16px';
+      if (length < 45) return '14px';
+      return '12px';
+    }};
+  }
+  // Unicode絵文字
+  span {
+    font-size: ${({ length }) => {
+      if (length === 1) return '40px';
+      return 'inherit';
+    }};
+  }
 `;
 
 export default memo(Message);

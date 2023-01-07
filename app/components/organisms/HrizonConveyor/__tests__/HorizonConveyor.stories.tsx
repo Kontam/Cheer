@@ -43,8 +43,13 @@ const conveyorSetting: HorizonConveyor = {
   queueLimit: 3,
 };
 
+const emoji = {
+  test: 'https://placehold.jp/150x150.png',
+};
+
 export const Conveyor = () => (
   <HorizonConveyorComponent
+    emoji={emoji}
     setting={conveyorSetting}
     slideMessages={slideMessages}
     members={members}

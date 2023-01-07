@@ -28,6 +28,7 @@ const MessageGrid: React.FC = () => {
   const gridSetting = useSelector((state) => state.settings.screen.grid);
   const gridMessages = useSelector((state) => state.app.grid.gridMessages);
   const members = useSelector((state) => state.app.members);
+  const emoji = useSelector((state) => state.api.slackEmojiList.emoji);
   const requestRef = useRef<number>();
   const intervalsRef = useRef<number[]>();
   useEffect(() => {
@@ -48,7 +49,13 @@ const MessageGrid: React.FC = () => {
     };
   }, [gridSetting, dispatch]);
 
-  return <MessageGridComponent gridMessages={gridMessages} members={members} />;
+  return (
+    <MessageGridComponent
+      gridMessages={gridMessages}
+      members={members}
+      emoji={emoji}
+    />
+  );
 };
 
 export default MessageGrid;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SlackEmoji } from '../../../modules/util/requests/webClient';
 import {
   SlideMessages,
   HorizonConveyor,
@@ -11,12 +12,14 @@ type Props = {
   slideMessages: SlideMessages;
   setting: HorizonConveyor;
   members: Members;
+  emoji: SlackEmoji;
 };
 
 const HrizonConveyor: React.FC<Props> = ({
   slideMessages,
   setting,
   members,
+  emoji,
 }) => {
   const { amount } = setting;
   return (
@@ -33,6 +36,7 @@ const HrizonConveyor: React.FC<Props> = ({
           slideMessage={message}
           length={amount}
           member={members.find((member) => member.id === message.message.user)}
+          emoji={emoji}
         />
       ))}
     </Container>

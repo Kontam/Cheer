@@ -22,6 +22,7 @@ import {
   channelListRequestFail,
   channelListRequestSuccess,
 } from '../api/slackChannelList';
+import { requestEmojiListFlow } from '../api/slackEmojiList';
 
 import { TokenInfo } from '../types';
 import {
@@ -61,6 +62,7 @@ export function* loginSaga() {
     const web = getWebClientInstance(payload.token);
     try {
       yield call(requestChannelListFlow, web);
+      yield call(requestEmojiListFlow, web);
       yield put(requestAppUserInfo());
       const user: UserProfileGetResponse = yield call(web.users.profile.get);
       yield put(requestAppUserInfoSuccess(user));
