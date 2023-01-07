@@ -29,8 +29,8 @@ const MessageGrid: React.FC = () => {
   const gridMessages = useSelector((state) => state.app.grid.gridMessages);
   const members = useSelector((state) => state.app.members);
   const emoji = useSelector((state) => state.api.slackEmojiList.emoji);
-  const requestRef = useRef<number>();
-  const intervalsRef = useRef<number[]>();
+  const requestRef = useRef<NodeJS.Timeout>();
+  const intervalsRef = useRef<NodeJS.Timeout[]>();
   useEffect(() => {
     dispatch(initializeGridMessages(gridSetting.activeCell));
     requestRef.current = setInterval(() => {
