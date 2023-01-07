@@ -1,4 +1,4 @@
-import { UserMessage } from '../../modules/util/requests/webClient';
+import { SlackEmoji, UserMessage } from '../../modules/util/requests/webClient';
 import appConst from '../../modules/constants/appConst';
 
 declare module 'react-redux' {
@@ -57,6 +57,10 @@ export type SlackChannelState = {
 
 export type SlackChannelList = {
   channels: SlackChannelState[];
+} & APIState;
+
+export type SlackEmojiList = {
+  emoji: SlackEmoji;
 } & APIState;
 
 export type AppUserInfo = {
@@ -156,6 +160,7 @@ export type RootState = {
     slackMessages: SlackMessages;
     slackChannelInfo: SlackChannelInfo;
     slackChannelList: SlackChannelList;
+    slackEmojiList: SlackEmojiList;
     appUserInfo: AppUserInfo;
   };
   ui: {

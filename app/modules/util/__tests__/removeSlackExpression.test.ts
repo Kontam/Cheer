@@ -2,7 +2,6 @@ import assert from 'power-assert';
 import removeSlackExpression, {
   removeMention,
   removeInlineCode,
-  removeEmojiCode,
 } from '../removeSlackExpression';
 
 const mention = '<@ABCDE3F3F>';
@@ -34,32 +33,6 @@ describe('コードブロック削除関数のテスト', () => {
     const body = `こんにちは`;
     const text = `\`${body}\`\`${body}\``;
     assert.equal(removeInlineCode(text), body + body);
-  });
-});
-
-describe('絵文字が含まれたテキストが渡された時、絵文字を消去する', () => {
-  test('絵文字が１つ含まれたテキストが渡された時、絵文字コードを消去した文字列を返す', () => {
-    const body = `こんにちは`;
-    const text = `${body}:sunny:`;
-    assert.equal(removeEmojiCode(text), body);
-  });
-
-  test('絵文字が２つ含まれたテキストが渡された時、全ての絵文字を消去した文字列を返す', () => {
-    const body = `こんにちは`;
-    const text = `${body}:sunny::no_good:`;
-    assert.equal(removeEmojiCode(text), body);
-  });
-
-  test('::の間にスペースが入っている文字列は絵文字ではないので消去しない', () => {
-    const body = `こんにちは`;
-    const text = `${body}:sunny day:`;
-    assert.equal(removeEmojiCode(text), text);
-  });
-
-  test('::の間に改行が入っている文字列は絵文字ではないので消去しない', () => {
-    const body = `こんにちは`;
-    const text = `${body}:sunny\nday:`;
-    assert.equal(removeEmojiCode(text), text);
   });
 });
 

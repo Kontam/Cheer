@@ -5,9 +5,8 @@ import appConst from '../../../modules/constants/appConst';
 import { SettingsState } from '../../modules/types';
 
 export const AUTOFILL_PREFERENCE = 'AUTOFILL_PREFERENCE' as const;
-export const autofillPreference = createAction<SettingsState>(
-  AUTOFILL_PREFERENCE
-);
+export const autofillPreference =
+  createAction<SettingsState>(AUTOFILL_PREFERENCE);
 
 // 設定内容stateを受け取り、formの値を埋める
 function* autofillPreferenceFlow({ payload }: Action<SettingsState>) {

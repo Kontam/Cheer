@@ -6,9 +6,8 @@ import appConst from '../../../modules/constants/appConst';
 
 export const WRITE_AUTH_TOKEN = 'WRITE_AUTH_TOKEN' as const;
 
-export const writeAuthTokenToStorage = createAction<TokenInfo>(
-  WRITE_AUTH_TOKEN
-);
+export const writeAuthTokenToStorage =
+  createAction<TokenInfo>(WRITE_AUTH_TOKEN);
 
 /**
  * storageにトークンを書き出す

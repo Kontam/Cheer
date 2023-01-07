@@ -61,7 +61,7 @@ describe('reducerのテスト', () => {
   ];
 
   test('apiからの取得したメッセージリストがユーザーからのメッセージのみにフィルタされる', () => {
-    const expected: any = [mockMessages[2], mockMessages[4]];
+    const expected: any = [mockMessages[2], mockMessages[4], mockMessages[5]];
     assert.deepEqual(filterSlackMessages(mockMessages), expected);
   });
 });

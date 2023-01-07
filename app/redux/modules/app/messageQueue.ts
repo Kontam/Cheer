@@ -9,9 +9,8 @@ export const ENQUEUE_MESSAGES = 'ENQUEUE_MESSAGES';
 export const DEQUEUE_MESSAGES = 'DEQUEUE_MESSAGES';
 export const WATCH_NEW_CHANNEL = 'WATCH_NEW_CHANNEL';
 
-export const enqueueMessageQueue = createAction<UserMessage[]>(
-  ENQUEUE_MESSAGES
-);
+export const enqueueMessageQueue =
+  createAction<UserMessage[]>(ENQUEUE_MESSAGES);
 export const dequeueMessageQueue = createAction<number>(DEQUEUE_MESSAGES);
 export const watchNewChannel = createAction(WATCH_NEW_CHANNEL);
 

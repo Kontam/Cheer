@@ -27,6 +27,11 @@ import {
 } from '../../api/appUserInfo';
 import { mockSlackChannelListResponse } from './fixture/slackChannelList.fixture';
 import { mockUserProfileGetResponse } from './fixture/userProfileGet.fixture';
+import {
+  emojiListRequest,
+  emojiListRequestSuccess,
+} from '../../api/slackEmojiList';
+import { mockEmojiListResponse } from './fixture/emojiList.fixture';
 
 const listParams = { limit: 1000, cursor: '' };
 const mockToken: TokenInfo = { token: 'mockToken', botToken: 'mockBotToken' };
@@ -41,6 +46,7 @@ describe('ログイン/ログアウトフローの確認 正常系', () => {
           matchers.call.fn(web.conversations.list),
           mockSlackChannelListResponse,
         ],
+        [matchers.call.fn(web.emoji.list), mockEmojiListResponse],
         [matchers.call.fn(web.users.profile.get), mockUserProfileGetResponse],
       ])
       .withReducer(createRootReducer({} as any));
@@ -52,6 +58,8 @@ describe('ログイン/ログアウトフローの確認 正常系', () => {
       '- stateをLoadingに更新\n' +
       '- Slack APIにチャンネルリストをリクエストしてtokenの正当性を確認\n' +
       '- APIからの返却値をそのままreducerに渡してチャンネルリストを保存\n' +
+      '- Slack APIにEmojiリストをリクエスト\n' +
+      '- Emojiリストをreducerに渡して保存\n' +
       '- Slack APIにアプリ利用ユーザー情報をリクエスト\n' +
       '- アプリ利用ユーザーのAPIレスポンスをそのままSucessに渡す\n' +
       '- tokenをelectoron-storeで保存\n' +
@@ -64,6 +72,9 @@ describe('ログイン/ログアウトフローの確認 正常系', () => {
         .put(channelListRequest())
         .call(web.conversations.list, listParams)
         .put(channelListRequestSuccess(mockSlackChannelListResponse.channels))
+        .put(emojiListRequest())
+        .call(web.emoji.list)
+        .put(emojiListRequestSuccess(mockEmojiListResponse.emoji))
         .call(web.users.profile.get)
         .put(requestAppUserInfoSuccess(mockUserProfileGetResponse))
         .not.put.like({ action: { type: REQUEST_APP_USER_INFO_FAIL } })

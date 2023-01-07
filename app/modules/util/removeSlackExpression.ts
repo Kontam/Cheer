@@ -6,10 +6,11 @@ export function removeInlineCode(text: string) {
   return text.replace(/`/g, '');
 }
 
-export function removeEmojiCode(text: string) {
-  return text.replace(/:\S*?:/g, '');
+export function removeUnusedExpression(text: string) {
+  return removeInlineCode(removeMention(text));
 }
 
 export default function removeSlackExpression(text: string) {
-  return removeEmojiCode(removeInlineCode(removeMention(text)));
+  const unusedExpressionRemoved = removeUnusedExpression(text);
+  return unusedExpressionRemoved;
 }
