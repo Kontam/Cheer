@@ -9,11 +9,7 @@ type Props = {
 };
 
 const FieldTitle: React.FC<Props> = ({ label }) => {
-  return (
-    <>
-      <Title>{label}</Title>
-    </>
-  );
+  return <Title>{label}</Title>;
 };
 
 const Title = styled.p`

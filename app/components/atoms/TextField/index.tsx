@@ -19,16 +19,14 @@ const TextField: React.FC<Props> = ({
   onChange,
 }) => {
   return (
-    <>
-      <StyledField
-        name={name}
-        placeholder={placeholder}
-        type="text"
-        component="input"
-        disabled={disabled}
-        onChange={onChange}
-      />
-    </>
+    <StyledField
+      name={name}
+      placeholder={placeholder}
+      type="text"
+      component="input"
+      disabled={disabled}
+      onChange={onChange}
+    />
   );
 };
 

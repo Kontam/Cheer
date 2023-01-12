@@ -1,3 +1,4 @@
+/* eslint-disable import/no-import-module-exports */
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { createHashHistory } from 'history';
@@ -10,10 +11,7 @@ import { desktopIntegrationMiddleware } from '../middlewares/desktopIntegrationM
 
 declare global {
   interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: (
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      obj: Record<string, any>
-    ) => any;
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: (obj: Record<string, any>) => any;
   }
   interface NodeModule {
     hot?: {

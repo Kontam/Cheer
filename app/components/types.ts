@@ -1,3 +1,4 @@
+import React from 'react';
 import { ScreenModes, SelectChannelTab } from '../redux/modules/types';
 
 export type ScreenSettingFormData = {

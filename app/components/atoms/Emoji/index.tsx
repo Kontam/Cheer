@@ -25,14 +25,10 @@ const Emoji: React.FC<Props> = ({ emoji, emojiExpression }) => {
         )
       : '';
 
-  return (
-    <>
-      {unicode ? (
-        <span>{unicode}</span>
-      ) : (
-        <img src={getEmojiSrc(emoji, emojiExpression)} alt={emojiExpression} />
-      )}
-    </>
+  return unicode ? (
+    <span>{unicode}</span>
+  ) : (
+    <img src={getEmojiSrc(emoji, emojiExpression)} alt={emojiExpression} />
   );
 };
 
