@@ -7,6 +7,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
     'jest/expect-expect': 'off',
     'import/prefer-default-export': 'off',
     'no-use-before-define': 'off',
@@ -40,5 +41,8 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json'],
     projectFolderIgnoreList: ['puppeteer'],
+  },
+  globals: {
+    "NodeJS": true,
   },
 };
