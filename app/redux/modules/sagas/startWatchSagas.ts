@@ -2,7 +2,12 @@ import { call, put, takeEvery, select } from 'redux-saga/effects';
 import { createAction } from 'redux-actions';
 import { push } from 'connected-react-router';
 import { getUnixTime } from 'date-fns';
-import { RootState, SlackChannelInfo, TokenInfo } from '../types';
+import {
+  ChannelHistories,
+  RootState,
+  SlackChannelInfo,
+  TokenInfo,
+} from '../types';
 import {
   getWebClientInstance,
   ChannelInfoFromSlack,
@@ -58,7 +63,7 @@ export function* requestSlackChannelInfoFlow() {
   const currentChannel: SlackChannelInfo = yield select(
     slackChannelInfoSelector
   );
-  const userName = yield select(userNameSelector);
+  const userName: string = yield select(userNameSelector);
   try {
     const result: ChannelInfoFromSlack = yield call(web.conversations.info, {
       channel: selectedChannel,
@@ -75,7 +80,9 @@ export function* requestSlackChannelInfoFlow() {
       channel: selectedChannel,
       text: `${userName}さんがこのチャンネルの閲覧を開始しました。`,
     });
-    const channelHistories = yield select(channelHistoriesSelector);
+    const channelHistories: ChannelHistories = yield select(
+      channelHistoriesSelector
+    );
     if (channelHistories.length > appConst.CHANNEL_HISTORY_LIMIT) {
       yield put(
         overflowHistory(
@@ -94,7 +101,7 @@ export function* requestSlackChannelInfoFlow() {
         : getUnixTime(new Date()).toString();
     yield put(setLastRequestTime(firstMessageTS));
     yield put(push(routes.WATCH_SCREEN));
-  } catch (e) {
+  } catch (e: any) {
     // botが対象チャンネルに存在していない時のエラー
     // メジャーユースケースで発生する
     if (e.data?.error === appConst.ERROR_NOT_IN_CHANNEL) {

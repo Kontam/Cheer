@@ -1,6 +1,8 @@
 import React from 'react';
 import RecommendBot from './RecommendBot';
 
-export default function RecommendBotPage() {
+const RecommendBotPage = () => {
   return <RecommendBot />;
-}
+};
+
+export default RecommendBotPage;

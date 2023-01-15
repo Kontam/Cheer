@@ -1,3 +1,4 @@
+import React from 'react';
 import { remote } from 'electron';
 
 export const useMenu = () => {

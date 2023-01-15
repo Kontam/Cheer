@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { openPreference, quitApp } from '../../../redux/effects/app';
 import { pushSelectChannel } from '../../../redux/modules/api/slackChannelList';

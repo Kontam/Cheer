@@ -6,7 +6,7 @@ import WatchScreen from '../components/pages/WatchScreen';
 import Login from '../components/pages/Login';
 import RecommendBot from '../components/pages/RecommendBot';
 
-export default function Routes() {
+const Routes = () => {
   return (
     <Switch>
       <Route path={routes.RECOMMEND_BOT} component={RecommendBot} />
@@ -15,4 +15,6 @@ export default function Routes() {
       <Route path={routes.LOGIN} component={Login} />
     </Switch>
   );
-}
+};
+
+export default Routes;

@@ -9,11 +9,9 @@ type Props = {
 
 const IconButton: React.FC<Props> = ({ src, onClick }) => {
   return (
-    <>
-      <Button type="button" onClick={onClick}>
-        <Img src={src} />
-      </Button>
-    </>
+    <Button type="button" onClick={onClick}>
+      <Img src={src} />
+    </Button>
   );
 };
 

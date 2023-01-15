@@ -18,7 +18,11 @@ export function* readChannelHistoriesFromStorageFlow() {
     appConst.STORAGE_CHANNEL_HISTORIES
   );
   if (!(channelHistories && channelHistories.length)) return;
-  const uniqHistories = yield call(uniqBy, channelHistories, 'id');
+  const uniqHistories: ChannelHistories = yield call(
+    uniqBy,
+    channelHistories,
+    'id'
+  );
   yield put(historyLoaded(uniqHistories));
   yield put(selectTab('history'));
   yield put(selectChannel(uniqHistories[uniqHistories.length - 1].id));
