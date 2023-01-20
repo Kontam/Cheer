@@ -8,13 +8,13 @@ export function divideMessageIntoEmoji(message: string): DividedMessageEmoji {
   const separatedMessage = match.reduce<DividedMessageEmoji>(
     (acc, emoji, currentIndex) => {
       const currentMessage = acc[0][currentIndex];
-      const splitted = currentMessage.split(emoji);
-      const newDividedMessages = acc[0].map((m, index) => {
-        if (index !== currentIndex) return m;
-        return splitted[0];
-      });
+      const before = currentMessage.slice(0, currentMessage.indexOf(emoji));
+      const after = currentMessage.slice(
+        currentMessage.indexOf(emoji) + emoji.length
+      );
+      const alreadyDivided = acc[0].slice(0, acc[0].length - 1);
       return [
-        [...newDividedMessages, splitted[1]],
+        [...alreadyDivided, before, after],
         [...acc[1], emoji],
       ];
     },

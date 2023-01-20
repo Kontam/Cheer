@@ -49,12 +49,12 @@ describe('SlackのメッセージからEmoji表現を抽出し、登場ごとに
     });
     describe('Emojiのみが連続で出現する時', () => {
       beforeEach(() => {
-        message = ':first::second:';
+        message = ':bow::bow:';
       });
       test('Emoji登場ごとに分割したメッセージリストと、文中のEmojiが入ったリストを返す', () => {
         assert.deepStrictEqual(divideMessageIntoEmoji(message), [
-          ['',  '', ''],
-          [':first:', ':second:'],
+          ['', '', ''],
+          [':bow:', ':bow:'],
         ]);
       });
     });
@@ -65,7 +65,7 @@ describe('SlackのメッセージからEmoji表現を抽出し、登場ごとに
       });
       test('Emoji登場ごとに分割したメッセージリストと、文中のEmojiが入ったリストを返す', () => {
         assert.deepStrictEqual(divideMessageIntoEmoji(message), [
-          ['Emojiを', '' , '連続で含んだメッセージ'],
+          ['Emojiを', '', '連続で含んだメッセージ'],
           [':first:', ':second:'],
         ]);
       });
