@@ -36,14 +36,39 @@ describe('SlackのメッセージからEmoji表現を抽出し、登場ごとに
     });
   });
   describe('メッセージ内にEmoji表現2つ存在する時', () => {
-    beforeEach(() => {
-      message = 'Emojiを:first:複数:second:含んだメッセージ';
+    describe('文と絵文字が交互に出現する時', () => {
+      beforeEach(() => {
+        message = 'Emojiを:first:複数:second:含んだメッセージ';
+      });
+      test('Emoji登場ごとに分割したメッセージリストと、文中のEmojiが入ったリストを返す', () => {
+        assert.deepStrictEqual(divideMessageIntoEmoji(message), [
+          ['Emojiを', '複数', '含んだメッセージ'],
+          [':first:', ':second:'],
+        ]);
+      });
     });
-    test('Emoji登場ごとに分割したメッセージリストと、文中のEmojiが入ったリストを返す', () => {
-      assert.deepStrictEqual(divideMessageIntoEmoji(message), [
-        ['Emojiを', '複数', '含んだメッセージ'],
-        [':first:', ':second:'],
-      ]);
+    describe('Emojiのみが連続で出現する時', () => {
+      beforeEach(() => {
+        message = ':bow::bow:';
+      });
+      test('Emoji登場ごとに分割したメッセージリストと、文中のEmojiが入ったリストを返す', () => {
+        assert.deepStrictEqual(divideMessageIntoEmoji(message), [
+          ['', '', ''],
+          [':bow:', ':bow:'],
+        ]);
+      });
+    });
+
+    describe('Emojiが連続で出現する時', () => {
+      beforeEach(() => {
+        message = 'Emojiを:first::second:連続で含んだメッセージ';
+      });
+      test('Emoji登場ごとに分割したメッセージリストと、文中のEmojiが入ったリストを返す', () => {
+        assert.deepStrictEqual(divideMessageIntoEmoji(message), [
+          ['Emojiを', '', '連続で含んだメッセージ'],
+          [':first:', ':second:'],
+        ]);
+      });
     });
   });
 });
