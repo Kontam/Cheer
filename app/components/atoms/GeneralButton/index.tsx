@@ -24,17 +24,15 @@ const GeneralButton: React.FC<Props> = ({
   exAttributes,
 }) => {
   return (
-    <>
-      <Input
-        type={type}
-        onClick={onClick}
-        value={label}
-        full={full}
-        disabled={disabled}
-        buttonType={buttonType}
-        {...exAttributes}
-      />
-    </>
+    <Input
+      type={type}
+      onClick={onClick}
+      value={label}
+      full={full}
+      disabled={disabled}
+      buttonType={buttonType}
+      {...exAttributes}
+    />
   );
 };
 

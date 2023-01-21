@@ -79,7 +79,7 @@ export function* loginSaga() {
       yield put(push(routes.LOGIN));
       yield put(ipcLogoutComplete());
     } catch (e) {
-      yield put(channelListRequestFail(e?.data?.error));
+      yield put(channelListRequestFail((e as any)?.data?.error));
       yield call(removeWebClientInstance);
       yield put(writeAuthTokenToStorage({ token: '', botToken: '' })); // tokenの削除
     }

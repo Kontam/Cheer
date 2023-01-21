@@ -10,6 +10,7 @@ export type Props = {
 
 const ScreenMenu: React.FC<Props> = ({ menus, isOpen }) => {
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {isOpen && (
         <FlatMenuList menus={menus} exAttributes={QA_ATTRIBUTES.SCREEN_MENU} />

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-import-module-exports */
 import { createStore, applyMiddleware, compose } from 'redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
