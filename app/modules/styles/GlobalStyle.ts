@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { reset } from 'styled-reset';
 import { styleConst } from './styleConst';
 
-const GlobalStyle = createGlobalStyle`
+export const globalStyle = `
   ${reset}
 
   @font-face {
@@ -30,6 +30,10 @@ const GlobalStyle = createGlobalStyle`
   .MuiAlert-message {
     font-size: 1.6rem;
   }
+`;
+
+const GlobalStyle = createGlobalStyle`
+${globalStyle}
 `;
 
 export default GlobalStyle;

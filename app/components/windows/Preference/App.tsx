@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader/root';
 import { Provider } from 'react-redux';
 import { Store } from 'redux';
 import Preference from '../../pages/Preference';
-import GlobalStyle from '../../../modules/styles/GlobalStyle';
+import { globalStyle } from '../../../modules/styles/GlobalStyle';
 
 export type Props = {
   store: Store;
@@ -12,7 +12,13 @@ export type Props = {
 const Root = ({ store }: Props) => {
   return (
     <Provider store={store}>
-      <GlobalStyle />
+      {/*
+          styled-components 5.2 has issue about createGlobalStyle
+          This is workaround.
+          See: https://github.com/styled-components/styled-components/issues/3146
+      */}
+      <style>{globalStyle}</style>
+      {/* <GlobalStyle /> */}
       <Preference />
     </Provider>
   );

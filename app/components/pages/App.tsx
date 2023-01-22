@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { hot } from 'react-hot-loader/root';
 import { History } from 'history';
 import { Store } from 'redux';
-import GlobalStyle from '../../modules/styles/GlobalStyle';
+import { globalStyle } from '../../modules/styles/GlobalStyle';
 import Routes from '../../modules/Routes';
 
 type Props = {
@@ -15,7 +15,13 @@ type Props = {
 const Root = ({ store, history }: Props) => {
   return (
     <Provider store={store}>
-      <GlobalStyle />
+      {/*
+          styled-components 5.2 has issue about createGlobalStyle
+          This is workaround.
+          See: https://github.com/styled-components/styled-components/issues/3146
+      */}
+      <style>{globalStyle}</style>
+      {/* <GlobalStyle /> */}
       <ConnectedRouter history={history}>
         <Routes />
       </ConnectedRouter>

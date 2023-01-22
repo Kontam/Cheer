@@ -2445,12 +2445,10 @@ exports[`Storyshots molecules/Message Emoji Only 1`] = `
         <p
           className="c8"
         >
-          
           <img
             alt=":test:"
             src="https://placehold.jp/150x150.png"
           />
-          
         </p>
       </div>
     </div>
