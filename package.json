@@ -159,13 +159,13 @@
     "@babel/preset-react": "^7.12.1",
     "@babel/preset-typescript": "^7.12.1",
     "@babel/register": "^7.12.1",
-    "@storybook/addon-actions": "^6.0.27",
+    "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-knobs": "^6.0.27",
-    "@storybook/addon-links": "^6.0.27",
-    "@storybook/addon-storyshots": "^6.0.27",
-    "@storybook/addons": "^6.0.27",
-    "@storybook/react": "^6.0.27",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/addon-storyshots": "^6.5.15",
+    "@storybook/addons": "^6.5.15",
+    "@storybook/react": "^6.5.15",
     "@types/enzyme": "^3.10.7",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/history": "^4.7.8",
@@ -176,7 +176,6 @@
     "@types/react-redux": "^7.1.9",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.6",
-    "@types/react-test-renderer": "^16.9.3",
     "@types/redux-logger": "^3.0.8",
     "@types/tapable": "^1.0.6",
     "@types/vfile-message": "^2.0.0",
@@ -218,7 +217,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.3.1",
     "prettier": "^2.1.2",
-    "react-test-renderer": "^16.14.0",
     "redux-logger": "^3.0.6",
     "rimraf": "^3.0.2",
     "spectron": "^10.0.1",
@@ -242,7 +240,7 @@
     "@material-ui/core": "^4.11.0",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@slack/web-api": "^5.13.0",
-    "@storybook/cli": "^6.0.27",
+    "@storybook/cli": "^6.5.15",
     "@types/jest-environment-puppeteer": "^5.0.3",
     "@types/lodash.uniqby": "^4.7.6",
     "@types/power-assert": "^1.5.3",
@@ -288,7 +286,7 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "source-map-support": "^0.5.19",
-    "styled-components": "~5.1.0",
+    "styled-components": "~5.3.6",
     "styled-reset": "^4.2.3",
     "tree-kill": "^1.2.2",
     "ts-node": "^10.9.1"
@@ -320,5 +318,8 @@
     "extends": [
       "bliss"
     ]
+  },
+  "resolutions": {
+    "react-test-renderer": "18.2.0"
   }
 }
