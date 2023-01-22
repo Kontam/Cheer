@@ -1,7 +1,7 @@
 {
   "name": "Cheer",
   "productName": "Cheer",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Slack App for showing messages on your screen.",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -248,7 +248,7 @@
     "@types/redux-actions": "^2.6.1",
     "@types/redux-form": "^8.3.0",
     "@types/reselect": "^2.2.0",
-    "@types/styled-components": "^5.1.4",
+    "@types/styled-components": "^5.1.26",
     "axios": "^0.21.0",
     "babel-polyfill": "^6.26.0",
     "child_process": "^1.0.2",
@@ -286,8 +286,8 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "source-map-support": "^0.5.19",
-    "styled-components": "~5.3.6",
-    "styled-reset": "^4.2.3",
+    "styled-components": "^5.3.6",
+    "styled-reset": "^4.4.5",
     "tree-kill": "^1.2.2",
     "ts-node": "^10.9.1"
   },
