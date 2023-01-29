@@ -13,7 +13,7 @@ import merge from 'webpack-merge';
 import { spawn, execSync } from 'child_process';
 import { TypedCssModulesPlugin } from 'typed-css-modules-webpack-plugin';
 import baseConfig from './webpack.config.base';
-import CheckNodeEnv from '../internals/scripts/CheckNodeEnv';
+import CheckNodeEnv from '../internals/scripts/CheckNodeEnv.js';
 
 // When an ESLint server is running, we can't set the NODE_ENV so we'll check if it's
 // at the dev webpack config is not accidentally run in a production environment
@@ -28,7 +28,7 @@ const manifest = path.resolve(dll, 'renderer.json');
 
 const requiredByDLLConfig = '';
 
-export default merge.smart(baseConfig, {
+export default merge(baseConfig, {
   devtool: 'inline-source-map',
 
   mode: 'development',
@@ -144,25 +144,26 @@ export default merge.smart(baseConfig, {
 
   devServer: {
     port,
-    publicPath,
     compress: true,
-    noInfo: true,
-    stats: 'errors-only',
-    inline: true,
-    lazy: false,
     hot: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
-    contentBase: path.join(__dirname, 'dist'),
-    watchOptions: {
-      aggregateTimeout: 300,
-      ignored: /node_modules/,
-      poll: 100,
+    devMiddleware: {
+      stats: 'errors-only',
+      publicPath,
     },
     historyApiFallback: {
       verbose: true,
       disableDotRule: false,
     },
-    before() {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+      watch: {
+        aggregateTimeout: 300,
+        ignored: /node_modules/,
+        poll: 100,
+      },
+    },
+    onBeforeSetupMiddleware() {
       if (process.env.START_HOT) {
         console.log('Starting Main Process...');
         spawn('npm', ['run', 'start-main-dev'], {

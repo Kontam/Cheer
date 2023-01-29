@@ -7,15 +7,15 @@ import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import merge from 'webpack-merge';
 import TerserPlugin from 'terser-webpack-plugin';
-import baseConfig from './webpack.config.base';
-import CheckNodeEnv from '../internals/scripts/CheckNodeEnv';
-import DeleteSourceMaps from '../internals/scripts/DeleteSourceMaps';
+import baseConfig from './webpack.config.base.js';
+import CheckNodeEnv from '../internals/scripts/CheckNodeEnv.js';
+import DeleteSourceMaps from '../internals/scripts/DeleteSourceMaps.js';
 
 CheckNodeEnv('production');
 DeleteSourceMaps();
 
-export default merge.smart(baseConfig, {
-  devtool: process.env.DEBUG_PROD === 'true' ? 'source-map' : 'none',
+export default merge(baseConfig, {
+  devtool: process.env.DEBUG_PROD === 'true' ? 'source-map' : undefined,
 
   mode: 'production',
 
@@ -101,8 +101,9 @@ export default merge.smart(baseConfig, {
       : [
           new TerserPlugin({
             parallel: true,
-            sourceMap: true,
-            cache: true,
+            terserOptions: {
+              sourceMap: true,
+            },
           }),
         ],
   },
