@@ -13,4 +13,4 @@ module.exports = function CheckNodeEnv(expectedEnv) {
     );
     process.exit(2);
   }
-}
+};
