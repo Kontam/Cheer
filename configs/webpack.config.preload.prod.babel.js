@@ -7,24 +7,24 @@ import baseConfig from './webpack.config.base';
 const port = process.env.PORT || 1212;
 
 if (process.env.NODE_ENV === 'production') {
-  CheckNodeEnv('development');
+  CheckNodeEnv('production');
 }
 
 export default merge(baseConfig, {
   devtool: 'inline-source-map',
 
-  mode: 'development',
+  mode: 'production',
 
   target: 'electron-renderer',
   entry: path.join(__dirname, '..', 'app', 'preload.ts'),
 
   output: {
-    path: path.join(__dirname, '..', 'app'),
+    path: path.join(__dirname, '..', 'app', 'dist'),
     filename: 'preload.js',
   },
   plugins: [
     new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development',
+      NODE_ENV: 'production',
     }),
 
     new webpack.LoaderOptionsPlugin({

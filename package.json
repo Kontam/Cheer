@@ -11,7 +11,7 @@
     "build-main:e2e": "cross-env NODE_ENV=production DEBUG_PROD=true DEBUG_MODE=true E2E_BUILD=true webpack --config ./configs/webpack.config.main.prod.babel.js --color",
     "build-renderer:e2e": "cross-env NODE_ENV=production DEBUG_PROD=true DEBUG_MODE=true E2E_BUILD=true webpack --config ./configs/webpack.config.renderer.prod.babel.js --color",
     "dev": "cross-env START_HOT=1 node -r @babel/register ./internals/scripts/CheckPortInUse.js && cross-env START_HOT=1 yarn start-renderer-dev",
-    "dev:preload": "cross-env NODE_ENV=development webpack --config ./configs/webpack.config.preload.dev.babel.js --color",
+    "build:preload": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.preload.prod.babel.js --color",
     "dev:debug": "cross-env START_HOT=1 node -r @babel/register ./internals/scripts/CheckPortInUse.js && cross-env DEBUG_MODE=true START_HOT=1 yarn start-renderer-dev",
     "electron-rebuild": "electron-rebuild --parallel --force --types prod,dev,optional --module-dir app",
     "ts": "tsc",
