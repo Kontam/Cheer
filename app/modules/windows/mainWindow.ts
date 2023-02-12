@@ -1,5 +1,6 @@
 // import path from 'path';
 import { BrowserWindow } from 'electron';
+import path from 'path';
 import MenuBuilder from './menu';
 
 const installExtensions = async () => {
@@ -21,7 +22,6 @@ export const createMainWindow = async () => {
   ) {
     await installExtensions();
   }
-
   mainWindow = new BrowserWindow({
     show: false,
     width: 500,
@@ -31,16 +31,12 @@ export const createMainWindow = async () => {
     resizable: false,
     backgroundColor: '#FEFFFFFF',
     webPreferences:
-      process.env.NODE_ENV === 'development' || process.env.E2E_BUILD === 'true'
+      process.env.NODE_ENV === 'development'
         ? {
-            nodeIntegration: true,
-            enableRemoteModule: true,
+            preload: path.join(__dirname, '../..', 'dist', 'preload.js'),
           }
         : {
-            // TODO preloadしないことによる影響調査
-            // preload: path.join(__dirname, 'dist/main.renderer.prod.js'),
-            nodeIntegration: true,
-            enableRemoteModule: true,
+            preload: path.join(__dirname, 'dist', 'preload.js'),
           },
   });
   const htmlUrl =
