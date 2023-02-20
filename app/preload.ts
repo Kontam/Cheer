@@ -2,7 +2,7 @@ const { contextBridge, ipcRenderer } = require('electron');
 
 const electronHandler = {
   ipcRenderer: {
-    send(channel: string, args: any) {
+    send(channel: string, ...args: any[]) {
       ipcRenderer.send(channel, args);
     },
     on(channel: string, func: (...args: any) => void) {

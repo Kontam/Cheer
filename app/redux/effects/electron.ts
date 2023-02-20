@@ -1,4 +1,3 @@
-import { ipcRenderer, remote } from 'electron';
 import { call, takeEvery } from 'redux-saga/effects';
 import { QUIT_APP, OPEN_PREFERENCE, CLOSE_WINDOW } from './app';
 import appConst from '../../modules/constants/appConst';
@@ -12,6 +11,7 @@ import {
   MAKE_GENERAL_WINDOW,
   MAKE_LIST_WINDOW,
 } from './window';
+import { ipcRenderer } from '../../modules/util/exposedElectron';
 
 // electronに依存するsagaはこのファイルに集約する
 // storybookなどのsagaを使わない環境でcomponentがelectronに依存しないようにする
@@ -37,8 +37,11 @@ export function* makeListWindowFlow() {
 }
 
 export function* closeWindowFlow() {
+  yield console.log('effects/electron.ts: closeWindowSaga is disabled now');
+  /*
   const window = remote.getCurrentWindow();
   yield window.close();
+  */
 }
 
 export const electronSagas = [

@@ -1,7 +1,7 @@
-import { ipcRenderer } from 'electron';
 import { Store } from 'redux';
 import { createAction } from 'redux-actions';
 import appConst from '../../../modules/constants/appConst';
+import { ipcRenderer } from '../../../modules/util/exposedElectron';
 import { SettingsState } from '../types';
 
 export const SUBMIT_SCREEN_SETTING = 'SUBMIT_SCREEN_SETTING' as const;

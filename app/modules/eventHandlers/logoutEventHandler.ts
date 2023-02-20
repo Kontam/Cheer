@@ -1,7 +1,7 @@
-import { ipcRenderer } from 'electron';
 import { Store } from 'redux';
 import { logout } from '../../redux/modules/sagas/loginSagas';
 import appConst from '../constants/appConst';
+import { ipcRenderer } from '../util/exposedElectron';
 
 /**
  * menuからlogoutが押された時の処理
