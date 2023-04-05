@@ -1,4 +1,3 @@
-import { create } from 'domain';
 import { createAction } from 'redux-actions';
 
 // storybookでelectronをimportするとエラーになる

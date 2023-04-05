@@ -4,7 +4,7 @@ import { Action, createAction } from 'redux-actions';
 import { take, put, call, takeEvery } from 'redux-saga/effects';
 import appConst from '../../../modules/constants/appConst';
 import { routes } from '../../../modules/constants/routes';
-import { readStore } from '../../../modules/util/electronStore';
+import { ipcRenderer } from '../../../modules/util/exposedElectron';
 import {
   getWebClientInstance,
   removeWebClientInstance,
@@ -47,8 +47,16 @@ export const loginWithStorage = createAction(LOGIN_WITH_STORAGE);
  * 認証トークンをstorageから読み出してログインする
  */
 export function* loginWithStorageFlow() {
-  const token: string = yield readStore(appConst.STORAGE_AUTH_TOKEN);
-  const botToken: string = yield readStore(appConst.STORAGE_AUTH_BOT_TOKEN);
+  const token: string = yield call(
+    ipcRenderer.invoke,
+    appConst.IPC_REQUEST_READ_STORE,
+    { name: appConst.STORAGE_AUTH_TOKEN }
+  );
+  const botToken: string = yield call(
+    ipcRenderer.invoke,
+    appConst.IPC_REQUEST_READ_STORE,
+    { name: appConst.STORAGE_AUTH_BOT_TOKEN }
+  );
   if (!token || !botToken) return;
   yield put(login({ token, botToken }));
 }

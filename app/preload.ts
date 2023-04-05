@@ -11,6 +11,9 @@ const electronHandler = {
         ipcRenderer.removeListener(channel, func);
       };
     },
+    invoke(channel: string, ...args: any[]) {
+      return ipcRenderer.invoke(channel, ...args);
+    },
   },
 };
 
