@@ -2,11 +2,6 @@ import { call, takeEvery } from 'redux-saga/effects';
 import { QUIT_APP, OPEN_PREFERENCE, CLOSE_WINDOW } from './app';
 import appConst from '../../modules/constants/appConst';
 import {
-  makeCurrentWindowTransparent,
-  makeCurrentWindowList,
-  makeCurrentWindowDefault,
-} from '../../modules/windows/utils/makeWindowTransparent';
-import {
   MAKE_WATCH_WINDOW,
   MAKE_GENERAL_WINDOW,
   MAKE_LIST_WINDOW,
@@ -25,15 +20,15 @@ export function* openPreferenceFlow() {
 }
 
 export function* makeWatchWindowFlow() {
-  yield makeCurrentWindowTransparent();
+  yield call(ipcRenderer.send, appConst.IPC_WATCH_SCREEN);
 }
 
 export function* makeGeneralWindowFlow() {
-  yield makeCurrentWindowDefault();
+  yield call(ipcRenderer.send, appConst.IPC_DEFAULT_SCREEN);
 }
 
 export function* makeListWindowFlow() {
-  yield makeCurrentWindowList();
+  yield call(ipcRenderer.send, appConst.IPC_LIST_SCREEN);
 }
 
 export function* closeWindowFlow() {

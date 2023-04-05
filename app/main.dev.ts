@@ -15,6 +15,7 @@ import { createMainWindow } from './modules/windows/mainWindow';
 import { setMainUrlSchemeEventHandler } from './modules/eventHandlers/main/urlSchemeEventHandler';
 import { setAppQuitEventhandler } from './modules/eventHandlers/main/appQuitEventHandler';
 import { setOpenPreferenceEventhandler } from './modules/eventHandlers/main/preferenceEventHandler';
+import { setScreenEventHandlers } from './modules/eventHandlers/main/screenEventHandlers';
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -51,6 +52,7 @@ async function readyMainWindow() {
   setAppQuitEventhandler(app);
   setMainUrlSchemeEventHandler(mainWindow);
   setOpenPreferenceEventhandler(mainWindow);
+  setScreenEventHandlers(mainWindow);
   // 閉じられた時にmainWindowの参照をnullにする Docには残り続けるがwindowがない状態
   mainWindow.on('closed', () => {
     mainWindow = null;
