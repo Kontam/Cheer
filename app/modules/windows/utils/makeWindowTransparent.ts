@@ -33,3 +33,19 @@ export function makeWindowList(window: BrowserWindow) {
   makeWindowDefault(window);
   window.setSize(800, 600);
 }
+
+/**
+ * Window自体をun_clickableにする
+ * Watch中のメニューボタンからマウスリーヴしたときに透明スクリーンをクリックできないようにする
+ */
+export function makeWindowUnClickable(window: BrowserWindow) {
+  window.setIgnoreMouseEvents(true, { forward: true });
+}
+
+/**
+ * Window自体をclickableにする
+ * Watch中のメニューボタンからマウスホバーしたときクリックできるようにする
+ */
+export function makeWindowClickable(window: BrowserWindow) {
+  window.setIgnoreMouseEvents(false);
+}

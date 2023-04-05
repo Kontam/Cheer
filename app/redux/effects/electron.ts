@@ -1,5 +1,5 @@
 import { call, takeEvery } from 'redux-saga/effects';
-import { QUIT_APP, OPEN_PREFERENCE, CLOSE_WINDOW } from './app';
+import { QUIT_APP, OPEN_PREFERENCE, CLOSE_WINDOW, MAKE_CLICKABLE_WINDOW, makeClickableWindow, makeUnClickableWindow, MAKE_UN_CLICKABLE_WINDOW } from './app';
 import appConst from '../../modules/constants/appConst';
 import {
   MAKE_WATCH_WINDOW,
@@ -31,6 +31,14 @@ export function* makeListWindowFlow() {
   yield call(ipcRenderer.send, appConst.IPC_LIST_SCREEN);
 }
 
+export function* makeWindowUnClickableFlow() {
+  yield call(ipcRenderer.send, appConst.IPC_UN_CLICKABLE_SCREEN);
+}
+
+export function* makeWindowClickableFlow() {
+  yield call(ipcRenderer.send, appConst.IPC_CLICKABLE_SCREEN);
+}
+
 export function* closeWindowFlow() {
   yield console.log('effects/electron.ts: closeWindowSaga is disabled now');
   /*
@@ -45,5 +53,7 @@ export const electronSagas = [
   takeEvery(MAKE_WATCH_WINDOW, makeWatchWindowFlow),
   takeEvery(MAKE_GENERAL_WINDOW, makeGeneralWindowFlow),
   takeEvery(MAKE_LIST_WINDOW, makeListWindowFlow),
+  takeEvery(MAKE_CLICKABLE_WINDOW, makeClickableWindow),
+  takeEvery(MAKE_UN_CLICKABLE_WINDOW, makeUnClickableWindow),
   takeEvery(CLOSE_WINDOW, closeWindowFlow),
 ];

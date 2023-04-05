@@ -1,22 +1,26 @@
 import React from 'react';
-import { remote } from 'electron';
+import { useDispatch } from 'react-redux';
+import {
+  makeClickableWindow,
+  makeUnClickableWindow,
+} from '../../../redux/effects/app';
 
 export const useMenu = () => {
-  const window = remote.getCurrentWindow();
+  const dispatch = useDispatch();
   const handleMenuButtonMouseEnter: React.MouseEventHandler<
     HTMLDivElement
   > = () => {
-    window.setIgnoreMouseEvents(false);
+    dispatch(makeClickableWindow());
   };
   const handleMenuButtonMouseLeave: React.MouseEventHandler<
     HTMLDivElement
   > = () => {
-    window.setIgnoreMouseEvents(true, { forward: true });
+    dispatch(makeUnClickableWindow());
   };
   const handleMenuItemClick: React.MouseEventHandler<
     HTMLButtonElement
   > = () => {
-    window.setIgnoreMouseEvents(true, { forward: true });
+    dispatch(makeUnClickableWindow());
   };
   const hasMenu = process.platform !== 'darwin';
   return {
