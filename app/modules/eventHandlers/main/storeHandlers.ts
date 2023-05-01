@@ -1,8 +1,8 @@
-import { BrowserWindow, ipcMain } from 'electron';
+import { ipcMain } from 'electron';
 import appConst from '../../constants/appConst';
 import { readStore, saveToStore } from '../../util/electronStore';
 
-export function setStoreHandlers(window: BrowserWindow) {
+export function setStoreHandlers() {
   ipcMain.on(appConst.IPC_SAVE_TO_STORE, (e, arg) => {
     saveToStore(arg.name, arg.value);
   });

@@ -17,6 +17,7 @@ import { setAppQuitEventhandler } from './modules/eventHandlers/main/appQuitEven
 import { setOpenPreferenceEventhandler } from './modules/eventHandlers/main/preferenceEventHandler';
 import { setScreenEventHandlers } from './modules/eventHandlers/main/screenEventHandlers';
 import { setStoreHandlers } from './modules/eventHandlers/main/storeHandlers';
+import { setSlackEventHandlers } from './modules/eventHandlers/main/slackEventHandlers';
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -55,6 +56,7 @@ async function readyMainWindow() {
   setOpenPreferenceEventhandler(mainWindow);
   setScreenEventHandlers(mainWindow);
   setStoreHandlers();
+  setSlackEventHandlers();
   // 閉じられた時にmainWindowの参照をnullにする Docには残り続けるがwindowがない状態
   mainWindow.on('closed', () => {
     mainWindow = null;
