@@ -1,11 +1,10 @@
 import { ConversationsHistoryArguments } from '@slack/web-api';
 import { Action, createAction } from 'redux-actions';
 import { select, put, call, takeEvery } from 'redux-saga/effects';
+import appConst from '../../../modules/constants/appConst';
+import { ipcRenderer } from '../../../modules/util/exposedElectron';
 import filterSlackMessages from '../../../modules/util/filterSlackMessage';
-import {
-  getWebClientBotInstance,
-  SlackHistoryResponse,
-} from '../../../modules/util/requests/webClient';
+import { SlackHistoryResponse } from '../../../modules/util/requests/webClient';
 import {
   requestMessagesAPI,
   requestMessagesAPISuccess,
@@ -37,16 +36,19 @@ export function* requestSlackMessagesFlow(
 
   const selectedChannel: string = yield select(selectedChannelSelector);
   const authInfo: AuthInfo = yield select(authInfoSelector);
-  const botWeb = getWebClientBotInstance(authInfo.botToken);
 
   const oldest = yield select(lastRequestTimeSelector);
   yield put(requestMessagesAPI());
   const result: SlackHistoryResponse = yield call(
-    botWeb.conversations.history,
+    ipcRenderer.invoke,
+    appConst.IPC_SLACK_CONVERSATIONS_HISTORY,
     {
-      channel: selectedChannel,
-      oldest,
-      ...{ ...options, ...(options.limit === 0 ? { limit: 1 } : {}) },
+      botToken: authInfo.botToken,
+      option: {
+        channel: selectedChannel,
+        oldest,
+        ...{ ...options, ...(options.limit === 0 ? { limit: 1 } : {}) },
+      },
     }
   );
   // 疎通確認用にoptionsにlimit:0が指定されるケースがある
