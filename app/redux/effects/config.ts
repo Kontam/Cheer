@@ -24,7 +24,7 @@ export function* readSettingConfigFlow() {
 }
 
 export function* writeSettingConfigFlow({ payload }: Action<SettingsState>) {
-  yield ipcRenderer.send(appConst.IPC_SAVE_TO_STORE, {
+  yield call(ipcRenderer.send, appConst.IPC_SAVE_TO_STORE, {
     name: appConst.CONFIG_SETTING,
     value: payload,
   });

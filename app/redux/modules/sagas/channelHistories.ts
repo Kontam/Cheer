@@ -33,7 +33,7 @@ export function* readChannelHistoriesFromStorageFlow() {
 export function* writeChannelHistoriesToStorageFlow({
   payload,
 }: Action<ChannelHistories>) {
-  yield ipcRenderer.send(appConst.IPC_SAVE_TO_STORE, {
+  yield call(ipcRenderer.send, appConst.IPC_SAVE_TO_STORE, {
     name: appConst.STORAGE_CHANNEL_HISTORIES,
     value: [...payload],
   });
