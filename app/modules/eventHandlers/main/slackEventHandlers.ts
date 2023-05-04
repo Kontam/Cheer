@@ -22,6 +22,10 @@ export function setSlackEventHandlers() {
     const webClient = getWebClientInstance(arg.token);
     return webClient.users.profile.get();
   });
+  ipcMain.handle(appConst.IPC_SLACK_USER_INFO, (e, arg) => {
+    const webClient = getWebClientInstance(arg.token);
+    return webClient.users.info(arg.option);
+  });
   ipcMain.handle(appConst.IPC_SLACK_POST_MESSAGE, (e, arg) => {
     const botWebClient = getWebClientBotInstance(arg.botToken);
     return botWebClient.chat.postMessage(arg.option);

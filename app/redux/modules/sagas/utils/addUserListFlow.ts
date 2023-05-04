@@ -9,6 +9,8 @@ import {
 } from '../../../../modules/util/requests/webClient';
 import { preloadImage } from '../../../../modules/util/preloadImage';
 import { addMembers } from '../../app/members';
+import { ipcRenderer } from '../../../../modules/util/exposedElectron';
+import appConst from '../../../../modules/constants/appConst';
 
 export const memberSelector = (state: RootState) => state.app.members;
 export const authInfoSelector = (state: RootState) => state.user.authInfo;
@@ -21,10 +23,12 @@ export function* addUserListFlow(userMessages: UserMessage[]) {
     (message) => !members.some((member) => message.user === member.id)
   );
   const authInfo: AuthInfo = yield select(authInfoSelector);
-  const web = getWebClientInstance(authInfo.token);
   const effects = required.map((message) =>
-    call(web.users.info, {
-      user: message.user,
+    call(ipcRenderer.invoke, appConst.IPC_SLACK_USER_INFO, {
+      token: authInfo.token,
+      option: {
+        user: message.user,
+      },
     })
   );
   const results: SlackUserInfoResponse[] = yield all(effects);
