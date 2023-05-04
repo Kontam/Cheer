@@ -1,4 +1,3 @@
-// import path from 'path';
 import { BrowserWindow } from 'electron';
 import path from 'path';
 import MenuBuilder from './menu';
