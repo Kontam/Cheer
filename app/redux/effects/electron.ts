@@ -1,5 +1,13 @@
 import { call, takeEvery } from 'redux-saga/effects';
-import { QUIT_APP, OPEN_PREFERENCE, CLOSE_WINDOW, MAKE_CLICKABLE_WINDOW, makeClickableWindow, makeUnClickableWindow, MAKE_UN_CLICKABLE_WINDOW } from './app';
+import {
+  QUIT_APP,
+  OPEN_PREFERENCE,
+  CLOSE_WINDOW,
+  MAKE_CLICKABLE_WINDOW,
+  makeClickableWindow,
+  makeUnClickableWindow,
+  MAKE_UN_CLICKABLE_WINDOW,
+} from './app';
 import appConst from '../../modules/constants/appConst';
 import {
   MAKE_WATCH_WINDOW,
