@@ -1,5 +1,6 @@
 import { BrowserWindow } from 'electron';
 import path from 'path';
+import { setWindowEventHandlers } from '../eventHandlers/main/screenEventHandlers';
 
 // const installExtensions = async () => {
 //   const installer = require('electron-devtools-installer');
@@ -57,5 +58,6 @@ export const createPreferenceWindow = async (parent: BrowserWindow) => {
       preferenceWindow.focus();
     }
   });
+  setWindowEventHandlers(preferenceWindow);
   return preferenceWindow;
 };

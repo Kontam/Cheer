@@ -25,3 +25,9 @@ export function setScreenEventHandlers(mainWindow: BrowserWindow) {
     makeWindowClickable(mainWindow);
   });
 }
+
+export function setWindowEventHandlers(window: BrowserWindow) {
+  ipcMain.once(appConst.IPC_CLOSE_WINDOW, () => {
+    window.close();
+  });
+}

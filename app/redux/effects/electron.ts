@@ -48,11 +48,7 @@ export function* makeWindowClickableFlow() {
 }
 
 export function* closeWindowFlow() {
-  yield console.log('effects/electron.ts: closeWindowSaga is disabled now');
-  /*
-  const window = remote.getCurrentWindow();
-  yield window.close();
-  */
+  yield call(ipcRenderer.send, appConst.IPC_CLOSE_WINDOW);
 }
 
 export const electronSagas = [
