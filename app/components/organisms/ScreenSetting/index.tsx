@@ -28,6 +28,11 @@ import { ipcRenderer } from '../../../modules/util/exposedElectron';
 const ScreenSetting = () => {
   const dispatch = useDispatch();
   useEffect(() => {
+    ipcRenderer.on(appConst.IPC_RESPONCE_PREFERENCE, () => {
+      dispatch(showSystemMessage('Successfully saved'));
+    });
+  }, []);
+  useEffect(() => {
     dispatch(readSettingConfig());
   }, [dispatch]);
 
@@ -83,9 +88,6 @@ const ScreenSetting = () => {
   const onHideMessage = () => {
     dispatch(hideSystemMessage());
   };
-  ipcRenderer.on(appConst.IPC_RESPONCE_PREFERENCE, () => {
-    dispatch(showSystemMessage('Successfully saved'));
-  });
 
   return (
     <ScreenSettingPresentational
