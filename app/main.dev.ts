@@ -86,13 +86,17 @@ ipcMain.on(appConst.IPC_REQUEST_PREFERENCE, async (event, arg) => {
  */
 ipcMain.on(appConst.IPC_LOGIN_COMPLETE, (event, arg) => {
   if (!mainMenu) return;
-  mainMenu.getMenuItemById(appConst.MAIN_MENU_SELECT_CHANNEL).enabled = true;
+  const menu = mainMenu.getMenuItemById(appConst.MAIN_MENU_SELECT_CHANNEL);
+  if (!menu) return;
+  menu.enabled = true;
 });
 
 /**
- * rendererからログアウト完了が通知されたら認証済みステータスに変更
+ * rendererからログアウト完了が通知されたら認証なしステータスに変更
  */
 ipcMain.on(appConst.IPC_LOGOUT_COMPLETE, (event, arg) => {
   if (!mainMenu) return;
-  mainMenu.getMenuItemById(appConst.MAIN_MENU_SELECT_CHANNEL).enabled = false;
+  const menu = mainMenu.getMenuItemById(appConst.MAIN_MENU_SELECT_CHANNEL);
+  if (!menu) return;
+  menu.enabled = false;
 });
