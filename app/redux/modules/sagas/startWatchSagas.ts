@@ -111,11 +111,11 @@ export function* requestSlackChannelInfoFlow() {
   } catch (e: any) {
     // botが対象チャンネルに存在していない時のエラー
     // メジャーユースケースで発生する
-    if (e.data?.error === appConst.ERROR_NOT_IN_CHANNEL) {
+    if (e.message.includes(appConst.ERROR_NOT_IN_CHANNEL)) {
       yield put(
         requestMessagesAPIFail({
           error: true,
-          error_message: e.data?.error,
+          error_message: e.message,
         })
       );
       yield put(push(routes.RECOMMEND_BOT));
@@ -125,11 +125,11 @@ export function* requestSlackChannelInfoFlow() {
     yield put(
       requestSlackChannelInfoFail({
         error: true,
-        error_message: e.data?.error,
+        error_message: e.message,
       })
     );
     removeWebClientInstance(); // 認証に失敗したインスタンスを除去
-    yield put(showAlert(e.data?.error));
+    yield put(showAlert(e.message));
   }
 }
 
