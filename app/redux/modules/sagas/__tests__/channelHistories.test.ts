@@ -10,10 +10,15 @@ import {
 import { readStore } from '../../../../modules/util/electronStore';
 import { createHistoriesDeplicated } from './fixture/channelHistories.fixture';
 import { selectTab, selectChannel } from '../../ui/selectChannelUI';
+import { mockPreload } from '../../../../lib/test/mockPreload';
 
 function* saga() {
   yield all(channelHistoriesSagas);
 }
+
+beforeAll(() => {
+  mockPreload();
+});
 
 describe('writeChannelHistoriesToStorage 履歴をstrageに保存する', () => {});
 
