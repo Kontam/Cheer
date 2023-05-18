@@ -5,7 +5,7 @@ export function mockPreload() {
     ipcRenderer: {
       send: jest.fn,
       on: jest.fn,
-      invoke: jest.fn as any,
+      invoke: jest.fn().mockResolvedValue(undefined) as any,
     },
   };
   Object.defineProperty(window, 'electron', {
