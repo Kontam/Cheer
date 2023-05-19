@@ -5,7 +5,6 @@ import { AuthInfo, Member, Members, RootState } from '../../types';
 import {
   UserMessage,
   SlackUserInfoResponse,
-  getWebClientInstance,
 } from '../../../../modules/util/requests/webClient';
 import { preloadImage } from '../../../../modules/util/preloadImage';
 import { addMembers } from '../../app/members';
