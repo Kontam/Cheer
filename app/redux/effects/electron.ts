@@ -57,7 +57,7 @@ export const electronSagas = [
   takeEvery(MAKE_WATCH_WINDOW, makeWatchWindowFlow),
   takeEvery(MAKE_GENERAL_WINDOW, makeGeneralWindowFlow),
   takeEvery(MAKE_LIST_WINDOW, makeListWindowFlow),
-  takeEvery(MAKE_CLICKABLE_WINDOW, makeClickableWindow),
-  takeEvery(MAKE_UN_CLICKABLE_WINDOW, makeUnClickableWindow),
+  takeEvery(MAKE_CLICKABLE_WINDOW, makeWindowClickableFlow),
+  takeEvery(MAKE_UN_CLICKABLE_WINDOW, makeWindowUnClickableFlow),
   takeEvery(CLOSE_WINDOW, closeWindowFlow),
 ];
