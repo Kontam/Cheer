@@ -19,7 +19,7 @@ export default merge(baseConfig, {
 
   mode: 'production',
 
-  target: 'electron-preload',
+  target: ['web', 'electron-renderer'],
 
   entry: {
     main: path.join(__dirname, '..', 'app/index.tsx'),
@@ -34,6 +34,9 @@ export default merge(baseConfig, {
     path: path.join(__dirname, '..', 'app/dist'),
     publicPath: './dist/',
     filename: '[name].renderer.prod.js',
+    library: {
+      type: 'umd',
+    },
   },
 
   module: {

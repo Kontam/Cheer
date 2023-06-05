@@ -1,6 +1,4 @@
 import { ExpectApi, expectSaga } from 'redux-saga-test-plan';
-import * as matchers from 'redux-saga-test-plan/matchers';
-import { throwError } from 'redux-saga-test-plan/providers';
 import { push } from 'connected-react-router';
 import { WebClient } from '@slack/web-api';
 import { getWebClientInstance } from '../../../../modules/util/requests/webClient';
@@ -32,24 +30,34 @@ import {
   emojiListRequestSuccess,
 } from '../../api/slackEmojiList';
 import { mockEmojiListResponse } from './fixture/emojiList.fixture';
+import {
+  mockInvokeReset,
+  mockInvokeWithImplementation,
+} from '../../../../lib/test/mockInvoke';
+import appConst from '../../../../modules/constants/appConst';
 
-const listParams = { limit: 1000, cursor: '' };
 const mockToken: TokenInfo = { token: 'mockToken', botToken: 'mockBotToken' };
-const web = getWebClientInstance(mockToken.token);
+
+afterEach(() => {
+  mockInvokeReset();
+});
 
 describe('ログイン/ログアウトフローの確認 正常系', () => {
   let expect: ExpectApi;
   beforeEach(() => {
-    expect = expectSaga(loginSaga)
-      .provide([
-        [
-          matchers.call.fn(web.conversations.list),
-          mockSlackChannelListResponse,
-        ],
-        [matchers.call.fn(web.emoji.list), mockEmojiListResponse],
-        [matchers.call.fn(web.users.profile.get), mockUserProfileGetResponse],
-      ])
-      .withReducer(createRootReducer({} as any));
+    mockInvokeWithImplementation((channel) => {
+      switch (channel) {
+        case appConst.IPC_SLACK_USER_PROFILE:
+          return Promise.resolve(mockUserProfileGetResponse);
+        case appConst.IPC_SLACK_EMOJI_LIST:
+          return Promise.resolve(mockEmojiListResponse);
+        case appConst.IPC_SLACK_CHANNEL_LIST:
+          return Promise.resolve(mockSlackChannelListResponse);
+        default:
+          return Promise.reject();
+      }
+    });
+    expect = expectSaga(loginSaga).withReducer(createRootReducer({} as any));
   });
 
   test(
@@ -70,12 +78,9 @@ describe('ログイン/ログアウトフローの確認 正常系', () => {
       return expect
         .put(recieveToken(mockToken))
         .put(channelListRequest())
-        .call(web.conversations.list, listParams)
         .put(channelListRequestSuccess(mockSlackChannelListResponse.channels))
         .put(emojiListRequest())
-        .call(web.emoji.list)
         .put(emojiListRequestSuccess(mockEmojiListResponse.emoji))
-        .call(web.users.profile.get)
         .put(requestAppUserInfoSuccess(mockUserProfileGetResponse))
         .not.put.like({ action: { type: REQUEST_APP_USER_INFO_FAIL } })
         .put(writeAuthTokenToStorage(mockToken))
@@ -126,23 +131,17 @@ describe('ログイン/ログアウトフローの確認 異常系', () => {
     const errorResponse: any = new Error('mock error');
     errorResponse.data = { error: 'error message' };
     beforeEach(() => {
+      mockInvokeWithImplementation(() => {
+        return Promise.reject(errorResponse);
+      });
       webCl = getWebClientInstance('token');
       expect = expectSaga(loginSaga)
-        .provide([
-          [
-            matchers.call.fn(webCl.conversations.list),
-            throwError(errorResponse),
-          ],
-        ])
         .withReducer(createRootReducer({} as any))
         .dispatch(login(mockToken));
     });
 
     test('チャンネルリスト取得成功アクションがdispathされない', () => {
-      return expect
-        .call(webCl.conversations.list, listParams)
-        .not.put(channelListRequestSuccess(errorResponse))
-        .run();
+      return expect.not.put(channelListRequestSuccess(errorResponse)).run();
     });
 
     test('チャンネルリスト取得失敗アクションが実行される', () => {

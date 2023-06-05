@@ -23,6 +23,7 @@ module.exports = {
     'compat/compat': 'warn',
     'react/jsx-props-no-spreading': 'off',
     'import/extensions': 'off',
+    'react-hooks/exhaustive-deps': 'off',
   },
   settings: {
     'import/resolver': {

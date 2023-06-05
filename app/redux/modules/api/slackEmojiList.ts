@@ -10,6 +10,7 @@ import {
 } from '../../../modules/util/requests/webClient';
 import { routes } from '../../../modules/constants/routes';
 import { makeListWindow } from '../../effects/window';
+import appConst from '../../../modules/constants/appConst';
 
 export const INITIAL_STATE: SlackEmojiList = {
   emoji: {},
@@ -49,14 +50,18 @@ export const emojiListSagas = [
   takeEvery(PUSH_SELECT_EMOJI, pushSelectChannelFlow),
 ];
 
-export function* requestEmojiListFlow(webClient: WebClient) {
+export function* requestEmojiListFlow(token: string) {
   yield put(emojiListRequest());
-  const list = yield* requestEmojiList(webClient);
+  const list = yield* requestEmojiList(token);
   yield put(emojiListRequestSuccess(list));
 }
 
-function* requestEmojiList(webClient: WebClient) {
-  const result: SlackEmojiListResponse = yield call(webClient.emoji.list);
+function* requestEmojiList(token: string) {
+  const result: SlackEmojiListResponse = yield call(
+    window.electron.ipcRenderer.invoke,
+    appConst.IPC_SLACK_EMOJI_LIST,
+    { token }
+  );
   return result.emoji;
 }
 

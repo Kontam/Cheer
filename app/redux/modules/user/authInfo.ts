@@ -1,6 +1,5 @@
 import { createAction, handleActions, Action } from 'redux-actions';
 import { takeEvery } from 'redux-saga/effects';
-import { ipcRenderer } from 'electron';
 import { AuthInfo, TokenInfo } from '../types';
 import appConst from '../../../modules/constants/appConst';
 import {
@@ -8,6 +7,7 @@ import {
   CHANNEL_LIST_REQUEST_FAIL,
   CHANNEL_LIST_REQUEST,
 } from '../api/slackChannelList';
+import { ipcRenderer } from '../../../modules/util/exposedElectron';
 
 export const INITIAL_STATE: AuthInfo = {
   authed: false,

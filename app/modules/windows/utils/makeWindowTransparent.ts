@@ -1,11 +1,10 @@
-import { remote } from 'electron';
+import { BrowserWindow } from 'electron';
 import appConst from '../../constants/appConst';
 
 /**
  * current windowを最前面透明スクリーンにする
  */
-export function makeCurrentWindowTransparent() {
-  const window = remote.getCurrentWindow();
+export function makeWindowTransparent(window: BrowserWindow) {
   window.resizable = true;
   window.maximize();
   window.setBackgroundColor('#00CCCCCC');
@@ -17,8 +16,7 @@ export function makeCurrentWindowTransparent() {
 /**
  * 最前面透明スクリーンにした変更を元に戻す
  */
-export function makeCurrentWindowDefault() {
-  const window = remote.getCurrentWindow();
+export function makeWindowDefault(window: BrowserWindow) {
   window.unmaximize();
   window.setIgnoreMouseEvents(false);
   window.setAlwaysOnTop(false);
@@ -26,13 +24,28 @@ export function makeCurrentWindowDefault() {
   window.resizable = true; // windowsではresizable falseではsetSizeが効かない
   window.setSize(appConst.DEFAULT_WINDOW_X, appConst.DEFAULT_WINDOW_Y);
   window.resizable = false;
-  return window;
 }
 
 /**
  * ChannelSelect画面の画面情報に変更する
  */
-export function makeCurrentWindowList() {
-  const window = makeCurrentWindowDefault();
+export function makeWindowList(window: BrowserWindow) {
+  makeWindowDefault(window);
   window.setSize(800, 600);
+}
+
+/**
+ * Window自体をun_clickableにする
+ * Watch中のメニューボタンからマウスリーヴしたときに透明スクリーンをクリックできないようにする
+ */
+export function makeWindowUnClickable(window: BrowserWindow) {
+  window.setIgnoreMouseEvents(true, { forward: true });
+}
+
+/**
+ * Window自体をclickableにする
+ * Watch中のメニューボタンからマウスホバーしたときクリックできるようにする
+ */
+export function makeWindowClickable(window: BrowserWindow) {
+  window.setIgnoreMouseEvents(false);
 }

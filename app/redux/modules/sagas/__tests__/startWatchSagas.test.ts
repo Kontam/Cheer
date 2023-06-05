@@ -1,11 +1,6 @@
 import { expectSaga, ExpectApi } from 'redux-saga-test-plan';
 import { push } from 'connected-react-router';
 import { select } from 'redux-saga/effects';
-import * as matchers from 'redux-saga-test-plan/matchers';
-import {
-  getWebClientBotInstance,
-  getWebClientInstance,
-} from '../../../../modules/util/requests/webClient';
 import createRootReducer from '../../reducer';
 import {
   requestSlackChannelInfoSuccess,
@@ -40,6 +35,11 @@ import {
   requestMessagesAPISuccess,
 } from '../../api/slackMessages';
 import { lastRequestTimeSelector } from '../requestSlackMessagesSagas';
+import {
+  mockInvokeReset,
+  mockInvokeWithImplementation,
+} from '../../../../lib/test/mockInvoke';
+import appConst from '../../../../modules/constants/appConst';
 
 describe('Slack APIからチャンネル情報を取得するフローのテスト', () => {
   function* saga() {
@@ -57,20 +57,46 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
   const mockRequestTime = ''; // testでは空文字列になる
   const mockToken = { token: '123', botToken: 'bot' };
   const mockOldest = '1';
-  const web = getWebClientInstance('test token');
-  const botWeb = getWebClientBotInstance('test bot token');
+  const successCaseAPIMocks = () => {
+    mockInvokeWithImplementation((channel, args) => {
+      switch (channel) {
+        case appConst.IPC_SLACK_CHANNEL_INFO:
+          return Promise.resolve(mockChannelInfoResponse);
+        case appConst.IPC_SLACK_POST_MESSAGE:
+          return Promise.resolve();
+        case appConst.IPC_SLACK_CONVERSATIONS_HISTORY:
+          return Promise.resolve({ messages: [] });
+        default:
+          return Promise.reject();
+      }
+    });
+  };
+  const failChannelInfoAPIMocks = (errorMessage: string) => {
+    mockInvokeWithImplementation((channel, args) => {
+      switch (channel) {
+        case appConst.IPC_SLACK_CHANNEL_INFO:
+          throw new Error(errorMessage);
+        case appConst.IPC_SLACK_POST_MESSAGE:
+          return Promise.resolve();
+        case appConst.IPC_SLACK_CONVERSATIONS_HISTORY:
+          return Promise.resolve({ messages: [] });
+        default:
+          return Promise.reject();
+      }
+    });
+  };
+
+  afterEach(() => {
+    mockInvokeReset();
+  });
 
   describe('正常に処理が終了した場合のフロー', () => {
     describe('直前までwatchしたchannelと違うチャンネル or 初回watchのケース', () => {
       let expect: ExpectApi;
       beforeEach(() => {
+        successCaseAPIMocks();
         expect = expectSaga(saga)
-          .provide([
-            [matchers.call.fn(web.conversations.info), mockChannelInfoResponse],
-            [select(lastRequestTimeSelector), mockOldest],
-            [matchers.call.fn(botWeb.conversations.history), { messages: [] }],
-            [matchers.call.fn(botWeb.chat.postMessage), {}],
-          ])
+          .provide([[select(lastRequestTimeSelector), mockOldest]])
           .withReducer(createRootReducer({} as any));
       });
 
@@ -95,9 +121,6 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
               .select(selectedChannelSelector)
               .select(authInfoSelector)
               .select(slackChannelInfoSelector)
-              .call(web.conversations.info, {
-                channel: mockChannelId,
-              })
               .not.put.like({
                 action: { type: REQUEST_SLACK_CHANNEL_INFO_FAIL },
               })
@@ -109,11 +132,6 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
               )
 
               // requestSlackMessagesFlow start
-              .call(botWeb.conversations.history, {
-                channel: mockChannelId,
-                oldest: mockOldest,
-                limit: 1,
-              })
               .put(requestMessagesAPISuccess([]))
               .not.put.like({ action: { type: ENQUEUE_MESSAGES } }) // 疎通確認時はスキップされる
               // requestSlackMessagesFlow end
@@ -152,15 +170,11 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
       let expect: ExpectApi;
 
       beforeEach(() => {
+        successCaseAPIMocks();
         expect = expectSaga(saga)
           .withReducer(createRootReducer({} as any))
           .dispatch(requestSlackChannelInfoSuccess(previousChannel))
-          .provide([
-            [matchers.call.fn(web.conversations.info), mockChannelInfoResponse],
-            [select(lastRequestTimeSelector), mockOldest],
-            [matchers.call.fn(botWeb.conversations.history), { messages: [] }],
-            [matchers.call.fn(botWeb.chat.postMessage), {}],
-          ]);
+          .provide([[select(lastRequestTimeSelector), mockOldest]]);
       });
 
       test('新規チャンネルwatchのActionがDispatchされない', () => {
@@ -176,15 +190,11 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
       let expect: ExpectApi;
 
       beforeEach(() => {
+        successCaseAPIMocks();
         expect = expectSaga(saga)
           .withReducer(createRootReducer({} as any))
           .dispatch(historyLoaded(createMaxSizeHistories())) // 上限数まで履歴を作る
-          .provide([
-            [matchers.call.fn(web.conversations.info), mockChannelInfoResponse],
-            [select(lastRequestTimeSelector), mockOldest],
-            [matchers.call.fn(botWeb.conversations.history), { messages: [] }],
-            [matchers.call.fn(botWeb.chat.postMessage), {}],
-          ]);
+          .provide([[select(lastRequestTimeSelector), mockOldest]]);
       });
 
       test('新しい履歴がpushされた後に溢れた数のデキューを行う', () => {
@@ -198,29 +208,13 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
 
   describe('SlackのWatch対象チャンネル取得 例外発生ケース', () => {
     let expect: ExpectApi;
-    let mockErrorData: any;
     beforeEach(() => {
-      expect = expectSaga(saga)
-        .provide([
-          [matchers.call.fn(botWeb.conversations.history), { messages: [] }],
-          [matchers.call.fn(botWeb.chat.postMessage), {}],
-        ])
-        .withReducer(createRootReducer({} as any));
+      expect = expectSaga(saga).withReducer(createRootReducer({} as any));
     });
     describe('本アプリのbotが参加していないチャンネルをWatchした時', () => {
+      const errorMessage = 'not_in_channel';
       beforeEach(() => {
-        mockErrorData = {
-          data: {
-            ok: false,
-            error: 'not_in_channel',
-          },
-        };
-        expect.provide([
-          [
-            matchers.call.fn(web.conversations.info),
-            Promise.reject(mockErrorData),
-          ],
-        ]);
+        failChannelInfoAPIMocks(errorMessage);
       });
 
       test('bot招待説明画面に遷移する', () => {
@@ -231,7 +225,7 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
           .put(
             requestMessagesAPIFail({
               error: true,
-              error_message: mockErrorData.data.error,
+              error_message: errorMessage,
             })
           )
           .put(push(routes.RECOMMEND_BOT))
@@ -243,19 +237,9 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
     });
 
     describe('想定外のエラーが発生した時', () => {
+      const errorMessage = 'mock error message';
       beforeEach(() => {
-        mockErrorData = {
-          data: {
-            ok: false,
-            error: 'mock error message',
-          },
-        };
-        expect.provide([
-          [
-            matchers.call.fn(web.conversations.info),
-            Promise.reject(mockErrorData),
-          ],
-        ]);
+        failChannelInfoAPIMocks(errorMessage);
       });
 
       test('Fail用Actionがdisaptchされる', () => {
@@ -266,10 +250,10 @@ describe('Slack APIからチャンネル情報を取得するフローのテス�
           .put(
             requestSlackChannelInfoFail({
               error: true,
-              error_message: mockErrorData.data.error,
+              error_message: errorMessage,
             })
           )
-          .put(showAlert(mockErrorData.data.error))
+          .put(showAlert(errorMessage))
           .dispatch(selectChannel(mockChannelId))
           .dispatch(recieveToken(mockToken))
           .dispatch(startWatch())

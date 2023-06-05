@@ -9,10 +9,8 @@ import {
   TokenInfo,
 } from '../types';
 import {
-  getWebClientInstance,
   ChannelInfoFromSlack,
   removeWebClientInstance,
-  getWebClientBotInstance,
 } from '../../../modules/util/requests/webClient';
 import {
   requestSlackChannelInfoSuccess,
@@ -31,6 +29,7 @@ import { routes } from '../../../modules/constants/routes';
 import { showAlert } from '../common/alert';
 import { requestMessagesAPIFail } from '../api/slackMessages';
 import { requestSlackMessagesFlow } from './requestSlackMessagesSagas';
+import { ipcRenderer } from '../../../modules/util/exposedElectron';
 
 // saga
 export const START_WATCH = 'START_WATCH';
@@ -58,16 +57,21 @@ export const userNameSelector = (state: RootState) =>
 export function* requestSlackChannelInfoFlow() {
   const selectedChannel: string = yield select(selectedChannelSelector);
   const { token, botToken }: TokenInfo = yield select(authInfoSelector);
-  const web = getWebClientInstance(token);
-  const botWeb = getWebClientBotInstance(botToken);
   const currentChannel: SlackChannelInfo = yield select(
     slackChannelInfoSelector
   );
   const userName: string = yield select(userNameSelector);
   try {
-    const result: ChannelInfoFromSlack = yield call(web.conversations.info, {
-      channel: selectedChannel,
-    });
+    const result: ChannelInfoFromSlack = yield call(
+      ipcRenderer.invoke,
+      appConst.IPC_SLACK_CHANNEL_INFO,
+      {
+        token,
+        option: {
+          channel: selectedChannel,
+        },
+      }
+    );
     yield put(requestSlackChannelInfo());
     yield put(
       requestSlackChannelInfoSuccess({
@@ -76,9 +80,12 @@ export function* requestSlackChannelInfoFlow() {
       })
     );
     yield* requestSlackMessagesFlow({ limit: 0 }); // 疎通確認のため0件取得
-    yield call(botWeb.chat.postMessage, {
-      channel: selectedChannel,
-      text: `${userName}さんがこのチャンネルの閲覧を開始しました。`,
+    yield call(ipcRenderer.invoke, appConst.IPC_SLACK_POST_MESSAGE, {
+      botToken,
+      option: {
+        channel: selectedChannel,
+        text: `${userName}さんがこのチャンネルの閲覧を開始しました。`,
+      },
     });
     const channelHistories: ChannelHistories = yield select(
       channelHistoriesSelector
@@ -104,11 +111,11 @@ export function* requestSlackChannelInfoFlow() {
   } catch (e: any) {
     // botが対象チャンネルに存在していない時のエラー
     // メジャーユースケースで発生する
-    if (e.data?.error === appConst.ERROR_NOT_IN_CHANNEL) {
+    if (e.message.includes(appConst.ERROR_NOT_IN_CHANNEL)) {
       yield put(
         requestMessagesAPIFail({
           error: true,
-          error_message: e.data?.error,
+          error_message: e.message,
         })
       );
       yield put(push(routes.RECOMMEND_BOT));
@@ -118,11 +125,11 @@ export function* requestSlackChannelInfoFlow() {
     yield put(
       requestSlackChannelInfoFail({
         error: true,
-        error_message: e.data?.error,
+        error_message: e.message,
       })
     );
     removeWebClientInstance(); // 認証に失敗したインスタンスを除去
-    yield put(showAlert(e.data?.error));
+    yield put(showAlert(e.message));
   }
 }
 

@@ -39,6 +39,12 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     modules: [path.join(__dirname, '..', 'app'), 'node_modules'],
+    alias: {
+      path: 'path-browserify',
+      os: 'os-browserify/browser',
+      crypto: 'crypto-browserify',
+      stream: 'stream-browserify',
+    },
   },
 
   plugins: [

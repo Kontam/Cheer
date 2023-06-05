@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { ipcRenderer } from 'electron';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFormValues } from 'redux-form';
 import ScreenSettingPresentational from './ScreenSetting';
@@ -24,9 +23,15 @@ import {
   hideSystemMessage,
   showSystemMessage,
 } from '../../../redux/modules/common/systemMessage';
+import { ipcRenderer } from '../../../modules/util/exposedElectron';
 
 const ScreenSetting = () => {
   const dispatch = useDispatch();
+  useEffect(() => {
+    ipcRenderer.on(appConst.IPC_RESPONCE_PREFERENCE, () => {
+      dispatch(showSystemMessage('Successfully saved'));
+    });
+  }, []);
   useEffect(() => {
     dispatch(readSettingConfig());
   }, [dispatch]);
@@ -83,9 +88,6 @@ const ScreenSetting = () => {
   const onHideMessage = () => {
     dispatch(hideSystemMessage());
   };
-  ipcRenderer.on(appConst.IPC_RESPONCE_PREFERENCE, () => {
-    dispatch(showSystemMessage('Successfully saved'));
-  });
 
   return (
     <ScreenSettingPresentational

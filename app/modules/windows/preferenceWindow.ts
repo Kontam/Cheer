@@ -1,5 +1,6 @@
-// import path from 'path';
 import { BrowserWindow } from 'electron';
+import path from 'path';
+import { setWindowEventHandlers } from '../eventHandlers/main/screenEventHandlers';
 
 // const installExtensions = async () => {
 //   const installer = require('electron-devtools-installer');
@@ -30,14 +31,12 @@ export const createPreferenceWindow = async (parent: BrowserWindow) => {
     resizable: false,
     maximizable: false,
     webPreferences:
-      process.env.NODE_ENV === 'development' || process.env.E2E_BUILD === 'true'
+      process.env.NODE_ENV === 'development'
         ? {
-            nodeIntegration: true,
+            preload: path.join(__dirname, '../..', 'dist', 'preload.js'),
           }
         : {
-            // TODO preloadしないことによる影響調査
-            // preload: path.join(__dirname, 'dist/preference.renderer.prod.js')
-            nodeIntegration: true,
+            preload: path.join(__dirname, 'dist', 'preload.js'),
           },
   });
   const htmlUrl =
@@ -45,7 +44,6 @@ export const createPreferenceWindow = async (parent: BrowserWindow) => {
       ? `file://${__dirname}/preference.html`
       : `file://${__dirname}/modules/windows/preference.html`;
   preferenceWindow.loadURL(htmlUrl);
-  // preferenceWindow.loadURL(`file://${__dirname}/preference.html`);
 
   // @TODO: Use 'ready-to-show' event
   //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
@@ -60,5 +58,6 @@ export const createPreferenceWindow = async (parent: BrowserWindow) => {
       preferenceWindow.focus();
     }
   });
+  setWindowEventHandlers(preferenceWindow);
   return preferenceWindow;
 };

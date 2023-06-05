@@ -49,4 +49,5 @@ npm-debug.log.*
 *.swp
 secret_memo.md
 .env
+jest_html_reporters*
 

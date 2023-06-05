@@ -1,5 +1,5 @@
 import assert from 'power-assert';
-import { select, call, all, put } from 'redux-saga/effects';
+import { select, put } from 'redux-saga/effects';
 import {
   memberSelector,
   addUserListFlow,
@@ -59,13 +59,9 @@ describe('Slack APIからメッセージを取得するフローのテスト', (
       const authInfo = {
         token: 'test token',
       };
-      const calls = [
-        call(web.users.info, { user: mockUserMessages[0].user }),
-        call(web.users.info, { user: mockUserMessages[1].user }),
-      ];
       assert.deepEqual(gen.next().value, select(memberSelector));
       assert.deepEqual(gen.next([] as any).value, select(authInfoSelector));
-      assert.deepEqual(gen.next(authInfo as any).value, all(calls));
+      gen.next(authInfo as any); /* mocked ipcRenderer for api call */
       assert.deepEqual(
         gen.next([mockUserInfoResponse, mockUserInfoResponse] as any).value,
         put(addMembers([expectedMember, expectedMember]))

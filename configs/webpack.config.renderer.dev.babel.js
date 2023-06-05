@@ -33,7 +33,7 @@ export default merge(baseConfig, {
 
   mode: 'development',
 
-  target: 'electron-renderer',
+  target: ['web', 'electron-renderer'],
 
   entry: {
     main: [
@@ -53,6 +53,9 @@ export default merge(baseConfig, {
   output: {
     publicPath: `http://localhost:${port}/dist/`,
     filename: '[name].renderer.dev.js',
+    library: {
+      type: 'umd',
+    },
   },
 
   module: {

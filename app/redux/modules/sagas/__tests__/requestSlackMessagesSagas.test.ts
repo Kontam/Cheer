@@ -23,6 +23,11 @@ import createRootReducer from '../../reducer';
 import saga from '../../saga';
 import { addMembers } from '../../app/members';
 import { selectChannel } from '../../ui/selectChannelUI';
+import {
+  mockInvokeReset,
+  mockInvokeWithImplementation,
+} from '../../../../lib/test/mockInvoke';
+import appConst from '../../../../modules/constants/appConst';
 
 describe('Slack APIからメッセージを取得するフローのテスト', () => {
   const mockUserMessages: SlackMessage[] = [
@@ -87,6 +92,9 @@ describe('Slack APIからメッセージを取得するフローのテスト', (
   };
   const mockChannelId = 'mockChannel';
 
+  afterEach(() => {
+    mockInvokeReset();
+  });
   test(
     'メッセージ 取得 & メンバーライブラリ更新の全体フローテスト\n' +
       '1. storeからSlackのキー情報を取得\n' +
@@ -105,37 +113,27 @@ describe('Slack APIからメッセージを取得するフローのテスト', (
       const botWeb = getWebClientBotInstance('test token');
       const mockUnixTime = getUnixTime(new Date()).toString();
 
-      return (
-        expectSaga(saga)
-          .provide([
-            [
-              matchers.call.fn(botWeb.conversations.history),
-              mockSlackApiResponse,
-            ],
-            [matchers.call.fn(web.users.info), mockUserInfoResponse],
-          ])
-          .withReducer(createRootReducer({} as any))
-          // .select(authInfoSelector)
-          .select(lastRequestTimeSelector)
-          .call(botWeb.conversations.history, {
-            channel: mockChannelId,
-            oldest: mockUnixTime,
-          })
-          .select(selectedChannelSelector)
-          .call(web.users.info, {
-            user: mockUserMessages[0].user,
-          })
-          .call(web.users.info, {
-            user: mockUserMessages[1].user,
-          })
-          .put(addMembers([expectedMember, expectedMember] as Members))
-          .put(requestMessagesAPISuccess(mockUserMessages))
-          .put(enqueueMessageQueue(mockUserMessages.reverse()))
-          .dispatch(selectChannel(mockChannelId))
-          .dispatch(setLastRequestTime(mockUnixTime))
-          .dispatch(requestSlackMessages())
-          .run()
-      );
+      mockInvokeWithImplementation((channel, args) => {
+        if (channel === appConst.IPC_SLACK_USER_INFO) {
+          return Promise.resolve(mockUserInfoResponse);
+        }
+        if (channel === appConst.IPC_SLACK_CONVERSATIONS_HISTORY) {
+          return Promise.resolve(mockSlackApiResponse);
+        }
+        return Promise.reject();
+      });
+
+      return expectSaga(saga)
+        .withReducer(createRootReducer({} as any))
+        .select(lastRequestTimeSelector)
+        .select(selectedChannelSelector)
+        .put(addMembers([expectedMember, expectedMember] as Members))
+        .put(requestMessagesAPISuccess(mockUserMessages))
+        .put(enqueueMessageQueue(mockUserMessages.reverse()))
+        .dispatch(selectChannel(mockChannelId))
+        .dispatch(setLastRequestTime(mockUnixTime))
+        .dispatch(requestSlackMessages())
+        .run();
     }
   );
 

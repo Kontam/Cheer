@@ -1,12 +1,10 @@
-import { WebClient } from '@slack/web-api';
 import { push } from 'connected-react-router';
 import { Action, createAction } from 'redux-actions';
 import { take, put, call, takeEvery } from 'redux-saga/effects';
 import appConst from '../../../modules/constants/appConst';
 import { routes } from '../../../modules/constants/routes';
-import { readStore } from '../../../modules/util/electronStore';
+import { ipcRenderer } from '../../../modules/util/exposedElectron';
 import {
-  getWebClientInstance,
   removeWebClientInstance,
   SlackChannel,
   SlackChannelListResponse,
@@ -47,8 +45,16 @@ export const loginWithStorage = createAction(LOGIN_WITH_STORAGE);
  * 認証トークンをstorageから読み出してログインする
  */
 export function* loginWithStorageFlow() {
-  const token: string = yield readStore(appConst.STORAGE_AUTH_TOKEN);
-  const botToken: string = yield readStore(appConst.STORAGE_AUTH_BOT_TOKEN);
+  const token: string = yield call(
+    ipcRenderer.invoke,
+    appConst.IPC_REQUEST_READ_STORE,
+    { name: appConst.STORAGE_AUTH_TOKEN }
+  );
+  const botToken: string = yield call(
+    ipcRenderer.invoke,
+    appConst.IPC_REQUEST_READ_STORE,
+    { name: appConst.STORAGE_AUTH_BOT_TOKEN }
+  );
   if (!token || !botToken) return;
   yield put(login({ token, botToken }));
 }
@@ -59,12 +65,15 @@ export function* loginSaga() {
     // login
     const { payload }: Action<TokenInfo> = yield take(LOGIN);
     yield put(recieveToken(payload));
-    const web = getWebClientInstance(payload.token);
     try {
-      yield call(requestChannelListFlow, web);
-      yield call(requestEmojiListFlow, web);
+      yield call(requestChannelListFlow, payload.token);
+      yield call(requestEmojiListFlow, payload.token);
       yield put(requestAppUserInfo());
-      const user: UserProfileGetResponse = yield call(web.users.profile.get);
+      const user: UserProfileGetResponse = yield call(
+        ipcRenderer.invoke,
+        appConst.IPC_SLACK_USER_PROFILE,
+        { token: payload.token }
+      );
       yield put(requestAppUserInfoSuccess(user));
       yield put(writeAuthTokenToStorage(payload));
       yield put(makeListWindow());
@@ -86,21 +95,25 @@ export function* loginSaga() {
   }
 }
 
-function* requestChannelListFlow(webClient: WebClient) {
+function* requestChannelListFlow(token: string) {
   yield put(channelListRequest());
-  const list = yield* requestChannelListAll(webClient);
+  const list = yield* requestChannelListAll(token);
   yield put(channelListRequestSuccess(list));
 }
 
-function* requestChannelListAll(webClient: WebClient) {
+function* requestChannelListAll(token: string) {
   let nextCursor: string | 'initial' = 'initial';
   let list: SlackChannel[] = [];
   while (nextCursor) {
     const result: SlackChannelListResponse = yield call(
-      webClient.conversations.list,
+      ipcRenderer.invoke,
+      appConst.IPC_SLACK_CHANNEL_LIST,
       {
-        limit: 1000,
-        cursor: nextCursor === 'initial' ? '' : nextCursor,
+        token,
+        option: {
+          limit: 1000,
+          cursor: nextCursor === 'initial' ? '' : nextCursor,
+        },
       }
     );
     list = list.concat(result.channels);

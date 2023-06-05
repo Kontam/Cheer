@@ -15,6 +15,10 @@ import { createMainWindow } from './modules/windows/mainWindow';
 import { setMainUrlSchemeEventHandler } from './modules/eventHandlers/main/urlSchemeEventHandler';
 import { setAppQuitEventhandler } from './modules/eventHandlers/main/appQuitEventHandler';
 import { setOpenPreferenceEventhandler } from './modules/eventHandlers/main/preferenceEventHandler';
+import { setScreenEventHandlers } from './modules/eventHandlers/main/screenEventHandlers';
+import { setStoreHandlers } from './modules/eventHandlers/main/storeHandlers';
+import { setSlackEventHandlers } from './modules/eventHandlers/main/slackEventHandlers';
+import { setShellEventHandlers } from './modules/eventHandlers/main/shellEventHandlers';
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -51,6 +55,10 @@ async function readyMainWindow() {
   setAppQuitEventhandler(app);
   setMainUrlSchemeEventHandler(mainWindow);
   setOpenPreferenceEventhandler(mainWindow);
+  setScreenEventHandlers(mainWindow);
+  setStoreHandlers();
+  setSlackEventHandlers();
+  setShellEventHandlers();
   // 閉じられた時にmainWindowの参照をnullにする Docには残り続けるがwindowがない状態
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -71,7 +79,7 @@ app.on('activate', () => {
  * preference画面から設定情報を受け取る
  */
 ipcMain.on(appConst.IPC_REQUEST_PREFERENCE, async (event, arg) => {
-  mainWindow?.webContents.send(appConst.IPC_REQUEST_SETTING, arg);
+  mainWindow?.webContents.send(appConst.IPC_REQUEST_SETTING, arg[0]);
   event.reply(appConst.IPC_RESPONCE_PREFERENCE, 'recieved');
 });
 
@@ -80,13 +88,17 @@ ipcMain.on(appConst.IPC_REQUEST_PREFERENCE, async (event, arg) => {
  */
 ipcMain.on(appConst.IPC_LOGIN_COMPLETE, (event, arg) => {
   if (!mainMenu) return;
-  mainMenu.getMenuItemById(appConst.MAIN_MENU_SELECT_CHANNEL).enabled = true;
+  const menu = mainMenu.getMenuItemById(appConst.MAIN_MENU_SELECT_CHANNEL);
+  if (!menu) return;
+  menu.enabled = true;
 });
 
 /**
- * rendererからログアウト完了が通知されたら認証済みステータスに変更
+ * rendererからログアウト完了が通知されたら認証なしステータスに変更
  */
 ipcMain.on(appConst.IPC_LOGOUT_COMPLETE, (event, arg) => {
   if (!mainMenu) return;
-  mainMenu.getMenuItemById(appConst.MAIN_MENU_SELECT_CHANNEL).enabled = false;
+  const menu = mainMenu.getMenuItemById(appConst.MAIN_MENU_SELECT_CHANNEL);
+  if (!menu) return;
+  menu.enabled = false;
 });
