@@ -10,6 +10,10 @@ export function makeWindowTransparent(window: BrowserWindow) {
   window.setBackgroundColor('#00CCCCCC');
   window.setIgnoreMouseEvents(true, { forward: true });
   window.setAlwaysOnTop(true);
+  window.setVisibleOnAllWorkspaces(true, {
+    visibleOnFullScreen: true,
+    skipTransformProcessType: true, // 指定しないとDock上でアプリが非表示になる
+  });
   window.setHasShadow(false);
 }
 
@@ -20,6 +24,7 @@ export function makeWindowDefault(window: BrowserWindow) {
   window.unmaximize();
   window.setIgnoreMouseEvents(false);
   window.setAlwaysOnTop(false);
+  window.setVisibleOnAllWorkspaces(false);
   window.setHasShadow(true);
   window.resizable = true; // windowsではresizable falseではsetSizeが効かない
   window.setSize(appConst.DEFAULT_WINDOW_X, appConst.DEFAULT_WINDOW_Y);
