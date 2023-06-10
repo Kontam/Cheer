@@ -1,7 +1,7 @@
 {
   "name": "Cheer",
   "productName": "Cheer",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Slack App for showing messages on your screen.",
   "main": "./main.prod.js",
   "author": {

@@ -25,10 +25,11 @@ export async function setupElectron(): Promise<[Browser, Page, number]> {
   // Wait for Puppeteer to connect
   while (!browser) {
     try {
-      browser = await puppeteer.connect({
-        browserURL: `http://localhost:${port}`,
+        browser = await puppeteer.connect({
+        browserURL: `http://127.0.0.1:${port}`,
         defaultViewport: { width: 600, height: 600 },
       });
+
       // backgroundのpageも作られるのでテスト対象のpageを見つける必要がある
       const pages = await browser.pages();
       page = await searchTargetPage(pages);
