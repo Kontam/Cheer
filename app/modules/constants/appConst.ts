@@ -3,7 +3,7 @@ import { secret } from './secret';
 const LP_DOMAIN =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
-    : 'https://cheer.konkonta.com';
+    : 'https://cheer.konkontam.com';
 
 const appConst = {
   // Number

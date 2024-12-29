@@ -6,7 +6,7 @@
 
 ### Install Cheer application
 
-Go to [our official page](https://cheer.konkonta.com/) and see start guide.
+Go to [our official page](https://cheer.konkontam.com/) and see start guide.
 
 ### Start development
 
