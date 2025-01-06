@@ -13,11 +13,13 @@ const ascProvider = process.env.APPLE_ASC_PROVIDER;
 async function notarizeApp() {
   console.log('start notarize');
   await notarize({
+    tool: 'notarytool',
     appBundledId,
     appPath,
     appleId,
     appleIdPassword,
     ascProvider,
+    teamId: ascProvider,
   });
   console.log('after notarize');
 }
